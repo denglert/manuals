@@ -24,6 +24,9 @@ module initadd <modulename>
 # Check the initlist
 module initlist
 
+# Remove module from intilist
+module initrm <modulename>
+
 # List loaded modules
 module list
 
