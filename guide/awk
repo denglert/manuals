@@ -1,0 +1,3 @@
+awk '$1 ~ !/pip/ {++c} END {print c}'
+
+awk '{if(NF==5 && $2>2) print $4}' bemeneti_file.dat

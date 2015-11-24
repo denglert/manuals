@@ -1,0 +1,5 @@
+# Connecting to the same session from a different terminal
+tmux new -t <session name>
+
+# Do not resize windows if two terminals are connected
+setw -g aggressive-resize on

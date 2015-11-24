@@ -1,0 +1,163 @@
+##########################################
+### --- File permissions/ownership --- ###
+##########################################
+
+# set properties of the file
+chmod u+x filename
+
+#########################
+### --- Searching --- ###
+#########################
+
+############
+### find ###
+############
+find where-to-look criteria what-to-do
+
+find . -name ""
+
+!find - execute last command
+
+# maxdepth
+find ./test -maxdepth 2 -name "*.php"
+
+# invert match
+find ./test -not -name "*.php"
+
+# find files modified within the last 20 days
+find . -type f -mtime -20
+
+# find files larger than 1 megabyte
+find . -size +1M
+
+# list format option
+find . -size +1M -ls 
+
+# - type:
+f - regular file
+d - directory
+
+### ls
+# recently modified
+ls -lt
+
+################################
+### --- PDF manipulation --- ###
+################################
+
+pdftk file1.pdf file2.pdf cat output mergedfile.pdf
+
+pdftk foo.pdf cat 1-2 output loloutput.pdf
+pdftk foo.pdf cat 1 5 21 output loloutput.pdf
+
+# Rotate -90
+pdftk int.pdf cat 1-endE output out.pdf
+
+# How to check size of a directory and free disk space
+du -h
+
+# Compress a .pdf file
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=output.pdf input.pdf # not so lossy
+
+convert input -compress Zip output.pdf # lossy
+
+###############################
+### Media file manipulation ###
+###############################
+
+# Convert multiple image to another format
+
+convert *.jpg pictures.pdf
+
+mogrify -format newformat *.oldformat
+e.g.: mogrify -format png *.gif 
+
+# Convert single file to another with detailed options
+convert -quality 05 -density 200x200 -trim compare_r3H_DeltapT_HP.pdf compare_r3H_DeltapT_HP.png
+
+
+##### Movement in directories ####
+
+#move up several directories: 
+cd ../../..
+
+#String concatenation:
+string1_string2
+
+#giveback variable value
+$
+
+# String replacement/evaluation
+${stringvariblename} 
+
+# Replace a string a file
+set -i "s/oldstring/newstring/g" inputfile
+set "s/oldstring/newstring/g" <inputfile> outfile
+
+
+#Search in bash
+CTRL+R
+
+
+# print full path
+readlink -f FILENAME
+
+### How to tar multiple directories
+tar czf directories.tar dir1 dir2 dir3 ...
+
+# Untarring
+tar zxvf filename
+
+# Loop over lines in an external file
+while read name
+do
+    echo "$name"
+done < names.txt
+
+# Get the filebasename (in Makefile)
+${PIDconfigfile##*/}
+
+########
+# if 'Segmentation' is found do sg
+workdir=Enigma_HighMult_Full_PIDConfig_default_trkCorr_no
+listfile=list_failedjobs_$workdir
+
+rm $listfile
+cd $workdir
+
+FILES=$(find . -name \* -print)
+
+rm $listfile
+touch $listfile
+
+for f in $FILES
+do
+  if grep -q 'Segmentation' $f; then
+  grep -o "\<root://.*.root\>" $f >> $listfile
+  fi
+done
+
+mv $listfile ../$listfile
+
+######################
+### Creating links ###
+######################
+
+# To create a symbolic link
+ln -s {/path/to/file-name} {link-name}
+
+# To create hard link
+ln {file.txt} {hard-link}
+
+########################################################
+### Computer Architecture and Hardware info commands ###
+########################################################
+
+# Get info about kernel and architecture
+uname -a
+
+# Linux standard base distribution information
+lsb_release -d
+
+# Get number of cores
+nproc

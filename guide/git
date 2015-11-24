@@ -1,0 +1,65 @@
+# Initializing
+git init
+
+# Checking status
+git status
+
+# Check log
+git log
+
+######################
+### Configurations ###
+######################
+
+# make git colourful
+git config --global color.ui auto
+
+#######################
+
+# Add a file to the staging area
+git add octocat.txt
+git add '*.txt'
+
+# Commit - storing the staged changes
+git commit -m "Add cute octocat story"
+
+# Add remote repository named 'origin'
+git remote add origin https://github.com/try-git/try_git.git
+
+# push command = where to put the commits
+# -u remembers the parameters?
+git push -u origin master
+
+# Pulling any new changes by
+git pull origin master
+
+# Taking a look at the differences between two commits
+# HEAD = most recent commit
+git diff HEAD
+
+# See staged differences
+git diff --staged
+
+# Unstaging files
+git reset octodog.txt
+
+# Undo to last commit, getting rid of all changes since the last commit for octoca.txt
+git checkout -- octocat.txt
+
+################
+### Branches ###
+################
+
+# Branching out
+git branch clean_up
+
+# Switching between branches
+get checkout clean_up
+
+# Merging
+git merge clean_up
+
+################
+
+# delete and stage removal
+git rm '*.txt'

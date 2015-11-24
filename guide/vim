@@ -1,0 +1,174 @@
+##### Getting help #####
+:help			// help menu
+:help subject		// search for a subject
+:help subject<CTRL-D>	// list all possible matches for the subject
+
+list all possible matches for an unfinished command:
+
+:col <CTRL-D>
+
+# Insert before
+1, yank the text you want to paste
+2, CTRL+V the lines
+3, Press I
+4, CTRL+R
+5, "
+
+# Delete including <char>
+df<char>
+
+# Delete till <char>
+dt<char>
+
+# example:
+dfc
+dtc
+
+### Spellcheck
+:set spell spelllang=en_us
+
+
+##### Moving around the file #####
+go the beginning of the file:
+gg
+
+go the end of the file:
+G 
+
+Position the cursor to the *** of the screen
+center: zz
+top: zt
+
+go the line no. {linenumber}
+{linenumber}G
+
+previous position:
+''
+older positions:
+CTRL-O
+
+newer positions:
+CTRL-I
+
+Placing marks by:
+m{markletter}
+
+jumping to mark {markletter}:
+'{markletter}
+
+
+scroll windows downwards by half a screen:
+CTRL-D
+
+
+#####  Commenting a section ####
+CTRL-V (block mode)
+c
+{comment characters}
+ESC
+
+
+##### Text editing  ####
+visual replace:
+v  // select block
+c  // change
+
+ggVG // select all
+
+:set paste   // paste mode
+:set nopaste 
+
+
+Join lines together
+J
+
+Break long lines into multiple lines
+gq{motion}
+{Visual}gq
+gqq
+...
+
+:set tw=80
+(textwidth)
+
+
+###### Split window ######
+:split OR :sp
+:vsplit OR :vsp
+
+Switching screens:
+CTRL+w left/right
+
+
+###### Path to file ######
+CTRL+g filename
+1 CTRL+g full path
+
+##### Differentiating ######
+:diffthis
+
+
+##### Substitution
+:s/old/new/g   changes all old to new in the current line
+:11,15s/old/new/g   changes lines 11 to 15 inclusive
+:%s/old/new/g   changes all lines 
+
+:s/^/new text / Insert "new text " at the beginning of the linese. 
+:s/$/ new text/ Append " new text" to the end of the line.
+:s/green/bright &/g Replace each "green" with "bright green" in the line.Searching
+
+#####  Searching for an expression  #####
+/ forwards search
+? backwards search
+
+* search for the expression under the cursor
+
+n - next match
+N - previous match 
+
+ignore the case of the letter:
+	:set ignorecase
+distinguish the case:
+	:set noignorecase
+
+disable the highlighting
+	:nohlsearch
+
+
+###### Tabulation and spaces ######
+:set tabstop=2
+:set noexpandtab
+:retab!
+
+
+###### Automatic file completion ######
+CTRL-X CTRL-F
+/home/edy/lib/files/
+
+
+###### Repetitive procedures ######
+recording a macro on the fly by
+:q{macroletter}
+playing it by @{macroletter}
+
+
+
+##### Syntax highlighting #####
+:colorscheme evening
+
+
+##### Word wrap on the a selected interval of lines
+:101,141!fold -w100
+
+
+##### Folding ########
+zR - fold remove
+zo - fold open
+zc - fold close
+zr - fold reduce
+zm - fold more
+
+##### Windows endline workaround ####
+^V means CTRL+V and
+^M means CTRL+M
+:%s/^V^M/^V^M/g
