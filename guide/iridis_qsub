@@ -1,0 +1,14 @@
+################################
+### IRIDIS submission system ###
+################################
+
+qsub <shell script>
+
+##########################
+### Example batch jobs ###
+##########################
+
+/local/software/examples
+
+# Copy an example
+copy_example fluent

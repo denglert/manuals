@@ -1,0 +1,31 @@
+#############
+### Quota ###
+#############
+
+# Quota usage for 'home' and 'scratch'
+mmlsquota --block-size=G home scratch
+
+###############
+### Modules ###
+###############
+
+# Load a module 
+module load <modulename>
+
+# List of modules
+module avail
+
+# Get HowTo
+module help <modulename>
+
+# Load module every time after login
+module initadd <modulename>
+
+# Check the initlist
+module initlist
+
+# List loaded modules
+module list
+
+# Load Intel compilers
+module load intel
