@@ -1,5 +1,11 @@
-# Connecting to the same session from a different terminal
+### Connecting to the same session from a different terminal
 tmux new -t <session name>
 
-# Do not resize windows if two terminals are connected
+### Do not resize windows if two terminals are connected
 setw -g aggressive-resize on
+
+### Detach all other clients and attach to session
+# a = attach
+# d = detach other clients
+# t = target
+tmux a -dt <session-name>
