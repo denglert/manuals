@@ -9,37 +9,19 @@ chmod u+x filename
 ### --- Searching --- ###
 #########################
 
-############
-### find ###
-############
-find where-to-look criteria what-to-do
-
-find . -name ""
-
-!find - execute last command
-
-# maxdepth
-find ./test -maxdepth 2 -name "*.php"
-
-# invert match
-find ./test -not -name "*.php"
-
-# find files modified within the last 20 days
-find . -type f -mtime -20
-
-# find files larger than 1 megabyte
-find . -size +1M
-
-# list format option
-find . -size +1M -ls 
-
-# - type:
-f - regular file
-d - directory
-
 ### ls
 # recently modified
 ls -lt
+
+####################
+### File reading ###
+####################
+
+# Print out the first 'n' lines of the file
+head -n <number of lines>
+
+# Print out the last 'n' lines of the file
+tail -n <number of lines>
 
 ################################
 ### --- PDF manipulation --- ###
