@@ -99,7 +99,7 @@ done < names.txt
 # Get the filebasename (in Makefile)
 ${PIDconfigfile##*/}
 
-########
+###################################
 # if 'Segmentation' is found do sg
 workdir=Enigma_HighMult_Full_PIDConfig_default_trkCorr_no
 listfile=list_failedjobs_$workdir
@@ -143,3 +143,11 @@ lsb_release -d
 
 # Get number of cores
 nproc
+
+
+#################
+### Libraries ###
+#################
+
+# Check if library <libname> is installed
+ldconfig -p | grep <libname>
