@@ -13,6 +13,7 @@ if(inPseudoEditMode) {
 // g++ options //
 /////////////////
 
+
 -shared
 	 Produce a shared object which can then be linked with other objects to form
 an executable.  Not all systems support this option.  For predictable results,

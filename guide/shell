@@ -121,6 +121,10 @@ done
 
 mv $listfile ../$listfile
 
+### Look at the functions of a library
+nm -Ca <library>
+
+
 ######################
 ### Creating links ###
 ######################
