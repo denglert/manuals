@@ -1,0 +1,17 @@
+#################
+## -- Paths -- ##
+
+# Full path of the current file
+%:p 
+
+# Full path to the directory of the current file
+%:p:h
+
+# Example:
+#  - change the working directory to the current file
+:cd %:p:h
+
+#  - change the working directory of the active window to the current file
+:lcd %:p:h
+
+######
