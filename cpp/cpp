@@ -31,23 +31,61 @@ you must also specify the same set of options used for compilation (-fpic,
 -I/data[...]/lib
 
 // LD_LIBRARY_PATH
-You can temporarily substitute a different library for this particular execution. In Linux, the environment variable LD_LIBRARY_PATH is a colon-separated set of directories where libraries should be searched for first, before the standard set of directories; this is useful when debugging a new library or using a nonstandard library for special purposes
-LD_LIBRARY_PATH is an environment variable you set to give the run-time shared library loader (ld.so) an extra set of directories to look for when searching for shared libraries. Multiple directories can be listed, separated with a colon (:).
+You can temporarily substitute a different library for this particular
+execution. In Linux, the environment variable LD_LIBRARY_PATH is a
+colon-separated set of directories where libraries should be searched for first,
+before the standard set of directories; this is useful when debugging a new
+library or using a nonstandard library for special purposes LD_LIBRARY_PATH is
+an environment variable you set to give the run-time shared library loader
+(ld.so) an extra set of directories to look for when searching for shared
+libraries. Multiple directories can be listed, separated with a colon (:).
 
 // 'inline' functions
 
 
 // 'static' functions
 (http://www.cprogramming.com/tutorial/statickeyword.html)
-The keyword static can be used in three major contexts: inside a function, inside a class definition, and in front of a global variable inside a file making up a multifile program.
+The keyword static can be used in three major contexts: inside a function,
+inside a class definition, and in front of a global variable inside a file
+making up a multifile program.
 
-- The use of static inside a function is the simplest. It simply means that once the variable has been initialized, it remains in memory until the end of the program
+- The use of static inside a function is the simplest. It simply means that once
+the variable has been initialized, it remains in memory until the end of the
+program
 
-- The second use of static is inside a class definition. While most variables declared inside a class occur on an instance-by-instance basis (which is to say that for each instance of a class, the variable can have a different value), a static member variable has the same value in any instance of the class and doesn't even require an instance of the class to exist. A helpful way to think about it is to imagine that the static variables of a class contain information essential to the making of new member objects (as though a class definition were, to borrow an analogy from The Java Programming Language, a factory). For instance, if you wanted to number your instances of a class, you could use a static member variable to keep track of the last number used. Importantly, it is good syntax to refer to static member functions through the use of a class name (class_name::x; rather than instance_of_class.x;). Doing so helps to remind the programmer that static member variables do not belong to a single instance of the class and that you don't need to have a single instance of a class to use a static member variable. As you have probably noticed, to access the static member, you use the scope operator, ::, when you refer to it through the name of the class.
+- The second use of static is inside a class definition. While most variables
+declared inside a class occur on an instance-by-instance basis (which is to say
+that for each instance of a class, the variable can have a different value), a
+static member variable has the same value in any instance of the class and
+doesn't even require an instance of the class to exist. A helpful way to think
+about it is to imagine that the static variables of a class contain information
+essential to the making of new member objects (as though a class definition
+were, to borrow an analogy from The Java Programming Language, a factory). For
+instance, if you wanted to number your instances of a class, you could use a
+static member variable to keep track of the last number used. Importantly, it is
+good syntax to refer to static member functions through the use of a class name
+(class_name::x; rather than instance_of_class.x;). Doing so helps to remind the
+programmer that static member variables do not belong to a single instance of
+the class and that you don't need to have a single instance of a class to use a
+static member variable. As you have probably noticed, to access the static
+member, you use the scope operator, ::, when you refer to it through the name of
+the class.
 
-An important detail to keep in mind when debugging or implementing a program using a static class member is that you cannot initialize the static class member inside of the class. In fact, if you decide to put your code in a header file, you cannot even initialize the static variable inside of the header file; do it in a .cpp file instead. Moreover, you are required to initialize the static class member or it will not be in scope. (The syntax is a bit weird: "type class_name::static_variable = value".) 
+An important detail to keep in mind when debugging or implementing a program
+using a static class member is that you cannot initialize the static class
+member inside of the class. In fact, if you decide to put your code in a header
+file, you cannot even initialize the static variable inside of the header file;
+do it in a .cpp file instead. Moreover, you are required to initialize the
+static class member or it will not be in scope. (The syntax is a bit weird:
+"type class_name::static_variable = value".) 
 
-- The last use of static is as a global variable inside a file of code. In this case, the use of static indicates that source code in other files that are part of the project cannot access the variable. Only code inside the single file can see the variable. (It's scope -- or visibility -- is limited to the file.) This technique can be used to simulate object oriented code because it limits visibility of a variable and thus helps avoid naming conflicts. This use of static is a holdover from C.
+- The last use of static is as a global variable inside a file of code. In this
+case, the use of static indicates that source code in other files that are part
+of the project cannot access the variable. Only code inside the single file can
+see the variable. (It's scope -- or visibility -- is limited to the file.) This
+technique can be used to simulate object oriented code because it limits
+visibility of a variable and thus helps avoid naming conflicts. This use of
+static is a holdover from C.
 
 ////////////////////////////////////////////////////
 // Difference between shared and static libraries //
