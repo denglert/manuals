@@ -63,3 +63,11 @@ git merge clean_up
 
 # delete and stage removal
 git rm '*.txt'
+
+
+#######################
+### Version control ###
+#######################
+
+# Restore file from old commit in git
+git checkout 'master@{7 days ago}' -- path/to/file.txt
