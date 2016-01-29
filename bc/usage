@@ -1,0 +1,8 @@
+##################
+### --- bc --- ###
+##################
+
+# Note: Need to put space before and after +/- sign!!!
+
+# Example
+TanB=$( echo "scale = 10; ($TanBMin + ($iTanB*$TanBBinWidth))" |bc -l)
