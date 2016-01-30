@@ -2,7 +2,23 @@
 ### IRIDIS submission system ###
 ################################
 
-qsub <shell script>
+qsub -l <resource options> <shell script>
+
+# Example resource option:
+"walltime=10:00:00"
+
+# Job status checking
+
+qstat
+
+checkjob <jobid>
+
+# Job priority factor
+XFACTOR = 1 + <EFFQUEUETIME> / <WALLCLOCKLIMIT>
+
+# Show all jobs submitted
+
+showq
 
 ##########################
 ### Example batch jobs ###
