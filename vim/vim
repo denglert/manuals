@@ -60,6 +60,13 @@ jumping to mark {markletter}:
 scroll windows downwards by half a screen:
 CTRL-D
 
+## Move till you find space
+# Useful for visual selection when 'w' does not work as you would want
+f <space>
+
+
+# Open same file in new tabe
+:tab split
 
 #####  Commenting a section ####
 CTRL-V (block mode)
