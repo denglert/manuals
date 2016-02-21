@@ -1,0 +1,44 @@
+####
+
+LIBDIR = lib
+
+#SRC_CMN = rambo.f alpha.f dhelas_all.f rangen.f initialize.f
+#OBJ1 = $(SRC_CMN:.f=.f.o)
+#OBJ_CMN = $(addprefix $(LIBDIR)/, $(OBJ1))
+#TMP_1 = $(shell find . -name *.f -not -path "./src/*")
+#TMP_2 = $(notdir $(TMP_1))
+#TMP_3 = $(TMP_2:.f=.f.o)
+#TMP_4 = $(addprefix lib/, $(TMP_3))
+
+TMP1 = $(shell find . -name *.f -not -path "./src/*" | sed 's/\.f/\.f.o/' | xargs -n 1 basename)
+TMP2 = $(addprefix ./lib/,$(TMP1))
+OBJ_CMN = $(TMP2) ./lib/initialize.f.o
+
+OBJ_ggZH_BSM = ./lib/ggZstarH_BSM.f.o ./lib/gg_ZH_BSM.f.o $(OBJ_CMN)
+OBJ_qqZH_BSM = ./lib/qqZstarH_BSM.f.o ./lib/qq_ZH_BSM.f.o $(OBJ_CMN)
+
+#################################################
+
+FLFLAGS = 
+FCFLAGS = -c
+F77     = gfortran
+
+####################################################
+# This is where Makefile tries to look for src files
+VPATH = src:rambo:DHELAS:alpha_QCD:CTEQ5
+
+all : ggZH_BSM qqZH_BSM
+
+ggZH_BSM: $(OBJ_ggZH_BSM)
+	$(F77) -o $@ $(FLFLAGS) $^
+
+qqZH_BSM: $(OBJ_qqZH_BSM)
+	$(F77) -o $@ $(FLFLAGS) $^
+
+./lib/%.f.o : %.f 
+	$(F77) $(FCFLAGS) $< -o $@ 
+
+test :
+	echo "$(TMP1)"
+	echo "$(TMP2)"
+	echo "$(OBJ_CMN)"
