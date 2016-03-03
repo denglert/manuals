@@ -1,0 +1,22 @@
+#!/bin/sh
+
+nLines=5
+
+# C-type loop
+for (( i=2; i<=$nLines; i++ ))
+do
+	echo "$i"
+done
+
+# Compact loop
+for i in {0..3};
+do
+	echo "$i"
+done
+
+
+file="dummyfile"
+while read line           
+do           
+	echo "line: $line"
+done <${file}
