@@ -14,7 +14,7 @@ do
 	echo "$i"
 done
 
-
+# Read in lines from a file
 file="dummyfile"
 while read line           
 do           
