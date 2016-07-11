@@ -1,0 +1,51 @@
+#############################
+### - MadGraph commands - ###
+#############################
+
+# - Start tutorial
+tutorial
+
+# - Display more info about a command
+help <command>
+
+# - Generate process
+generate p p > t t~
+
+# - Display processes
+display processes
+
+# - If you want to know more about particles and multiparticles present, write
+# - Note: This displays the particles of the model, NOT the particles of the process
+display particles
+display multiparticles
+
+# - Defined interactions of the model
+display interactions
+
+# - Import a model
+import model mssm
+import model 2HDM
+import model 2HDM_NLO
+
+# - Customize a model
+customize_model
+
+# - Define a multiparticle label
+define v = w+ w- z a
+
+# - See multiparticle labels
+display multiparticles
+
+# - Save command history
+history <filename>
+
+# - Load a command history and execute
+import command <filename>
+
+# - Running shell commands
+!ls -l
+
+# - At this stage you can export your processes to different formats. In
+# - this tutorial, we will explain how to create output for MadEvent.
+# - This is done simply by typing:
+output MY_FIRST_MG5_RUN
