@@ -49,3 +49,9 @@ import command <filename>
 # - this tutorial, we will explain how to create output for MadEvent.
 # - This is done simply by typing:
 output MY_FIRST_MG5_RUN
+
+# - At any time, you can access more commands/options for running the output by
+# - switching to an interactive interface for a given output folder 'MyFolder'.
+# - You can do so by typing:
+launch -i MyFolder
+
