@@ -55,3 +55,5 @@ output MY_FIRST_MG5_RUN
 # - You can do so by typing:
 launch -i MyFolder
 
+# Madgraph configuration
+./input/mg5_configuration.txt
