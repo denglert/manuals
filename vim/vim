@@ -124,6 +124,10 @@ CTRL+g filename
 :s/$/ new text/ Append " new text" to the end of the line.
 :s/green/bright &/g Replace each "green" with "bright green" in the line.Searching
 
+# Substitute every instance of the last searched pattern (could be highlighted
+# string with *) to 'new string'
+:%s//new-string/g
+
 #####  Searching for an expression  #####
 / forwards search
 ? backwards search
