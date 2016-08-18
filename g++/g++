@@ -1,4 +1,33 @@
-g++
+/////////////////
+// g++ options //
+/////////////////
+
+
+-shared
+	 produce a shared object which can then be linked with other objects to form
+an executable.  not all systems support this option.  for predictable results,
+you must also specify the same set of options used for compilation (-fpic,
+-fpic, or model suboptions) when you specify this linker option.[1]
+
+
+// to specify a directory to search for (binary) libraries, you just use -l:
+-l/data[...]/lib
+
+// to specify the actual library name, you use -l:
+-lfoo  # (links libfoo.a or libfoo.so)
+
+// to specify a directory to search for include files (different from libraries!) you use -i:
+-i/data[...]/lib
+
+// ld_library_path
+you can temporarily substitute a different library for this particular
+execution. in linux, the environment variable ld_library_path is a
+colon-separated set of directories where libraries should be searched for first,
+before the standard set of directories; this is useful when debugging a new
+library or using a nonstandard library for special purposes ld_library_path is
+an environment variable you set to give the run-time shared library loader
+(ld.so) an extra set of directories to look for when searching for shared
+libraries. multiple directories can be listed, separated with a colon (:).
 
 ############################
 -shared
@@ -19,6 +48,14 @@ g++
 ############################
 -D name
     Predefine name as a macro, with definition 1.
+
+############################
+-Wall
+    Turns on all optional warnings which are desirable for normal code.  At present this
+    is -Wcomment, -Wtrigraphs, -Wmultichar and a warning about integer promotion causing
+    a change of sign in "#if" expressions.  Note that many of the preprocessor's
+    warnings are on by default and have no options to control them.
+
 
 
 ############################
