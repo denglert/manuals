@@ -1,0 +1,297 @@
+### - Load the appropriate gcc/gfortran version
+module load gcc/6.1.0
+
+### - Run mg5_aMC
+./bin/mg5_aMC
+
+### - Generate diagrams
+generate g g > z > mu- mu+ h [QCD]
+
+# output:
+The current model sm does not allow to generate loop corrections of type
+['QCD'].
+MG5_aMC now loads 'loop_sm'.
+ import model loop_sm
+INFO: Restrict model loop_sm with file models/loop_sm/restrict_default.dat .
+INFO: Run "set stdout_level DEBUG" before import for more information.
+INFO: Change particles name to pass to MG5 convention
+Kept definitions of multiparticles l- / j / vl / l+ / p / vl~ unchanged
+Defined multiparticle all = g gh gh~ d u s c d~ u~ s~ c~ a ve vm vt e- mu- ve~
+vm~ vt~ e+ mu+ b t b~ t~ z w+ h w- ta- ta+
+------------------------------------------------------------------------
+ No Born diagrams found. Now switching to the loop-induced mode.
+ Please cite ref. 'arXiv:1507.00020' when using results from this mode.
+------------------------------------------------------------------------
+1 processes with 20 diagrams generated in 1.639 s
+Total: 1 processes with 20 diagrams
+
+### - Create MadGraph directory
+output /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry
+
+# output:
+INFO: initialize a new directory: gg_z_mumuh_LoopInd_retry
+INFO: remove old information in gg_z_mumuh_LoopInd_retry
+INFO: Organizing processes into subprocess groups
+INFO: Generating Helas calls for process: g g > z > mu- mu+ h WEIGHTED<=12 [
+noborn = QCD ]
+INFO: Processing color information for loop process: g g > z > mu- mu+ h [
+noborn = QCD ]
+INFO: Creating color matrix  loop process: g g > z > mu- mu+ h WEIGHTED<=12 [
+noborn = QCD ]
+INFO: Creating files in directory
+/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/SubProcesses/PV0_0_1_gg_z_mummuph
+ALOHA: aloha creates FFV1 set of routines with options: L1
+INFO: Computing diagram color coefficients
+INFO: Drawing loop Feynman diagrams for Process: g g > z > mu- mu+ h
+WEIGHTED<=12 [ noborn = QCD ]
+INFO: Creating files in directory P0_gg_llh
+INFO: Generating Feynman diagrams for Process: g g > z > mu- mu+ h WEIGHTED<=12
+[ noborn = QCD ]
+INFO: Finding symmetric diagrams for subprocess group gg_llh
+History written to
+/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Cards/proc_card_mg5.dat
+Generated helas calls for 1 subprocesses (20 diagrams) in 0.160 s
+Export UFO model to MG4 format
+ALOHA: aloha creates R2_GGZ routines
+ALOHA: aloha creates FFV2 set of routines with options: L2
+ALOHA: aloha creates FFV4 routines
+ALOHA: aloha creates VVS1 routines
+ALOHA: aloha creates FFV2_5 set of routines with options: L2
+save configuration file to
+/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Cards/me5_configuration.txt
+INFO: Use Fortran compiler gfortran
+INFO: Use c++ compiler g++
+INFO: Generate jpeg diagrams
+INFO: Generate web pages
+Output to directory
+/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry done.
+Type "launch" to generate events from this process, or see
+/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/README
+Run "open index.html" to see more information about this process.
+
+#####################################################
+### - Switching to the actual working directory - ###
+#####################################################
+
+cd /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry
+
+### - Running mode
+
+# Can be specified in ./Cards/me5_configuration.txt
+
+#! Default Running mode
+#!  0: single machine/ 1: cluster / 2: multicore
+# run_mode = 2
+
+
+### - Run ./bin/generate_events
+./bin/generate_events
+
+## - Settings
+
+# Flags
+The following switches determine which programs are run:
+ 1 Run the pythia shower/hadronization:                              pythia=ON
+ 2 Run PGS as detector simulator:                                       pgs=OFF
+ 3 Run Delphes as detector simulator:                               delphes=ON
+ 4 Decay particles with the MadSpin module:                         madspin=ON
+ 5 Add weights to the events based on changing model parameters:   reweight=Not available (requires NumPy)
+  Either type the switch number (1 to 5) to change its default setting,
+  or set any switch explicitly (e.g. type 'madspin=ON' at the prompt)
+  Type '0', 'auto', 'done' or just press enter when you are done.
+ [0, 1, 2, 3, 4, 5, auto, done, pythia=ON, ... ][60s to answer]
+
+# Cards
+
+Do you want to edit a card (press enter to bypass editing)?
+  1 / param      : param_card.dat
+  2 / run        : run_card.dat              <--- modify this for nEvents
+  3 / pythia     : pythia_card.dat           
+  4 / delphes    : delphes_card.dat
+  5 / madspin    : madspin_card.dat          <--- need to specify the h-> b bbar decay mode
+  6 / MadLoopParams : MadLoopParams.dat
+  9 / plot       : plot_card.dat
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [0, done, 1, param, 2, run, 3, pythia, 4, enter path, ... ]
+
+# run_card.dat
+
+# madspin_card.dat
+set spinmode none
+decay h > b b~
+
+
+### - Generation of events
+
+# output
+
+>0
+Generating 10000 events with run name run_01
+survey  run_01
+INFO: compile directory
+initMadLoop -r -f
+Initializing MadLoop loop-induced matrix elements (this can take some time)...
+MadLoop initialization finished.
+compile Source Directory
+Using random number seed offset = 21
+INFO: Running Survey
+Creating Jobs
+Working on SubProcesses
+INFO:     P0_gg_llh
+INFO:  Idle: 0,  Running: 8,  Completed: 0 [ current time: 15h09 ]
+INFO:  Idle: 0,  Running: 5,  Completed: 3 [  4.1s  ]
+INFO: P0_gg_llh/G1.7 is at 0.00132 +- 9.65e-05 pb. Now submitting iteration #2.
+INFO: P0_gg_llh/G1.8 is at 6.83e-05 +- 1.17e-05 pb. Now submitting iteration #2.
+INFO:  Idle: 0,  Running: 8,  Completed: 10 [  8.1s  ]
+INFO:  Idle: 1,  Running: 1,  Completed: 18 [  13.1s  ]
+INFO: P0_gg_llh/G1.8 is at 8.65e-05 +- 5.15e-06 pb. Now submitting iteration #3.
+INFO: P0_gg_llh/G1.7 is at 0.00153 +- 8.56e-05 pb. Now submitting iteration #3.
+INFO:  Idle: 0,  Running: 8,  Completed: 20 [  20.2s  ]
+INFO:  Idle: 0,  Running: 2,  Completed: 28 [  29.2s  ]
+INFO: P0_gg_llh/G1.8 is at 8.09e-05 +- 1.99e-06 pb. Now submitting iteration #4.
+INFO: Survey finished for P0_gg_llh/G1.7 at 0.00156 +- 2.96e-05 pb
+INFO:  Idle: 0,  Running: 4,  Completed: 30 [  40.6s  ]
+INFO:  Idle: 1,  Running: 0,  Completed: 34 [  53.7s  ]
+INFO: P0_gg_llh/G1.8 is at 8.22e-05 +- 1.86e-06 pb. Now submitting iteration #5.
+INFO:  Idle: 0,  Running: 4,  Completed: 35 [  1m 8s  ]
+INFO:  Idle: 1,  Running: 0,  Completed: 39 [  1m 44s  ]
+INFO: Survey finished for P0_gg_llh/G1.8 at 8.269e-05 +- 7.98e-07 pb
+INFO:  Idle: 0,  Running: 0,  Completed: 40 [  2m 5s  ]
+INFO:  Idle: 0,  Running: 0,  Completed: 40 [  2m 5s  ]
+INFO: End survey
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000
+/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/bin/internal/gen_ximprove.py:740: DeprecationWarning: object.__new__() takes no parameters
+  return super(gen_ximprove, cls).__new__(gen_ximprove_share, cmd, opt)
+/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/bin/internal/gen_ximprove.py:74: DeprecationWarning: object.__init__() takes no parameters
+  super(gensym, self).__init__(cmd, opt)
+INFO: Generating 10000.0 unweigthed events.
+INFO: Effective Luminosity 7016944.39529 pb^-1
+INFO: need to improve 2 channels
+Current estimate of cross-section: 0.00163889 +- 2.96297611749e-05
+INFO:  Idle: 1,  Running: 16,  Completed: 0 [ current time: 15h11 ]
+INFO:  Idle: 0,  Running: 16,  Completed: 1 [  8.9s  ]
+INFO:  Idle: 1,  Running: 1,  Completed: 16 [  12.9s  ]
+INFO: found enough event for P0_gg_llh/G1.8
+INFO:  Idle: 1,  Running: 0,  Completed: 18 [  17.9s  ]
+INFO: P0_gg_llh/G1.7 is at 4631/10974 (42%) event. Resubmit 4 job at iteration 1.
+INFO:  Idle: 0,  Running: 4,  Completed: 19 [  24.9s  ]
+INFO:  Idle: 0,  Running: 1,  Completed: 23 [  33.9s  ]
+INFO: P0_gg_llh/G1.7 is at 6946/10931 (64%) event. Resubmit 7 job at iteration 2.
+INFO:  Idle: 0,  Running: 1,  Completed: 31 [  44.9s  ]
+INFO: found enough event for P0_gg_llh/G1.7
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  58s  ]
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  58s  ]
+INFO: Combining runs
+INFO: finish refine
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000
+INFO: Generating 10000.0 unweigthed events.
+INFO: Effective Luminosity 7045031.84354 pb^-1
+INFO: need to improve 0 channels
+Current estimate of cross-section: 0.001632356 +- 9.40134864047e-06
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 15h12 ]
+INFO: Combining runs
+INFO: finish refine
+combine_events
+INFO: Combining Events
+INFO: fail to reach target 10000
+
+
+
+  === Results Summary for run: run_01 tag: run_nEvents_10k ===
+
+     Cumulative sequential time for this run: 11m10s
+     Cross-section :   0.001632 +- 9.401e-06 pb
+     Nb of events :  10000
+
+INFO: Creating Plots for parton level
+INFO: Plots for parton level generated, see /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01/plots_parton.html
+INFO: End Plots for parton level
+store_events
+INFO: Storing parton level results
+INFO: End Parton
+reweight -from_cards
+decay_events -from_cards
+INFO: Running MadSpin
+INFO: This functionality allows for the decay of resonances
+INFO: in a .lhe file, keeping track of the spin correlation effets.
+INFO: BE AWARE OF THE CURRENT LIMITATIONS:
+INFO:   (1) Only a succession of 2 body decay are currently allowed
+************************************************************
+*                                                          *
+*           W E L C O M E  to  M A D S P I N               *
+*                                                          *
+************************************************************
+INFO: Extracting the banner ...
+INFO: process: g g > z > mu- mu+ h
+INFO: options:
+INFO: detected model: loop_sm. Loading...
+set max_weight_ps_point 400  # number of PS to estimate the maximum for each event
+set spinmode none
+decay h > b b~
+decay t > w+ b, w+ > all all
+decay t~ > w- b~, w- > all all
+decay w+ > all all
+decay w- > all all
+decay z > all all
+launch
+INFO: Will use seed 268947007
+INFO: generate 10000 decay event for particle h
+/home/de3u14/lib/build/hep/MadGraph/MG5_aMC_v2_4_2/madgraph/madevent/gen_ximprove.py:746: DeprecationWarning: object.__new__() takes no parameters
+  return super(gen_ximprove, cls).__new__(gen_ximprove_v4, cmd, opt)
+/home/de3u14/lib/build/hep/MadGraph/MG5_aMC_v2_4_2/madgraph/madevent/gen_ximprove.py:752: DeprecationWarning: object.__init__() takes no parameters
+  super(gen_ximprove, self).__init__(cmd, opt)
+INFO: generate 10000 decay event for particle mu+
+INFO: generate 10000 decay event for particle mu-
+decaying event number 1000 [0.631242990494 s]
+decaying event number 2000 [1.29632997513 s]
+decaying event number 3000 [1.9185230732 s]
+decaying event number 4000 [2.53272414207 s]
+decaying event number 5000 [3.16512203217 s]
+decaying event number 6000 [3.79145598412 s]
+decaying event number 7000 [4.41696310043 s]
+decaying event number 8000 [5.0581510067 s]
+decaying event number 9000 [5.67068004608 s]
+INFO: The decayed event file has been moved to the following location:
+INFO: /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Events/run_01_decayed_1/unweighted_events.lhe.gz
+INFO: MadSpin Done
+INFO: Creating Plots for parton level
+INFO: Plots for parton level generated, see /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_parton.html
+INFO: End Plots for parton level
+INFO: Running Pythia
+INFO: Creating shower LHE File (for plot)
+INFO: Warning! Never use this lhe file for detector studies!
+INFO: Creating Plots for Pythia level
+INFO: Plots for pythia level generated, see /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_pythia_run_nEvents_10k.html
+INFO: End Plots for pythia level
+INFO: finish
+INFO: No pgs_card detected, so not run pgs
+INFO: prepare delphes run
+INFO: Running Delphes
+INFO: Creating Plots for Delphes level
+INFO: Plots for delphes level generated, see /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_delphes_run_nEvents_10k.html
+INFO: End Plots for delphes level
+INFO: delphes done
+  === Results Summary for run: run_01_decayed_1 tag: run_nEvents_10k ===
+
+     Cross-section :   0.001379 +- 7.941e-06 pb
+     Nb of events :  10000
+
+INFO: storring files of previous run
+gzipping output file: unweighted_events.lhe
+INFO: Storing Pythia files of previous run
+INFO: Done
+quit
+INFO:
+
+INFO:
+
