@@ -1,0 +1,11 @@
+# .ssh/config on hostA:
+Host hostalias
+	Hostname hostname
+   ProxyCommand ssh hostB -W %h:%p
+	User username
+
+# Graphics
+ssh -X
+
+# Create socket
+ssh -L 
