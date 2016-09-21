@@ -1,0 +1,270 @@
+# Credit goes to
+http://www-d0.fnal.gov/~bruce1/root_tricks.txt
+
+These are some of the root commands
+I have found useful:
+
+{
+  gROOT->Reset();
+ 
+  // open a file on the stack (instance f of TFile):
+  TFile f("recoA_reco_all_0000132081_027.raw_t01.56.00.rootx");
+ 
+  // open a file on the heap with pointer f:
+//  TFile *f = new TFile("recoA_reco_all_0000132081_028.raw_t01.56.00.rootx");
+ 
+ 
+  //create a TBrowser called "browser":
+  TBrowser browser;
+ 
+  // view the contents of f:
+  f.Map();
+  // note that each TBasket is
+ 
+  // StreamerInfo of f:
+  f.ShowStreamerInfo();
+ 
+  // get the list of Keyes and print them:
+  f.GetListOfKeys() -> Print();
+ 
+  // list contents of file pointed to by f:
+  f.ls();
+  // for example there is a TTree named "Global"
+  //   and a TH1F named "Vertex x-coord"
+ 
+  // to see the structure of the TTree named "Global":
+  Global -> Print();
+ 
+  // to see the 10'th entry of the TTree "Global":
+  Global -> Show(10);
+ 
+  // to explore the TTree "Global":
+  Global -> StartViewer();
+ 
+  // to make list of variables in file DimuonAnalyze.h
+  Global->MakeClass("DimuonAnalyze");
+ 
+  // Inspect object f:
+  // f.Inspect();
+ 
+  // Set break point
+  // .b TChild::Print
+ 
+  // Single step:
+  // .s
+ 
+  // Print variable fX:
+  // .p fX
+ 
+  // Load a script
+  // .L script.C
+ 
+  // See a class:
+  // .class TMyClass
+ 
+  // Open a root file "histos.root" and see
+  // histogram "histos_name":
+  TFile f("histos.root");
+  f.ls();
+  TH1F *h1 = (TH1F*)f.Get("histo_name");
+ 
+  // Open a root file, see contents, plot histogram
+  TFile *f=new TFile("histos_cosmic_300302.root");
+  gDirectory->ls("-m"); // see contents in memory
+  gDirectory->ls("-d"); // see contents in disk
+  gDirectory->ls(); // see contents in memory and disk
+  f->ls(); // see contents of f
+ 
+//  hphi_p_c_osdimu->SetFillColor(2); // 2=red, 0=white
+  hphi_p_c_osdimu->SetLineColor(2); // 2=red, 4=blue
+  hphi_p_c_osdimu->SetLineStyle(1); // 0=continuous, 1=continuous, 2=dash
+           // 4=dot-dash,
+  hphi_p_c_osdimu->Draw(); // create default canvas and draw histo
+ 
+  hphi_m_c_osdimu->SetLineColor(4); // 4=blue
+  hphi_m_c_osdimu->SetLineStyle(2); // 0=continuous, 1=continuous, 2=dash
+  hphi_m_c_osdimu->Draw("SAME"); // create default canvas and draw histo
+ 
+// to recover the root file which didn't close properly
+// due to a job crash:
+  TFile f("myfile.root", "UPDATE"); //did not work!
+ 
+// to re-bin a histogram:
+TH1F* h = new TH1F("h","",nbins,a,b);
+Global->Draw("ngtrk > h");
+h->Draw();
+ 
+}
+
+
+{
+// This is my macro to read the root-tuple "find_jpsi_ks.rtpl",
+// get the TTree  Find_Jpsi_Ks, loop over entries and loop over
+// entries-of-selected-leaves and make histograms:
+  // read root-tuple:
+  TFile f("find_jpsi_ks.rtpl");
+
+  // list its contents:
+  f->ls();
+//TFile**         find_jpsi_ks.rtpl       Created for you by HepRootFileManager
+// TFile*         find_jpsi_ks.rtpl       Created for you by HepRootFileManager
+//  KEY: TTree    Find_Jpsi_Ks;1  Find_Jpsi_Ks
+
+  // create pointer to TTree:
+  TTree *t = (TTree*)f->Get("Find_Jpsi_Ks");
+
+  // see contents of t:
+  t->Print();
+//******************************************************************************
+//*Tree    :Find_Jpsi_Ks: Find_Jpsi_Ks
+//*
+//*Entries :     1000 : Total =          577765 bytes  File  Size =     577725 *
+//*        :          : Tree compression factor =   1.00                       *
+//******************************************************************************
+//*Br    0 :GENERAL   : NHits1A/I:evtno/I:runno/I                              *
+//*Entries :     1000 : Total  Size=      24598 bytes  File Size  =          0 *
+//*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+//*............................................................................*
+//*Br    1 :PAIRS     : Npairs/I:MassPiPi[Npairs]/F:dfitmassPiPi[Npairs]/F:    *
+//*         | dpx[Npairs]/F:dpy[Npairs]/F:dpz[Npairs]/F:dx[Npairs]/F:          *
+//*         | dy[Npairs]/F:dz[Npairs]/F:dza[Npairs]/F:dzb[Npairs]/F:           *
+//*         | fitmassPiPi[Npairs]/F:itrk1[Npairs]/I:itrk2[Npairs]/I:           *
+//*         | px[Npairs]/F:py[Npairs]/F:pz[Npairs]/F:x[Npairs]/F:y[Npairs]/F:  *
+//*         | z[Npairs]/F                                                      *
+//*Entries :     1000 : Total  Size=      98550 bytes  File Size  =      61048 *
+//*Baskets :        2 : Basket Size=      32000 bytes  Compression=   1.00     *
+//*............................................................................*
+//etc
+
+  // show entry 8:
+  t->Show(11);
+//======> EVENT:11
+// NHits1A         = 83
+// evtno           = 39
+// runno           = 99
+// Npairs          = 3
+// MassPiPi        = 0.993992, 0.294507, 0.496462
+// dfitmassPiPi    = 0.0176188, 0.00711786, 0.0164655
+// dpx             = 0.14189, 0.142032, 0.143149
+// dpy             = 0.142697, 0.142182, 0.142981
+// dpz             = 0.145469, 0.144091, 0.147738
+// dx              = 0.203969, 0.637133, 0.190137
+// dy              = 0.452385, 0.954212, 0.327835
+// dz              = 1.03976, 0.941163, 1.04501
+// dza             = 1.44137, 1.32633, 1.48497
+// dzb             = 1.50135, 1.33573, 1.47087
+// fitmassPiPi     = 0.973809, 0.293094, 0.464736
+// itrk1           = 3, 6, 9
+// itrk2           = 9, 8, 10
+// px              = -0.141439, -0.461855, 0.561618
+// py              = -0.207748, -0.697007, -0.98243
+// pz              = 0.422029, -0.00318856, 0.698665
+// x               = -2.68425, -1.43192, -2.76856
+// y               = -2.11112, -2.57253, -1.62071
+// z               = -22.0453, -43.3655, -22.0729
+// NtrkXY          = 13
+// TXYR            = 63.8251, 64.1954, 69.1909, 71.2592, 129.092
+// TXYdca          = 3.41344, 0.183826, 1.71824, 3.12839, -2.15291
+// TXYpT           = 0.382686, 0.384906, 0.414858, 0.42726, 0.774018
+// TXYphi          = 0.28816, 1.33301, 0.83856, 2.21178, 3.47327
+// TXYqopt         = -2.61311, 2.59804, -2.41046, -2.3405, -1.29196
+// TXYtanl         = 0, 0, 0, 0, 0
+// TXYx0           = -19.1084, 62.2105, -52.7337, -59.6224, 41.3346
+// TXYy0           = 64.4662, -15.0779, 47.4052, -44.4825, -120.021
+// TXYz            = 0, 0, 0, 0, 0
+// NtrkXYZ         = 16
+// TXYZR           = 63.8251, 64.1954, 69.1909, 71.2592, 129.092
+// TXYZdca         = 3.41344, 0.183826, 1.71824, 3.12839, -2.15291
+// TXYZpT          = 0.382686, 0.384906, 0.414858, 0.42726, 0.774018
+// TXYZphi         = 0.28816, 1.33301, 0.83856, 2.21178, 3.47327
+// TXYZqopt        = -2.61311, 2.59804, -2.41046, -2.3405, -1.29196
+// TXYZtanl        = 0.887918, 0.542353, 1.76159, 0.210531, 1.3653
+// TXYZx0          = -19.1084, 62.2105, -52.7337, -59.6224, 41.3346
+// TXYZy0          = 64.4662, -15.0779, 47.4052, -44.4825, -120.021
+// TXYZz           = -89.7906, -86.8368, -127.854, 7.29706, -376.369
+
+
+{
+  // plotting histograms the easy way:
+  TCanvas *c2 = new TCanvas("c2","TRKSXY",900,600);
+  c2->SetLeftMargin(0.15);
+  c2->SetBottomMargin(0.15);
+  c2->SetLogy(0);
+  c2->Clear();
+  c2->Divide(3,2);
+  c2->cd(1);
+  t->Draw("NtrkXY>>NtrkXY(100,0.0,80.0)");
+  c2->cd(2);
+  t->Draw("TXYpT>>pT(100,0.0,5.0)");
+  c2->cd(3);
+  t->Draw("TXYdca>>dca(400,-10.0,10.0)");
+  c2->cd(4);
+  t->Draw("TXYphi*180.0/3.1415927>>phi(100,0.0, 360.0)");
+  c2->cd(5);
+  t->Draw("TXYqopt>>qopt(100,-6.0,6.0)");
+  c2->cd(6);
+  t->Draw("TXYx0>>x0(100,-50.0,50.0)");
+}
+
+
+  // the detailed way:
+  // create a histogram:
+  TH1F *hmPiPi = new TH1F("hmPiPi","mPiPi",200,0.0,5.0);
+  TH1F *hmPiPifit = new TH1F("hmPiPifit","mPiPifit",200,0.0,5.0);
+
+  // create pointer to branch PAIRS:
+  TBranch *b_PAIRS = t->GetBranch("PAIRS");
+
+  // get entries:
+  Int_t nentries = (Int_t)t->GetEntries();
+  cout << "nentries=" << nentries << endl;
+  for(Int_t i=0; i<nentries ; i++)
+  {
+    t->GetEntry(i);
+    TObjArray *leaves  = t->GetListOfLeaves();
+    TLeaf *leaf = (TLeaf*)leaves->UncheckedAt(3); // gets leaf Npairs
+//    cout << "i=" << i << " leaf=" << leaf->GetName() <<
+//      " len=" << leaf->GetLen() << " value=" << leaf->GetValue(0) << endl;
+//    TBranch *branch = leaf->GetBranch(); // gets branch of that leaf
+    TLeaf *leaf = (TLeaf*)leaves->UncheckedAt(4); // gets leaf MassPiPi
+//    cout << "i=" << i << " leaf=" << leaf->GetName() <<
+//      " len=" << leaf->GetLen() << endl;
+    Int_t len = leaf->GetLen(); // gets number of entries of leaf
+    for(Int_t j=0; j<len ; j++)
+    {
+//      cout << "i=" << i << " leaf=" << leaf->GetName() << " len=" <<
+//      leaf->GetLen()
+//        << " j=" << j << " value=" << leaf->GetValue(j) << endl;
+      hmPiPi->Fill(leaf->GetValue(j));
+    }
+
+    TLeaf *leaf = (TLeaf*)leaves->UncheckedAt(14); // gets leaf number xx
+    Int_t len = leaf->GetLen(); // gets number of entries of leaf
+    for(Int_t j=0; j<len ; j++)
+    {
+//      cout << "i=" << i << " leaf=" << leaf->GetName() << " len=" <<
+//      leaf->GetLen()
+//        << " j=" << j << " value=" << leaf->GetValue(j) << endl;
+      hmPiPifit->Fill(leaf->GetValue(j));
+    }
+  }
+
+  // plot histogram:
+  TCanvas *c1 = new TCanvas("c1","mPiPi",900,600);
+  c1->SetLeftMargin(0.15);
+  c1->SetBottomMargin(0.15);
+  c1->SetLogy(0);
+  c1->Clear();
+  c1->Divide(2,1);
+  c1->cd(1);
+// hlmmm->SetLineColor(4); // blue
+// hlmmm->SetLineStyle(2); // dashed
+  hmPiPi->Draw();
+  c1->cd(2);
+// hlmpp->SetLineColor(2); // red
+// hlmpp->SetLineStyle(1); // continuous
+  hmPiPifit->Draw();
+
+}
+
+
