@@ -1,0 +1,7 @@
+## Swap panes
+
+# swap-pane -U
+<prefix key> {
+
+# swap-pane -D
+<prefix key> }
