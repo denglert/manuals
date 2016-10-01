@@ -12,4 +12,4 @@ PATH=$HOME/local/bin:$PATH
 export PATH
 
 # Set VIM runtime library to local version
-export VIMRUNTIME=/home/de3u14/lib/build/vim/runtime/
+export VIMRUNTIME=~/lib/build/vim/runtime/
