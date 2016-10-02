@@ -24,7 +24,10 @@ convert input -compress Zip output.pdf # lossy
 ### --- Postscript --- ###
 ##########################
 
-# Convert all *.eps files into .pdf
+# Convert all *.eps files in all subfolders into .pdf
+FILES=$(find . -name "*.eps" -type f -printf "%p\n"); for f in ${FILES}; do ps2pdf $f ${f%.eps}.pdf; done
+
+# Convert all *.eps files in a folder into .pdf
 
 # ps
 for FILE in *.ps

@@ -4,8 +4,34 @@ module load gcc/6.1.0
 ### - Run mg5_aMC
 ./bin/mg5_aMC
 
+### - Import model
+import models/sm           # regular SM
+import models/loop_sm           # regular SM
+import models/2HDM_NLO     # 2HDM_NLO
+import models/2HDMtII_NLO  # 2HDM_NLO - type II
+
+### - Define multi-particle labels
+define q = u u~ ... b b~ # to include b quarks as well 
+
 ### - Generate diagrams
+
+# - SM
 generate g g > z > mu- mu+ h [QCD]
+generate q q > z > mu- mu+ h [QCD]
+
+# - 2HDM
+# Notation:
+# a  - photon
+# h1 - h
+# h2 - H
+# h3 - A
+
+generate g g > z > mu- mu+ h1 [QCD]
+generate q q > z > mu- mu+ h1 [QCD]
+
+# To exclude the photon 'a'
+generate g g > z > mu- mu+ h1 / a [QCD]
+generate q q > z > mu- mu+ h1 [QCD]
 
 # output:
 The current model sm does not allow to generate loop corrections of type
@@ -26,7 +52,7 @@ vm~ vt~ e+ mu+ b t b~ t~ z w+ h w- ta- ta+
 Total: 1 processes with 20 diagrams
 
 ### - Create MadGraph directory
-output /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry
+output ~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry
 
 # output:
 INFO: initialize a new directory: gg_z_mumuh_LoopInd_retry
@@ -39,7 +65,7 @@ noborn = QCD ]
 INFO: Creating color matrix  loop process: g g > z > mu- mu+ h WEIGHTED<=12 [
 noborn = QCD ]
 INFO: Creating files in directory
-/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/SubProcesses/PV0_0_1_gg_z_mummuph
+~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/SubProcesses/PV0_0_1_gg_z_mummuph
 ALOHA: aloha creates FFV1 set of routines with options: L1
 INFO: Computing diagram color coefficients
 INFO: Drawing loop Feynman diagrams for Process: g g > z > mu- mu+ h
@@ -49,7 +75,7 @@ INFO: Generating Feynman diagrams for Process: g g > z > mu- mu+ h WEIGHTED<=12
 [ noborn = QCD ]
 INFO: Finding symmetric diagrams for subprocess group gg_llh
 History written to
-/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Cards/proc_card_mg5.dat
+~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Cards/proc_card_mg5.dat
 Generated helas calls for 1 subprocesses (20 diagrams) in 0.160 s
 Export UFO model to MG4 format
 ALOHA: aloha creates R2_GGZ routines
@@ -58,22 +84,22 @@ ALOHA: aloha creates FFV4 routines
 ALOHA: aloha creates VVS1 routines
 ALOHA: aloha creates FFV2_5 set of routines with options: L2
 save configuration file to
-/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Cards/me5_configuration.txt
+~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Cards/me5_configuration.txt
 INFO: Use Fortran compiler gfortran
 INFO: Use c++ compiler g++
 INFO: Generate jpeg diagrams
 INFO: Generate web pages
 Output to directory
-/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry done.
+~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry done.
 Type "launch" to generate events from this process, or see
-/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/README
+~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/README
 Run "open index.html" to see more information about this process.
 
 #####################################################
 ### - Switching to the actual working directory - ###
 #####################################################
 
-cd /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry
+cd ~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry
 
 ### - Running mode
 
@@ -103,6 +129,8 @@ The following switches determine which programs are run:
 
 # Cards
 
+# Use the ATLAS Delphes card!!!
+
 Do you want to edit a card (press enter to bypass editing)?
   1 / param      : param_card.dat
   2 / run        : run_card.dat              <--- modify this for nEvents
@@ -122,10 +150,12 @@ Do you want to edit a card (press enter to bypass editing)?
 
 # run_card.dat
 
-# madspin_card.dat
+# madspin_card.dat (not needed for bkgr)
 set spinmode none
 decay h > b b~
 
+### - Move model library to the 'output' folder
+#./models/2HDM_NLO to 'outputpath'/models/2HDM_NLO #!!!
 
 ### - Generation of events
 
@@ -168,9 +198,9 @@ INFO: End survey
 refine 10000
 Creating Jobs
 INFO: Refine results to 10000
-/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/bin/internal/gen_ximprove.py:740: DeprecationWarning: object.__new__() takes no parameters
+~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/bin/internal/gen_ximprove.py:740: DeprecationWarning: object.__new__() takes no parameters
   return super(gen_ximprove, cls).__new__(gen_ximprove_share, cmd, opt)
-/home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/bin/internal/gen_ximprove.py:74: DeprecationWarning: object.__init__() takes no parameters
+~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/bin/internal/gen_ximprove.py:74: DeprecationWarning: object.__init__() takes no parameters
   super(gensym, self).__init__(cmd, opt)
 INFO: Generating 10000.0 unweigthed events.
 INFO: Effective Luminosity 7016944.39529 pb^-1
@@ -214,7 +244,7 @@ INFO: fail to reach target 10000
      Nb of events :  10000
 
 INFO: Creating Plots for parton level
-INFO: Plots for parton level generated, see /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01/plots_parton.html
+INFO: Plots for parton level generated, see ~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01/plots_parton.html
 INFO: End Plots for parton level
 store_events
 INFO: Storing parton level results
@@ -246,9 +276,9 @@ decay z > all all
 launch
 INFO: Will use seed 268947007
 INFO: generate 10000 decay event for particle h
-/home/de3u14/lib/build/hep/MadGraph/MG5_aMC_v2_4_2/madgraph/madevent/gen_ximprove.py:746: DeprecationWarning: object.__new__() takes no parameters
+~/lib/build/hep/MadGraph/MG5_aMC_v2_4_2/madgraph/madevent/gen_ximprove.py:746: DeprecationWarning: object.__new__() takes no parameters
   return super(gen_ximprove, cls).__new__(gen_ximprove_v4, cmd, opt)
-/home/de3u14/lib/build/hep/MadGraph/MG5_aMC_v2_4_2/madgraph/madevent/gen_ximprove.py:752: DeprecationWarning: object.__init__() takes no parameters
+~/lib/build/hep/MadGraph/MG5_aMC_v2_4_2/madgraph/madevent/gen_ximprove.py:752: DeprecationWarning: object.__init__() takes no parameters
   super(gen_ximprove, self).__init__(cmd, opt)
 INFO: generate 10000 decay event for particle mu+
 INFO: generate 10000 decay event for particle mu-
@@ -262,23 +292,23 @@ decaying event number 7000 [4.41696310043 s]
 decaying event number 8000 [5.0581510067 s]
 decaying event number 9000 [5.67068004608 s]
 INFO: The decayed event file has been moved to the following location:
-INFO: /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Events/run_01_decayed_1/unweighted_events.lhe.gz
+INFO: ~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/Events/run_01_decayed_1/unweighted_events.lhe.gz
 INFO: MadSpin Done
 INFO: Creating Plots for parton level
-INFO: Plots for parton level generated, see /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_parton.html
+INFO: Plots for parton level generated, see ~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_parton.html
 INFO: End Plots for parton level
 INFO: Running Pythia
 INFO: Creating shower LHE File (for plot)
 INFO: Warning! Never use this lhe file for detector studies!
 INFO: Creating Plots for Pythia level
-INFO: Plots for pythia level generated, see /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_pythia_run_nEvents_10k.html
+INFO: Plots for pythia level generated, see ~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_pythia_run_nEvents_10k.html
 INFO: End Plots for pythia level
 INFO: finish
 INFO: No pgs_card detected, so not run pgs
 INFO: prepare delphes run
 INFO: Running Delphes
 INFO: Creating Plots for Delphes level
-INFO: Plots for delphes level generated, see /home/de3u14/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_delphes_run_nEvents_10k.html
+INFO: Plots for delphes level generated, see ~/lib/projects/2HDM/MadGraph/gg_z_mumuh_LoopInd_retry/HTML/run_01_decayed_1/plots_delphes_run_nEvents_10k.html
 INFO: End Plots for delphes level
 INFO: delphes done
   === Results Summary for run: run_01_decayed_1 tag: run_nEvents_10k ===

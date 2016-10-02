@@ -1,0 +1,61 @@
+# Job submission
+qsub -l <resource options> <shell script>
+
+# Example resource option:
+"walltime=10:00:00"
+
+# Job status checking
+
+qstat
+
+checkjob <jobid>
+
+# Job priority factor
+XFACTOR = 1 + <EFFQUEUETIME> / <WALLCLOCKLIMIT>
+
+# Show all jobs submitted
+showq
+
+##########################
+### Example batch jobs ###
+##########################
+
+/local/software/examples
+
+# Copy an example
+copy_example fluent
+
+
+## Specifying resources within the job script ##
+
+It can be tedious and error-prone typing the resource requirements on the qsub
+command line, so you may prefer to specify them in the job script itself.
+Default resource requirements can be defined within a job script by including a
+line begining with "#PBS" near the beginning of the script - before the first
+executable line (these are called PBS "directives"). If my_script contained the
+two lines
+
+###################
+### - Options - ###
+###################
+
+#PBS -l walltime=30:00:00
+#PBS -l nodes=2:ppn=16
+
+# - Name
+ -N name
+Declares a name  for the job. The name specified may be up to and including
+15 characters in length.  It must consist of printable, non white space
+characters with the first character alphabetic.
+
+If the -N option is not specified, the job name will be the base name of the
+job script file specified on the command line. If no script file name was
+specified and the script was read from the standard input, then the job name
+will be set to STDIN.
+
+#it would request 2 nodes for 30 hours when submitted with:
+
+qsub my_script
+
+#but any resource specified by a directive can be overridden by the resources
+#specified on the qsub command line.
