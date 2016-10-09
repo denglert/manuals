@@ -1,4 +1,5 @@
 ##### Getting help #####
+
 :help			// help menu
 :help subject		// search for a subject
 :help subject<CTRL-D>	// list all possible matches for the subject
@@ -26,7 +27,6 @@ dtc
 
 ### Spellcheck
 :set spell spelllang=en_us
-
 
 ##### Moving around the file #####
 go the beginning of the file:
@@ -115,18 +115,6 @@ CTRL+g filename
 :diffthis
 
 
-##### Substitution
-:s/old/new/g   changes all old to new in the current line
-:11,15s/old/new/g   changes lines 11 to 15 inclusive
-:%s/old/new/g   changes all lines 
-
-:s/^/new text / Insert "new text " at the beginning of the linese. 
-:s/$/ new text/ Append " new text" to the end of the line.
-:s/green/bright &/g Replace each "green" with "bright green" in the line.Searching
-
-# Substitute every instance of the last searched pattern (could be highlighted
-# string with *) to 'new string'
-:%s//new-string/g
 
 #####  Searching for an expression  #####
 / forwards search
@@ -162,15 +150,11 @@ recording a macro on the fly by
 :q{macroletter}
 playing it by @{macroletter}
 
-
-
 ##### Syntax highlighting #####
 :colorscheme evening
 
-
 ##### Word wrap on the a selected interval of lines
 :101,141!fold -w100
-
 
 ##### Folding ########
 zR - fold remove
