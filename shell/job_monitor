@@ -1,0 +1,38 @@
+#!/bin/bash
+# Job monitor script example
+
+iter=0
+maxiter=$(( ${nmhBins} * ${nmHBins} * ${nmHBins} * ${nmABins} * ${nCosBABins} *
+${nTanBBins} * ${nZ7Bins} ))
+
+start_time_full=$(date +"%T")
+start_time_seconds=$(date +%s)
+echo "Start time: $start_time_full" > run.log
+
+iter=$(( iter + 1 ))
+
+# for loop here
+for
+do 
+
+<dostuff>
+
+if [ `expr $iter % 500` -eq 0 ]; then
+	current_time_full=$(date +"%T")
+	current_time_seconds=$(date +%s)
+	elapsed=$(( $current_time_seconds - $start_time_seconds ))
+	estimated=$(echo "scale=5; ($maxiter / $iter) * $elapsed" | bc)
+	
+	# Converting float to integer (shell-style)
+	estimated=$(printf "%.0f" $estimated)
+	
+	#echo "$iter / $maxiter = $(echo "scale=3; ($iter * 100.00 / $maxiter)" | bc) % Current time : $current_time_full" >> run.log
+	echo "$iter / $maxiter = $(echo "scale=3; ($iter * 100.00 / $maxiter)" | bc) %" >> run.log
+	echo "Current time : $current_time_full" >> run.log
+	printf "Elapsed time %02d:%02d:%02d\n" \
+	$((elapsed / 3600)) $((elapsed / 60 % 60)) $((elapsed % 60)) >> run.log
+	printf "Estimated full runtime %02d:%02d:%02d\n" \
+	$((estimated / 3600)) $((estimated / 60 % 60)) $((estimated % 60)) >> run.log
+fi
+
+done
