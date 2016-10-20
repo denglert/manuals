@@ -1,0 +1,27 @@
+############################
+### --- ROOT install --- ###
+############################
+
+https://root.cern.ch/download/root_v5.34.36.source.tar.gz
+
+# Note: libxpm requires some extra fiddling on IRIDIS
+
+# From ROOT ./configure:
+# ...
+#  with options, prefix with --with-, enables corresponding support
+  xpm-incdir         XPM support, path to X11/Xpm.h
+  xpm-libdir         XPM support, path to libXpm
+
+# Configure
+./configure --prefix=~/lib/build/hep/ROOT/build/root_v5.34.36 \
+--disable-fftw3 \
+--with-xpm-incdir=~/lib/build/libXpm/include \
+--with-xpm-libdir=~/lib/build/libXpm/usr/lib64 \
+--enable-minuit2 \
+--etcdir=~/lib/build/hep/ROOT/etc/root_v5.34.36
+
+# Make
+make -j
+
+# Make install
+make install
