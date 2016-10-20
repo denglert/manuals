@@ -25,7 +25,7 @@ rpm2cpio libXpm-3.5.8-2.el6.src.rpm | cpio -idmv
 # still want to use the X11 directory found on the system.
 # What I did was to add the Xpm include dir to CFLAGS in Makefile.linuxx8664gcc
 
-CFLAGS        = -pipe -m64 -Wshadow -Wall -W -fPIC $(EXTRA_CFLAGS) $(USERCONF_CFLAGS) -I/home/de3u14/lib/build/libXpm/include
+CFLAGS        = -pipe -m64 -Wshadow -Wall -W -fPIC $(EXTRA_CFLAGS) $(USERCONF_CFLAGS) -I~/lib/build/libXpm/include
 
 # Now you need to configure
 --with-xpm-incdir=~/lib/build/libXpm/include \
