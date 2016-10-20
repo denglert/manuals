@@ -2,19 +2,32 @@
 ### --- ROOT install --- ###
 ############################
 
+# Using ROOT 5.34.36
 https://root.cern.ch/download/root_v5.34.36.source.tar.gz
 
-# Note: libxpm requires some extra fiddling on IRIDIS
+# Note: libxpm requires some extra fiddling on IRIDIS as the X11/xpm.h is not
+# installed/kept.
 
-# From ROOT ./configure:
+# Download a .rpm from here:
+http://rpm.pbone.net/index.php3/stat/3/srodzaj/2/search/libXpm-3.5.8-2.el6.src.rpm
+
+# To extract .rpm:
+rpm2cpio libXpm-3.5.8-2.el6.src.rpm | cpio -idmv
+
+# From ROOT ./configure you would figure that by adding a simple flag to include
+# the X11/xpm.h path is enough:
 # ...
 #  with options, prefix with --with-, enables corresponding support
   xpm-incdir         XPM support, path to X11/Xpm.h
   xpm-libdir         XPM support, path to libXpm
 
-# Configure
-./configure --prefix=~/lib/build/hep/ROOT/build/root_v5.34.36 \
---disable-fftw3 \
+# Unfortunately these flags don't help in this case, because the Makefile would
+# still want to use the X11 directory found on the system.
+# What I did was to add the Xpm include dir to CFLAGS in Makefile.linuxx8664gcc
+
+CFLAGS        = -pipe -m64 -Wshadow -Wall -W -fPIC $(EXTRA_CFLAGS) $(USERCONF_CFLAGS) -I/home/de3u14/lib/build/libXpm/include
+
+# Now you need to configure
 --with-xpm-incdir=~/lib/build/libXpm/include \
 --with-xpm-libdir=~/lib/build/libXpm/usr/lib64 \
 --enable-minuit2 \
@@ -25,3 +38,12 @@ make -j
 
 # Make install
 make install
+
+###############################################
+
+# ./configure produces these files where compilation variables are stored:
+
+./config/Makefile.comp
+./config/Makefile.config
+./config/Makefile.$(ARCH) # ARCH = linuxx8664gcc on iridis
+
