@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# - To try out:
+# ./split.sh example splitted_
+
 inputfile=$1
 outputbase=$2
 
