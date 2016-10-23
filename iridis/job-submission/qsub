@@ -4,6 +4,10 @@
 
 qsub -l <resource options> <shell script>
 
+# Specify queue
+qsub -q test
+qsub -q highmem
+
 # Example resource option:
 "walltime=10:00:00"
 
