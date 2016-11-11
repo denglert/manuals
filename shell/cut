@@ -1,0 +1,2 @@
+# - Print out only the first field, when using delimiter =
+cut -d = -f 1 
