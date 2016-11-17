@@ -34,7 +34,7 @@ CFLAGS        = -pipe -m64 -Wshadow -Wall -W -fPIC $(EXTRA_CFLAGS) $(USERCONF_CF
 --etcdir=~/lib/build/hep/ROOT/etc/root_v5.34.36
 
 # Make
-make -j
+make -j16
 
 # Make install
 make install
@@ -46,4 +46,12 @@ make install
 ./config/Makefile.comp
 ./config/Makefile.config
 ./config/Makefile.$(ARCH) # ARCH = linuxx8664gcc on iridis
+
+
+# Compiler:
+ CXX           = g++
+ CC            = gcc
+ CXXFLAGS      = -pipe -m64 -Wshadow -Wall -W -Woverloaded-virtual \
+                 -fPIC $(EXTRA_CXXFLAGS) $(CXX11FLAGS) $(USERCONF_CXXFLAGS) \
+                                 -I~/lib/build/libXpm/include/                   <--- you need to add this line
 
