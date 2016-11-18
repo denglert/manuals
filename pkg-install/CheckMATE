@@ -1,0 +1,70 @@
+########################################
+### --- CheckMATE 2 Beta install --- ###
+########################################
+
+# Before everythin make sure you set up the correct environment variables
+# and also the correct version of compilers etc.:
+
+module list  # Make sure that there is no intel compiler loaded in 
+python -V    # Should be 2.7.X, with X>3
+gcc -v       # Should be 4.X
+
+conda env list
+source activate python27
+
+### - HepMC install - ###
+http://lcgapp.cern.ch/project/simu/HepMC
+
+./configure --with-momentum=GEV --with-length=MM --prefix=/home/de3u14/lib/build/hep/HepMC/build/HepMC-2.06.09
+make -j16
+make install
+
+
+### - Pythia install - ###
+http://home.thep.lu.se/~torbjorn/Pythia.html
+
+./configure --enable-64bit --enable-shared \
+--prefix=/home/de3u14/lib/build/hep/Pythia/build/pythia8219 \
+--with-hepmc2=/home/de3u14/lib/build/hep/HepMC/build/HepMC-2.06.09
+
+make -j16
+make install
+
+
+### - ROOT install - ###
+https://root.cern.ch/download/root_v5.34.36.source.tar.gz
+
+# In ../config/Makefile.linuxx8664gcc
+# add the following to CXXFLAGs:
+
+-I/home/de3u14/lib/build/libXpm/include
+
+
+./configure --prefix=/home/de3u14/lib/build/hep/ROOT/build/root_v5.34.36 \
+--disable-fftw3 \
+--with-xpm-libdir=/home/de3u14/lib/build/libXpm/usr/lib64 \
+--with-xpm-incdir=/home/de3u14/lib/build/libXpm/include \
+--enable-minuit2 \
+--enable-python \
+--etcdir=/home/de3u14/lib/build/hep/ROOT/etc/root_v5.34.36 \
+--with-python-incdir=/home/de3u14/lib/build/miniconda/build/envs/python27/include/python2.7 \
+--with-python-libdir=/home/de3u14/lib/build/miniconda/build/envs/python27/lib
+
+make -j16
+make install
+
+
+### - CheckMATE2 install - ###
+./configure \
+--prefix=/home/de3u14/lib/build/hep/CheckMATE/build/CheckMATE-2.0.0_beta \
+--with-hepmc=/home/de3u14/lib/build/hep/HepMC/build/HepMC-2.06.09 \
+--with-pythia=/home/de3u14/lib/build/hep/Pythia/build/pythia8219 \
+--with-delphes=/home/de3u14/lib/build/hep/Delphes/delphes-CM2-3.2.0 \
+--with-rootsys=/home/de3u14/lib/build/hep/ROOT/build/root_v5.34.36
+
+make -j16
+make install
+
+
+# Check if it's installed correctly by running
+./bin/CheckMATE
