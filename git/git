@@ -67,18 +67,26 @@ git pull origin master
 ########################
 
 # HEAD = latest commit for the current branch
+# @ = alias for head
 
-# - Diff between the working version and the HEAD
+## - Diff between the working copy and the staging area
+git diff
+
+# - Diff between the working copy and the HEAD
 git diff HEAD
 
 # - Diff between HEAD and the previous commit before that
 git diff HEAD HEAD^
+git show
 
 # - Diff between two commits specified by their hashes
 git diff <commit1> <commit2>
 
 # - Diff of the stage area the latest commit
 git diff --staged
+
+# - Launch visual diff tool
+git difftool <commit1> <commit2>
 
 ########################
 ### --- Checkout --- ###
@@ -90,9 +98,9 @@ git checkout -- octocat.txt
 # - Restore file from old commit in git
 git checkout 'master@{7 days ago}' -- path/to/file.txt
 
-################
-### Branches ###
-################
+########################
+### --- Branches --- ###
+########################
 
 # - Branching out
 git branch clean_up
