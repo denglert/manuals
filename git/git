@@ -98,6 +98,9 @@ git checkout -- octocat.txt
 # - Restore file from old commit in git
 git checkout 'master@{7 days ago}' -- path/to/file.txt
 
+# - Check out a single file from git repository
+wget <github.url>
+
 ########################
 ### --- Branches --- ###
 ########################
