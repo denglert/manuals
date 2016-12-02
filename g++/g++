@@ -75,3 +75,20 @@ option.  With sh and csh, -D'name(args...)=definition' works.
 			  -D and -U options are processed in the order they are given on the
 command line.  All -imacros file and -include file options are processed after
 all -D and -U options.
+
+####################################
+# - Linking a library statically - #
+####################################
+
+# - 
+-L/path/to/lib -Wl,-Bstatic -llibary
+
+# - Specifying excplicitly the library file name
+-L/path/to/lib -Wl,-Bstatic -l:libary.a
+
+####################################
+# - Linking a library dynamically- #
+####################################
+
+# - 
+-L/path/to/lib -Wl,-Bdynamic -llibary
