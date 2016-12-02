@@ -1,0 +1,41 @@
+###############################################
+### --- Installation instruction for Ag --- ###
+###############################################
+
+# - Reference - #
+https://gist.github.com/k-takata/5124445
+
+####################
+# - lzma Install - #
+####################
+
+wget http://tukaani.org/xz/xz-5.0.5.tar.xz
+./configure
+make
+make install
+./configure --prefix=/home/de3u14/lib/build/tools/lzma/build/xz-5.0.5
+
+####################
+# - pcre Install - #
+####################
+
+http://www.pcre.org/
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.bz2
+
+./configure --prefix=/home/de3u14/lib/build/tools/pcre/build/pcre-8.38 --enable-jit --enable-unicode-properties --disable-shared
+make -j16
+make install
+
+##################
+# - Ag Install - #
+##################
+
+./configure \
+--prefix=/home/de3u14/lib/build/tools/ag/build/the_silver_searcher \
+PCRE_CFLAGS='-I /home/de3u14/lib/build/tools/pcre/build/pcre-8.38/include -I/home/de3u14/lib/build/tools/pcre/build/pcre-8.38 -I/home/de3u14/lib/build/tools/lzma/xz-5.0.5/src/liblzma/api' \
+PCRE_LIBS='-L /home/de3u14/lib/build/tools/pcre/build/pcre-8.38/lib/ -Wl,-Bstatic -l:libpcre.a -Wl,-Bdynamic' \
+LZMA_CFLAGS="-I /home/de3u14/lib/build/tools/lzma/build/xz-5.0.5/include" \
+LZMA_LIBS="-L /home/de3u14/lib/build/tools/lzma/build/xz-5.0.5/lib -L/home/de3u14/lib/build/tools/lzma/xz-5.0.5/src/liblzma/.libs -Wl,-Bstatic -llzma"
+
+make -j16
+make install
