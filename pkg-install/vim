@@ -24,6 +24,8 @@
 # - Ubuntu 16.04
 # - compiled against system python2.7
 #   installed into /usr
+apt install libncurses5-dev
+
 ./configure \
 --with-features=huge \
 --enable-multibyte \
