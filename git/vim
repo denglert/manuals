@@ -1,0 +1,10 @@
+######################################
+### ---  vim-figutive commands --- ###
+######################################
+https://github.com/tpope/vim-fugitive
+
+# - Edit
+:Gedit
+
+# - Status
+:Gstatus
