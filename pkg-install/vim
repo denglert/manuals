@@ -12,14 +12,14 @@
 
 # - Ubuntu 16.04 (NOT TESTED)
 # - compiled against anaconda python2.7
- vi_cv_path_python=/home/edy/lib/build/anaconda3/pkgs/python-2.7.12-1/bin/python2.7 \
+ vi_cv_path_python=~/lib/build/anaconda3/pkgs/python-2.7.12-1/bin/python2.7 \
 ./configure \
---includedir=/home/edy/lib/build/anaconda3/pkgs/python-2.7.12-1/include/python2.7 \
+--includedir=~/lib/build/anaconda3/pkgs/python-2.7.12-1/include/python2.7 \
 --with-features=huge \
 --enable-multibyte \
 --enable-rubyinterp \
 --enable-pythoninterp \
---with-python-config-dir=/home/edy/lib/build/anaconda3/pkgs/python-2.7.12-1/lib/python2.7/config
+--with-python-config-dir=~/lib/build/anaconda3/pkgs/python-2.7.12-1/lib/python2.7/config
 
 # - Ubuntu 16.04
 # - compiled against system python2.7
