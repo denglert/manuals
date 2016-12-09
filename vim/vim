@@ -146,9 +146,13 @@ CTRL-X CTRL-F
 
 
 ###### Repetitive procedures ######
-recording a macro on the fly by
+# - recording a macro on the fly by
 :q{macroletter}
-playing it by @{macroletter}
+# - playing it by
+@{macroletter}
+
+# - Apply it to lines 5 through 10
+:5,10norm! @a
 
 ##### Syntax highlighting #####
 :colorscheme evening
