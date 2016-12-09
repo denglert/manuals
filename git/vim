@@ -1,0 +1,25 @@
+######################################
+### ---  vim-figutive commands --- ###
+######################################
+https://github.com/tpope/vim-fugitive
+
+# - Edit
+:Gedit
+
+# - Status
+:Gstatus
+
+# - add/reset changes
+- 
+
+# - add/reset changes --patch
+p
+
+# - Commit changes
+:Gcommit
+
+# - Move a file and simultaneously rename a buffer
+:Gmove
+
+# - Get log of file
+:Glog
