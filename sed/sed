@@ -1,0 +1,2 @@
+# - Remove blank lines
+sed '/^\s*$/d' <file> 
