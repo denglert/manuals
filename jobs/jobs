@@ -11,7 +11,7 @@ watch -n<seconds> -t qstat
 # Tip: you can run this in a separate tmux window, and you'll get notifications
 # if there is a change.
 
-:set-window-option -g visual-bell on
-:set-window-option -g bell-action other
-:set -g visual-activity on
-:setw -g monitor-activity on
+# - Do not monitor the activity of windows on default
+:set-window-option -g monitor-activity off
+# - Set to monitor the activity of a specific window
+:set-window-option -t session:window monitor-activity on

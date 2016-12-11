@@ -9,3 +9,31 @@ setw -g aggressive-resize on
 # d = detach other clients
 # t = target
 tmux a -dt <session-name>
+
+### --- Options --- ###
+
+## -- Showing optinos -- ##
+# - Global options
+show-option -g
+# - Server options
+show-option -s
+# - Window options
+show-option -w -t session:window 
+
+## -- Setting options -- ##
+
+# - At global/session level - #
+set-option [-agsuw] [-t target-session | target-window] option value
+
+bell-action [any | none | current]
+bell-on-alert [on | off]
+visual-bell [on | off]
+visual-content [on | off]
+visual-silence [on | off]
+
+# - At window level
+set-window-option [-agu] [-t target-window] option value
+
+monitor-activity [on | off]
+monitor-content string
+monitor-silence interval
