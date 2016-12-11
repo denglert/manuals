@@ -32,5 +32,3 @@ find . -type f -not -name .htaccess -printf "\n%p\n" -exec cat {} \;
 # - type:
 f - regular file
 d - directoryt push
-
-#
