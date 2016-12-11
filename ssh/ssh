@@ -9,3 +9,6 @@ ssh -X
 
 # Create socket
 ssh -L 
+
+# - Regenerate keycode
+ssh-keygen -p
