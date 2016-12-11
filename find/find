@@ -8,25 +8,27 @@ find . -name ""
 
 !find - execute last command
 
-# maxdepth
+# - maxdepth
 find ./test -maxdepth 2 -name "*.php"
 
-# invert match
+# - invert match
 find ./test -not -name "*.php"
 
-# find files modified within the last 20 days
+# - find files modified within the last 20 days
 find . -type f -mtime -20
 
-# find files larger than 1 megabyte
+# - find files modified between 20 days and 10 days ago
+find . -type f -mtime -20 -mtime +10
+
+# - find files larger than 1 megabyte
 find . -size +1M
 
-# list format option
+# - list format option
 find . -size +1M -ls 
 
-# print out the contents of all the files in the directory except for '.htaccess'
+# - print out the contents of all the files in the directory except for '.htaccess'
 find . -type f -not -name .htaccess -printf "\n%p\n" -exec cat {} \;
 
 # - type:
 f - regular file
 d - directory
-
