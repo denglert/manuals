@@ -3,7 +3,10 @@
 ##############################################
 
 # - You can watch jobs by
-watch -n<seconds> qstat
+watch -n<seconds> -t qstat
+
+# -n: number of secondto refresh
+# -t: no title
 
 # Tip: you can run this in a separate tmux window, and you'll get notifications
 # if there is a change.
