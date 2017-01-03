@@ -20,11 +20,17 @@ find . -type f -mtime -20
 # - find files modified between 20 days and 10 days ago
 find . -type f -mtime -20 -mtime +10
 
+# - find files modified between 20 min and 1 min ago
+find . -type f -mmin -20 -mmin +10
+
 # - find files larger than 1 megabyte
 find . -size +1M
 
 # - list format option
 find . -size +1M -ls 
+
+# - exclude directory
+find . -type f -path ./dir_to_be_excluded -prune -p string
 
 # - print out the contents of all the files in the directory except for '.htaccess'
 find . -type f -not -name .htaccess -printf "\n%p\n" -exec cat {} \;

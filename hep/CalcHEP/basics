@@ -1,0 +1,97 @@
+### --- Contents od CalcHEP dir --- ####
+
+- bin -> ~/lib/build/hep/CalcHEP/calchep_3.6.27/bin/
+- calchep*
+- calchep.ini
+- calchep_batch*
+- models/
+- results/
+- tmp/
+
+# - Contents of models/ dir - #
+
+extlib1.mdl
+extlib2.mdl
+extlib3.mdl
+extlib4.mdl
+func1.mdl
+func2.mdl
+func3.mdl
+func4.mdl
+lgrng1.mdl
+lgrng2.mdl
+lgrng3.mdl
+lgrng4.mdl
+prtcls1.mdl
+prtcls2.mdl
+prtcls3.mdl
+prtcls4.mdl
+vars1.mdl
+vars2.mdl
+vars3.mdl
+vars4.mdl
+
+# - Q: Why are there 4 instances?
+
+### ---  prtclxx.mdl  - particles --- ###
+
+
+# - Example:
+ Full  name  | A  | A  |  PDG   |2*spin| mass |width |color|aux| LaTex(A) | LaTeX(A+)    |
+gluon        |G   |G   |21      |2     |0     |0     |8    |G  |g         |g
+
+
+# - Width calculated on the fly
+!wh
+
+###  --- varsxx.mdl - independent parameters --- ###
+
+# - Example:
+Name          | Value       |  Comment
+EE            |0.31343      |elecromagnetic constant
+
+### --- funcxx.mdl - dependent parameters --- ###
+
+# - Example:
+ Name      |  Expression                                                   <|
+CW         |MW/MZ                       % on-shell cos of the Weinberg angle
+
+### --- lgrngxx.mdl - Feynman rules --- ###
+
+# - Example
+
+ Vertices
+A1   |A2   |A3   |A4   |         Factor               |  Lorentz part                                                         |
+G    |G    |G    |     |GG                            |m1.m2*(p1-p2).m3+m2.m3*(p2-p3).m1+m3.m1*(p3-p1).m2
+
+### --- extlibxx.mdl - External libraries --- ###
+
+
+# - Example content:
+Standard Model
+Libraries
+External libraries                                                                          |
+%-L$HOME/Packages/lhapdf-5.9.1/install/lib -lLHAPDF
+%-L$HOME/Packages/LHAPDF-6.1.5/install/lib -lLHAPDF
+=============================================================================================
+
+
+### --- Symbolic session --- ###
+
+P1, P2 -> P3, P4 [...,N*x]
+
+# wildcard
+H -> 2*x
+
+
+### --- Contents of results dir --- #
+
+n_calchep
+prt_nn
+distr_nn_mm
+distr_nn
+events_nn.txt
+list_prc.txt
+qnumbers
+session.dat
+
