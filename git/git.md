@@ -2,44 +2,47 @@
 
 ## Basic 
 
-*Initializing*
+Initializing a directory:
 
 ~~~~
 git init
 ~~~~
 
-*Checking status*
+Checking status:
 
 ~~~~
 git status
 ~~~~
 
-*Check log*
+Check log:
 
 ~~~~
 git log
 ~~~~
 
-#############################
-### --- Configuration --- ###
-#############################
+## Configuration
 
-# - Make git colourful
+Make git colourful:
 git config --global color.ui auto
 
-#####################
-### --- Stage --- ###
-#####################
+## Stage
 
-# - Add a file to the staging area
+Add a file to the staging area:
+
+~~~~
 git add octocat.txt
 git add '*.txt'
+~~~~
 
-# - Physically delete a file and remove it from the staging area
+Physically delete a file and remove it from the staging area:
+~~~~
 git rm <file>
+~~~~
 
-# - Unstaging files
+Unstaging files:
+~~~~
 git reset octodog.txt
+~~~~
 
 ######################
 ### --- Commit --- ###
