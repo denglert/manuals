@@ -149,8 +149,10 @@ Switching between branches:
 get checkout clean_up
 ~~~~
 
-# - Merging
-git merge clean_up
+## Merging
 
+~~~~
+git merge clean_up
+~~~~
 
 ## Etc
