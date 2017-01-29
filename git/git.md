@@ -3,13 +3,22 @@
 ## Basic 
 
 *Initializing*
+
+~~~~
 git init
+~~~~
 
 *Checking status*
-git status
 
-# - Check log
+~~~~
+git status
+~~~~
+
+*Check log*
+
+~~~~
 git log
+~~~~
 
 #############################
 ### --- Configuration --- ###
