@@ -32,3 +32,9 @@ for f in dfiles:
 
 df = pd.concat(df_list)
 ~~~~
+
+## Plotting
+
+~~~~
+df.plot(x, y, kind='scatter')
+~~~~
