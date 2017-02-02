@@ -38,3 +38,16 @@ df = pd.concat(df_list)
 ~~~~
 df.plot(x, y, kind='scatter')
 ~~~~
+
+## Read in chunks
+
+If you have limited memory, read the data in chunks:
+
+~~~~
+hdf_out = pd.HDFStore('out.h5f', 'w', complib='blosc', format='table')
+reader  = pd.read_table(in_fname, delimiter=r"\s+", chunksize=10**6)
+for i, df_chunk in enumerate(reader):
+    hdf_out.append('data', df_chunk, index=False)
+
+hdf_out.close()
+~~~~
