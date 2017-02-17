@@ -1,0 +1,22 @@
+@include HiggsMass_explorer.scan
+[setup]
+mode = scan
+workers = 127.0.0.1
+authkey = HiggsMass_recalc
+
+[SLHAProcessor]
+program = SPheno {template} SLHASpectrum
+
+[parameter_space]
+mode = file
+files = HiggsMass_explorer.scan.data
+file_columns = m0, m12, A0, sign_mu, tanBeta, mh0
+par_m0 = file.m0
+par_m12 = file.m12
+par_A0 = file.A0
+par_sign_mu = file.sign_mu
+par_tanBeta = file.tanBeta
+
+[algorithm]
+out_columns = pars.m0, pars.m12, pars.A0, 
+    pars.sign_mu, pars.tanBeta, data.mh0 - file.mh0

@@ -1,0 +1,32 @@
+###################################
+##          Instructions         ##
+###################################
+
+To reproduce the results shown in the manual, the following steps should be
+taken in the Unix shell:
+
+Extract the micrOMEGAs version 3.6.9.2 [1] package file, which is available on 
+the web under [2], and compile it:
+  $ tar xvfz micromegas_3.6.9.2.tgz
+  $ cd micromegas_3.6.9.2/
+  $ make
+
+Patch the Z3MH main source code using the supplied patch file copied to the 
+Z3MH subfolder of micrOMEGAs:
+  $ cd Z3MH
+  $ patch < Z3MH-main.c.patch
+Alternatively, one can make the modifications shown in the patch file by hand.
+
+Compile the main program of the Z3MH model:
+  $ make main=main.c
+
+Link the executable `main' to somewhere in the PATH environment variable, e.g.:
+  $ ln -s "$PWD/main" ~/bin/main-Z3MH
+or
+  $ sudo ln -s "$PWD/main" /usr/local/bin/main-Z3MH
+Alternatively, one can replace the `main-Z3MH' in th example scan definition
+file with the absolute path the file `main'.
+
+References
+[1] G. Bélanger, F. Boudjema, A. Pukhov, A. Semenov,  arXiv:1305.0237 [hep-ph]
+[2] https://lapth.cnrs.fr/micromegas/

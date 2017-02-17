@@ -1,0 +1,16 @@
+@include ChargedLeptons_optimize.scan
+
+[setup]
+# do MCMC analysis with chains containing 10000 
+#  points each
+mode = mcmc
+unit_length = 10000
+
+[parameter_space]
+# amend parameters with step sizes
+par_theta12e = interval(0, 1.5707963267948966) with mcmc_stepsize=0.003
+par_delta12e = interval(0, 3.141592653589793) with mcmc_stepsize=0.04
+
+[algorithm]
+# switch from a chi^2 to a distribution function
+likelihood = exp(-0.5 * (%(chi_squared)s))

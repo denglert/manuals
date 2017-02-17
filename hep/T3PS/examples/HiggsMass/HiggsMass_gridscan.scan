@@ -1,0 +1,8 @@
+@include HiggsMass_scatterscan.scan
+[parameter_space]
+mode = grid
+
+par_m0 = interval(200, 2000) with count = 10
+par_m12 = interval(200, 3000) with count = 10
+par_A0 = interval(-9000, 9000) with count = 20
+par_tanBeta = 1, 2,..., 5, 7.5,..., 30, 33,..., 60

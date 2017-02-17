@@ -1,0 +1,31 @@
+@include HiggsMass_gridscan.scan
+[setup]
+mode = explorer
+
+[algorithm]
+# maximize the Higgs boson mass!
+likelihood = data.mh0
+min_likelihood = 118
+
+# calculate maximal Higgs boson mass over several 
+#  different planes (or lines)
+projection_count = 7
+projection_0 = pars.m0, pars.m0
+projection_1 = pars.m12, pars.m12
+projection_2 = pars.A0, pars.A0
+projection_3 = pars.tanBeta, pars.tanBeta
+
+projection_4 = pars.m0, pars.m12
+projection_5 = pars.m0, pars.A0
+projection_6 = pars.m12, pars.A0
+
+# apply symmetry transformations to the projected 
+#  points to check for invariances
+symmetry_count = 2
+# no dependence on sign of mu? (by name)
+symmetry_0 = sign_mu: -pars.sign_mu
+# no dependence on sign of A0? (by index)
+symmetry_1 = 2: -pars[2]
+
+# only do state one calculation
+disabled_states = 2, 3

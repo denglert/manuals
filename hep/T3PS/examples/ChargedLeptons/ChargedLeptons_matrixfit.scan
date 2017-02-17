@@ -1,0 +1,29 @@
+[setup]
+helper_modules = scipy.optimize:scipy.linalg
+
+[parameter_space]
+par_names = ye, ymu, theta12e
+# numbers taken from arXiv:1306.6879
+par_ye = normalvariate(2.8501e-6, 0.0022e-6)
+par_ymu = normalvariate(6.0167e-4, 0.0044e-4)
+# ... and previous scans
+par_theta12e = normalvariate(0.211, 0.005)
+
+var_names = a, b, c
+Y_e = [[0, b], [a, c]]
+var_a = remember(a_b_c=scipy.optimize.fsolve(
+          lambda (a, b, c): (
+            abs(scipy.linalg.det(%(Y_e)s)) -
+              (pars.ye * pars.ymu),
+            scipy.linalg.norm(%(Y_e)s) ** 2 -
+              (pars.ye ** 2 + pars.ymu ** 2),
+            abs(b * c / (a ** 2 + c ** 2)) -
+              tan(pars.theta12e)
+          ),
+          (2e-5, 1e-4 , 6e-4)
+        ))[0]
+var_b = remember("a_b_c")[1]
+var_c = remember("a_b_c")[2]
+
+mode = scatter
+point_count = 100000

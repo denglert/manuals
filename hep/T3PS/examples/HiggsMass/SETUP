@@ -1,0 +1,38 @@
+###################################
+##          Instructions         ##
+###################################
+
+To reproduce the results shown in the manual, the following steps should be
+taken in the Unix shell:
+
+Extract the SoftSUSY version 3.5.1 [1] package file, which is available on 
+the web under [2], and compile it (as given in the instructions on [2]):
+  $ tar xvfz softsusy-3.5.1.tar.gz
+  $ cd softsusy-3.5.1/
+  $ ./configure
+  $ make
+
+Create a link to the executable `softpoint.x' somewhere in the PATH environment 
+variable, e.g.:
+  $ ln -s "$PWD/softpoint.x" ~/bin/softpoint.x
+or
+  $ sudo ln -s "$PWD/softpoint.x" /usr/local/bin/softpoint.x
+Alternatively, one can replace the `softpoint.x' in th example scan definition
+file with the absolute path the file `softpoint.x'.
+
+Analogously, extract the SPheno version 3.3.3 [3] package file obtained from 
+the web page [4] and compile it (as given in the instructions on [4]):
+  $ tar xvfz SPheno-3.3.3.tar.gz
+  $ cd SPheno-3.3.3
+  $ make
+and link the SPheno executable
+  $ ln -s "$PWD/bin/SPheno" ~/bin/SPheno
+or
+  $ sudo ln -s "$PWD/bin/SPheno" /usr/local/bin/SPheno
+or replace the part in the example scan definition file with its absolute path.
+
+References
+[1] B.C. Allanach,  [arXiv:hep-ph/0104145]
+[2] http://softsusy.hepforge.org/
+[3] W. Porod and F. Staub,  [arXiv:1104.1573]
+[4] https://spheno.hepforge.org/

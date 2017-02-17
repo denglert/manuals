@@ -1,0 +1,15 @@
+[setup]
+mode = scan
+template = data.par.template
+point_processor = processors/SimpleProcessor.py
+
+[SimpleProcessor]
+program = main-Z3MH
+data_values = values[3], values[-8], values[-4]
+
+[parameter_space]
+par_names = laS1, MS
+data_names = Omega_DM, sigma_S_p, sigma_S_n
+
+par_laS1 = interval(0.01, 10) with count=200, distribution=log
+par_MS = interval(10, 10000) with count=200, distribution=log

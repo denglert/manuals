@@ -1,0 +1,82 @@
+[setup]
+mode = scan
+
+# use our template and the SLHAProcessor
+template = mSUGRA.slha.template
+point_processor = processors/SLHAProcessor.py
+
+[SLHAProcessor]
+# command line syntax as per SoftSUSY manual
+#  (and redirect its input to the template file 
+#  and its output to SLHASpectrum)
+program = softpoint.x leshouches < {template} > SLHASpectrum
+
+slha_files = SLHASpectrum
+
+# extract several masses from the spectrum file
+#  (for the PDG code meanings, see data_names)
+slha_data = slha[0]["MASS"][25],
+ slha[0]["MASS"][1000022],slha[0]["MASS"][1000024],
+ slha[0]["MASS"][1000006],slha[0]["MASS"][2000006], 
+ slha[0]["MASS"][1000021], 
+ slha[0]["MASS"][1000001],slha[0]["MASS"][1000002], 
+ slha[0]["MASS"][2000001],slha[0]["MASS"][2000002],
+ min([
+   slha[0]["MASS"][code] 
+   for code in [1000012, 1000014, 1000016]
+ ]),
+ slha[0]["MASS"][2000011],slha[0]["MASS"][2000013], 
+ slha[0]["MASS"][1000015],slha[0]["MASS"][1000005]
+
+[parameter_space]
+# mSUGRA has 5 parameters:
+par_names = m0, m12, A0, sign_mu, tanBeta
+
+# scan over the following continuous ranges:
+par_m0      = interval(50, 3000)
+par_m12     = interval(50, 3000)
+par_A0      = interval(-9000, 9000)
+par_tanBeta = interval(1, 60)
+# (except for the sign of mu of course)
+par_sign_mu = -1, 1
+
+# give names to all the masses 
+data_names = mh0, 
+    mN1, mC1, 
+    mstop1, mstop2, 
+    msG, 
+    msdL, msuL, 
+    msdR, msuR, 
+    msNu, 
+    mseR, msMuR, 
+    msTau1, msb
+
+# impose three constraints
+bound_count = 3
+# MSUSY must be below 3 TeV
+bound_0 = sqrt(data.mstop1 * data.mstop2) < 3000
+# masses have to satisfy current PDG bounds
+bound_1 = data.mN1 > 46
+    and (data.mC1 > 94 or pars.tanBeta > 40
+      or data.mC1-data.mN1 < 3)
+    and (data.msNu > 94 or pars.tanBeta > 40
+      or data.mseR-data.mN1 < 10)
+    and data.mseR > 107
+    and (data.msMuR > 94 or pars.tanBeta > 40
+      or data.msMuR-data.mN1 < 10)
+    and (data.msTau1 > 81.9
+      or data.msTau1-data.mN1 < 15)
+    and min(data.msuL, data.msdL, data.msuR,
+      data.msdR) > 1.11e3
+    and (data.msb > 89 or data.msb-data.mN1 < 8)
+    and (data.mstop1 > 95.7
+      or data.mstop1 - data.mN1 < 10)
+    and data.msG > 800
+# the neutralino shall be the lightest SUSY particle
+bound_2 = data.mN1 <= min(
+    data[i] for i in range(len(data)) if i != 0
+  )
+
+# do a random scan
+mode = scatter
+point_count = 100000

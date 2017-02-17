@@ -1,0 +1,35 @@
+--- main.c	2014-05-13 13:26:23.000000000 +0200
++++ main.c	2014-10-17 16:21:28.707995486 +0200
+@@ -3,7 +3,7 @@
+    various modules of micrOMEGAs  
+ ================================*/
+       
+-#define MASSES_INFO      
++/*#define MASSES_INFO*/
+   /* Display information about mass spectrum  */
+ 
+ //#define HIGGSBOUNDS "../Packages/HiggsBounds-4.1.0"  
+@@ -11,7 +11,7 @@
+ 
+ #define OMEGA            
+   /* Calculate relic density and display contribution of  individual channels */
+-#define INDIRECT_DETECTION  
++/*#define INDIRECT_DETECTION*/
+   /* Compute spectra of gamma/positron/antiprotons/neutrinos for DM annihilation; 
+      Calculate <sigma*v>;
+      Integrate gamma signal over DM galactic squared density for given line 
+@@ -32,11 +32,11 @@
+       for various nuclei
+   */
+ 
+-#define NEUTRINO 
++/*#define NEUTRINO*/
+ 
+-#define DECAYS
++/*#define DECAYS*/
+ 
+-#define CLEAN
++/*#define CLEAN*/
+   
+ /*===== end of Modules  ======*/
+ 

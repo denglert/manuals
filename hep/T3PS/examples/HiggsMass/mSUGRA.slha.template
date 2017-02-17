@@ -1,0 +1,20 @@
+Block MODSEL		    # Select model
+    1   1                 # sugra
+Block SMINPUTS		    # Standard Model inputs
+    1	1.279160000e+02	  # alpha^(-1) SM MSbar(MZ)
+    2   1.166370000e-05	  # G_Fermi
+    3   1.184000000e-01	  # alpha_s(MZ) SM MSbar
+    4   9.119000000e+01	  # MZ(pole)
+    5	4.190000000e+00	  # mb(mb) SM MSbar
+    6   1.729000000e+02	  # mtop(pole)
+    7	1.777000000e+00	  # mtau(pole)
+Block MINPAR		    # Input parameters
+    1   $m0               # m0
+    2   $m12              # m12
+    3   $tanBeta          # tan beta at MZ, DRbar
+    4   $sign_mu          # sign(mu)
+    5   $A0  	          # A0
+Block SOFTSUSY  # SOFTSUSY-specific 
+    1   1.0e-03   # Numerical precision
+    2   0.0	      # Quark mixing parameter
+    5   1.0       # 2-loop soft mass/trilinear RGEs

@@ -1,0 +1,27 @@
+[setup]
+# do optimization with default population size 
+#  (10*2 = 20 in this case)
+mode = optimize
+
+# use our custom processor 
+#  (it uses no template file)
+point_processor = fit_pmns.py
+
+[parameter_space]
+# two parameters that are angles in radians
+# (only interested in first quadrant for theta)
+par_names = theta12e, delta12e
+par_theta12e = interval(0, 1.5707963267948966)
+par_delta12e = interval(0, 3.141592653589793)
+
+data_names = sin12, sin23, sin13
+
+[algorithm]
+# fit to "NuFIT Free Fluxes + RSBL"
+#  (use higher minimum for theta23)
+chi_squared = (
+        ((data.sin12 ** 2 - 0.304) / 0.012) ** 2 +
+        ((data.sin23 ** 2 - 0.577) / 0.03) ** 2 +
+        ((data.sin13 ** 2 - 0.0219) / 0.0010) ** 2
+    )
+likelihood = -(%(chi_squared)s)
