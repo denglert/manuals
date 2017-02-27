@@ -4,7 +4,7 @@ Links:
 - http://holoviews.org/
 - http://dev.holoviews.org/
 - https://github.com/ioam/holoviews
-https://gitter.im/ioam/holoviews
+- https://gitter.im/ioam/holoviews
 
 **Install dev branch with conda**
 
