@@ -18,6 +18,7 @@ d = a.map(lambda x: x.clone(kdims=['br_A_tautau', 'br_A_Zh'], vdims=[]), hv.Poin
 ~~~~
 
 **Suppress warnings:**
+
 ~~~~
 import warnings
 warnings.filterwarnings("ignore", message="ColumnDataSource's columns must be of the same length")
