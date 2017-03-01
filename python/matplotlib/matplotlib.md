@@ -23,16 +23,16 @@ Save figure
 plt.savefig( 'fig.pdf' )
 ~~~~
 
-## Labels
+## Axis options
 
-Axis labels:
+**Axis labels:**
 
 ~~~~
 ax.set_xlabel( r'$\cos(\beta - \alpha)$' )
 ax.set_ylabel( r'$\sigma$ [pb]' )
 ~~~~
 
-Setting ticks and labels:
+**Setting ticks and labels:**
 
 ~~~~
 fix, ax = plt.subplots(nrows=1, ncols=1, sharex=True )
@@ -41,6 +41,9 @@ ax.set_xticklabels( np.linspace(0, 1, 5) )
 ax.set_yticks(      np.linspace(0, 1, 5) )
 ax.set_yticklabels( np.linspace(0, 1, 5) )
 ~~~~
+
+ax.set_xlim(0.0, 1.0)
+ax.set_ylim(0.0, 1.0)
 
 ## Pixel plot
 
@@ -62,3 +65,14 @@ Make a grid pixel plot, with specifying extent (didn't really managed to make it
 ~~~~
 plt.imshow(grid, extent=[-0.65, 0.65, 0, 20.5], interpolation='nearest', cmap='gnuplot' )
 ~~~~
+
+## Subplots
+
+**Make a 3x2 grid of subfplots
+
+~~~~
+fig, ax = plt.subplots(ncols=3, nrows=2)
+fig.set_size_inches(10,10)
+plt.subplots_adjust(wspace=0.2, hspace=0.2)
+~~~~
+
