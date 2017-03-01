@@ -33,10 +33,24 @@ for f in dfiles:
 df = pd.concat(df_list)
 ~~~~
 
+## Manipulating data
+
+**Rename columns:**
+
+~~~~
+df.rename(columns={'k_huu':'k_hdd', 'k_hdd':'k_huu'}, inplace=True)
+~~~~
+
 ## Plotting
 
 ~~~~
 df.plot(x, y, kind='scatter')
+~~~~
+
+or:
+
+~~~~
+df.plot.scatter(x, y)
 ~~~~
 
 ## Read in chunks
