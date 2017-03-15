@@ -5,8 +5,15 @@
 
 Import matplotlib
 
+General:
+
 ~~~~
 import matplotlib.pyplot as plt
+~~~~
+
+For contours:
+
+~~~~
 from matplitlib.mlab import griddata
 import matplotlib.cm as cm
 ~~~~
@@ -119,7 +126,7 @@ plt.imshow(grid, extent=[-0.65, 0.65, 0, 20.5], interpolation='nearest', cmap='g
 
 ## Subplots
 
-**Make a 3x2 grid of subfplots
+**Make a 3x2 grid of subfplots:**
 
 ~~~~
 fig, ax = plt.subplots(ncols=3, nrows=2)
@@ -127,3 +134,22 @@ fig.set_size_inches(10,10)
 plt.subplots_adjust(wspace=0.2, hspace=0.2)
 ~~~~
 
+
+## Colorbar
+
+
+**Get colorbar:**
+
+~~~~
+sc = a.scatter(x,y, c=z, cmap='Blues', rasterized=True, s=3, vmin=-5.0, vmax=-1.0)
+cb = plt.colorbar(sc, ticks=tick_lock)
+~~~~
+
+**Colorbar axis label:**
+
+~~~~
+sc    = a.scatter(x,y, c=z, cmap='Blues', rasterized=True, s=3, vmin=-5.0, vmax=-1.0)
+cb    = plt.colorbar(sc, ticks=tick_lock)
+cb_ax = cb.ax
+cb_ax.set_ylabel('colorbar label') 
+~~~~
