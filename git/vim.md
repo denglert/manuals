@@ -16,27 +16,27 @@ https://github.com/tpope/vim-fugitive
 - 
 ~~~~
 
-*Open current file in the window below:*
+**Open current file in the window below:**
 
 ~~~~
 <Enter>
 ~~~~
 
 
-*Invoke :Gcommit*
+**Invoke :Gcommit**
 
 ~~~~
 C 
 ~~~~
 
 
-Open 
+**Open:**
 
 ~~~~
 :Gedit
 ~~~~
 
-*Add/reset changes --patch*
+**Add/reset changes --patch**
 
 ~~~~
 p
@@ -77,37 +77,37 @@ map <Leader>gwp :!git add . && git commit -m "Template commit message: Work in p
 map <Leader>gcp :!git add . && git commit && git push<CR>
 ~~~~
 
-*Add all files in folder, commit and push:*
+**Add all files in folder, commit and push:**
 
 ~~~~
 <Leader>gcp
 ~~~~
 
-*Add all files in folder, commit with template message and push:*
+**Add all files in folder, commit with template message and push:**
 
 ~~~~
 <Leader>gcp
 ~~~~
 
-*Open up log of file:*
+**Open up log of file:**
 
 ~~~~
 <Leader>gl
 ~~~~
 
-*Git diff:*
+**Git diff:**
 
 ~~~~
 <Leader>gd
 ~~~~
 
-*Pull (git get):*
+**Pull (git get):**
 
 ~~~~
 <Leader>gg
 ~~~~
 
-*Open repo in browser:*
+**Open repo in browser:**
 
 ~~~~
 <Leader>gb
