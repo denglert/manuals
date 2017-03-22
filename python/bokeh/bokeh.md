@@ -139,11 +139,9 @@ from bokeh.models import ColumnDataSource
 
 x = list(range(-20, 21))
 y0, y1 = [abs(xx) for xx in x], [xx**2 for xx in x]
-~~~~
 
 # create a column data source for the plots to share
 
-~~~~
 source = ColumnDataSource(data=dict(x=x, y0=y0, y1=y1))
 
 TOOLS = "box_select,lasso_select,help"
