@@ -41,6 +41,12 @@ df = pd.concat(df_list)
 df.rename(columns={'k_huu':'k_hdd', 'k_hdd':'k_huu'}, inplace=True)
 ~~~~
 
+### Sort
+
+~~~~
+df_sorted = df.sort_values(by=['mHc'], ascending=[False])
+~~~~
+
 ## Plotting
 
 ~~~~
