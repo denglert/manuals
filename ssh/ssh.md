@@ -7,7 +7,9 @@ References:
 
 ## Generating a new SSH key
 
+~~~~
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+~~~~
 
 ## Passwordless login with SSH key pairs
 
@@ -23,10 +25,12 @@ Steps:
 
 ## .ssh/config
 
+Config for tunneling
+
 ~~~~
 Host hostalias
     Hostname hostname
-    ProxyCommand ssh hostB -W %h:%p
+    ProxyCommand ssh user@gateway_host -W %h:%p
     User username
     IdentityFile ~/.ssh/id_rsa_custom
 ~~~~
