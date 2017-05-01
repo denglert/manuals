@@ -67,3 +67,12 @@ renamed = all_ds.redim(mH=('mH', r'$m_{H}$ [GeV]'), mHc=('mHc', r'$m_{H^\pm}$ [G
 `hv.Curve(range(10), vdims=[hv.Dimension('y', range=(0, 10))])` or you can use the redim method to
 `hv.Curve(range(10)).redim(y=dict(range=(0,10)))` which will let you do the same thing on an existing
 element.
+
+
+**Aliases**
+
+~~~~
+import holoviews as hv
+al = hv.util.Aliases(name1='Long label', name2='Long label 2')
+al.name1
+~~~~
