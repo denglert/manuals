@@ -77,6 +77,19 @@ inline_rc = dict(mpl.rcParams)
 mpl.rcParams.update(inline_rc)
 ~~~~
 
+## Contour plot
+
+Example for a simple contour plot:
+
+~~~~
+k_hdd = lambda cba, tb: np.sqrt(1.0-cba*cba) - cba * tb
+cba   = np.linspace(-1.0, 1.0, 100, endpoint=True)
+tb    = np.linspace(0.0, 30.0, 100, endpoint=True)
+X, Y  = np.meshgrid(cba,tb)
+Z     = k_hdd(X,Y)
+c = plt.contourf(X,Y,Z, 10,  cmap='RdBu_r',  extend='both')
+~~~~
+
 ## Axis options
 
 **Axis labels:**
