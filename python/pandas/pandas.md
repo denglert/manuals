@@ -33,6 +33,15 @@ for f in dfiles:
 df = pd.concat(df_list)
 ~~~~
 
+## Merge
+
+### How to merge a list of dataframes
+
+~~~~
+import functools
+df = functools.reduce(lambda left,right: pd.merge(left,right,on=['shat', 'f', 'k_hzz', 'k_hqq'], how='inner'), dfs)
+
+~~~~
 ## Manipulating data
 
 **Rename columns:**
