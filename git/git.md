@@ -154,16 +154,43 @@ wget <github.url>
 
 ## Branches
 
-**Branching out:**
+**List all branches (including remote ones):**
 
 ~~~~
-git branch clean_up
+git branch -a
 ~~~~
 
-**Switching between branches:**
+Note: The branches which are not available locally are displayed in red (if you have colour coding
+enabled).
+
+**Show only remote branches:**
 
 ~~~~
-get checkout clean_up
+git branch -r
+~~~~
+
+**Create a new branch (branching out) with:**
+
+~~~~
+git branch <branch-name>
+~~~~
+
+**Switch to a new branch:**
+
+~~~~
+git checkout <branch-name>
+~~~~
+
+**Create a new branch and switch to it in one go:**
+
+~~~~
+git checkout -b <branch-name>
+~~~~
+
+**Delete a branch:**
+
+~~~~
+git branch -d <branch-to-be-deleted>
 ~~~~
 
 ## Merging
@@ -178,6 +205,14 @@ git merge <branch>
 
 ~~~~
 git merge upstream/master
+~~~~
+
+## Tags
+
+**List tags:**
+
+~~~~
+git tag
 ~~~~
 
 ## Syncing a fork
