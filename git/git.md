@@ -16,8 +16,28 @@ git status
 
 **Check log:**
 
+Docs:
+http://schacon.github.io/git/git-log.html
+
 ~~~~
 git log
+~~~~
+
+Get the info about the latest commit in a specific format:
+
+~~~~
+git log -1 --format=%H\ -\ %cd
+~~~~
+
+## Log
+
+Check the log history of the repo:
+
+~~~~
+git log
+~~~~
+
+~~~~
 ~~~~
 
 ## Configuration
@@ -207,12 +227,49 @@ git merge <branch>
 git merge upstream/master
 ~~~~
 
+To stop the merge process where you've encounter conflicts:
+
+~~~~
+git merge --abort
+~~~~
+
 ## Tags
+
+Reference:
+https://git-scm.com/book/en/v2/Git-Basics-Tagging
+
+There are two types of tags:
+- lightweight
+- annotated
 
 **List tags:**
 
 ~~~~
 git tag
+~~~~
+
+**Show a tag:**
+
+~~~~
+git show <tag-name>
+~~~~
+
+**Checkout a specific tag:**
+
+Methods:
+
+a) Create a new branch where the tag is checked out.
+
+~~~~
+git checkout tags/<tag_name> -b <branch_name>
+~~~~
+
+b) Directly checkout the tag (not recommended)
+
+Warning: This will make the repo into a HEADLESS state!
+
+~~~~
+git checkout tags/<tag-name>
 ~~~~
 
 ## Syncing a fork
@@ -238,4 +295,25 @@ local changes.
 git merge upstream/master
 ~~~~
 
-## Etc
+# Troubleshooting
+
+## `git: Not currently on any branch` problem
+
+https://stackoverflow.com/questions/4735556/git-not-currently-on-any-branch-is-there-an-easy-way-to-get-back-on-a-branch
+
+If no commit was made (untested):
+
+~~~~
+git stash
+git checkout some-branch
+git stash pop
+~~~~
+
+If you've already made a commit on a HEADLESS state, you should check the hash of the commit,
+checkout the branch where you'd want to merge that commit to and then proceed with the merge:
+
+~~~~
+git log --oneline -n1
+git checkout <branch-name>
+git merge <commit hash>
+~~~~
