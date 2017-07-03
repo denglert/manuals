@@ -295,6 +295,33 @@ local changes.
 git merge upstream/master
 ~~~~
 
+## Submodules
+
+
+### Add a specific version of a package to your repo
+
+1. Add the submodule to your repo:
+
+~~~~
+git submodule add <url>
+~~~~
+
+2. Check out the tag/commit that you want to work on
+
+~~~~
+cd <pkg>
+git checkout <tag>/<commit>
+~~~~
+
+3. Commit the changes
+
+~~~~
+cd ..
+git commit -m "Added `<pkg>` with tag/commit."
+~~~~
+
+
+
 # Troubleshooting
 
 ## `git: Not currently on any branch` problem
