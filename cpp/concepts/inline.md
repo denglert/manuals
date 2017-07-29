@@ -1,3 +1,5 @@
+# `inline`
+
 Inline is more like static or extern than a directive telling the compiler to
 inline your functions. extern, static, inline are linkage directives, used
 almost exclusively by the linker, not the compiler.

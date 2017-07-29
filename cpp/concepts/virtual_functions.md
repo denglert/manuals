@@ -74,7 +74,7 @@ func(animal); // outputs: "I'm eating generic food."
 func(cat);    // outputs: "I'm eating generic food."
 ~~~~
 
-The solution is to make eat() a virtual function:
+The solution is to make `eat()` a virtual function:
 
 ~~~
 class Animal
