@@ -11,3 +11,4 @@ The keyword static can be used in three major contexts:
 
 [static_inside_function]: ./static_inside_function.md
 [static_class_member]:    ./static_class_member.md
+[static_global_variable]: ./static_global_variable.md
