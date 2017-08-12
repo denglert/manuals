@@ -1,19 +1,105 @@
-##### Getting help #####
+# `vim` tips and tricks
 
-:help			// help menu
-:help subject		// search for a subject
-:help subject<CTRL-D>	// list all possible matches for the subject
+
+## Basic
+
+### Getting help
+
+~~~~
+:help			          // help menu
+:help subject		    // search for a subject
+:help subject<CTRL-D> // list all possible matches for the subject
+~~~~
 
 list all possible matches for an unfinished command:
 
+~~~~
 :col <CTRL-D>
+~~~~
 
-# Insert before
-1, yank the text you want to paste
-2, CTRL+V the lines
-3, Press I
-4, CTRL+R
-5, "
+### Insert
+
+Insert before:
+
+1. yank the text you want to paste
+2. `CTRL+V` the lines
+3. Press `I`
+4. `CTRL+R`
+5. `"`
+
+
+### Moving around the file
+
+Go the beginning of the file:
+
+~~~~
+gg
+~~~~
+
+Go the end of the file:
+
+~~~~
+G 
+~~~~
+
+Position the cursor to top/center/bottom of the screen:
+
+- top:    `zt`
+- center:` zz`
+- bottom: `zb`
+
+go the line no. {linenumber}
+~~~~
+{linenumber}G
+~~~~
+
+previous position:
+~~~~
+''
+~~~~
+
+Older positions:
+~~~~
+CTRL-O
+~~~~
+
+Newer positions:
+~~~~
+CTRL-I
+~~~~
+
+Placing marks by:
+~~~~
+m{markletter}
+~~~~
+
+Jumping to mark {markletter}:
+~~~~
+'{markletter}
+~~~~
+
+
+Scroll windows downwards by half a screen:
+~~~~
+CTRL-D
+~~~~
+
+## Move till you find space
+# Useful for visual selection when 'w' does not work as you would want
+f <space>
+
+
+
+## Folding
+
+- `zR`: fold remove
+- `zo`: fold open
+- `zc`: fold close
+- `zr`: fold reduce
+- `zm`: fold more
+
+
+## Various (unsorted)
 
 # Delete including <char>
 df<char>
@@ -28,41 +114,6 @@ dtc
 ### Spellcheck
 :set spell spelllang=en_us
 
-##### Moving around the file #####
-go the beginning of the file:
-gg
-
-go the end of the file:
-G 
-
-Position the cursor to the *** of the screen
-center: zz
-top: zt
-
-go the line no. {linenumber}
-{linenumber}G
-
-previous position:
-''
-older positions:
-CTRL-O
-
-newer positions:
-CTRL-I
-
-Placing marks by:
-m{markletter}
-
-jumping to mark {markletter}:
-'{markletter}
-
-
-scroll windows downwards by half a screen:
-CTRL-D
-
-## Move till you find space
-# Useful for visual selection when 'w' does not work as you would want
-f <space>
 
 
 # Open same file in new tabe
@@ -160,12 +211,8 @@ CTRL-X CTRL-F
 ##### Word wrap on the a selected interval of lines
 :101,141!fold -w100
 
-##### Folding ########
-zR - fold remove
-zo - fold open
-zc - fold close
-zr - fold reduce
-zm - fold more
+## Folding
+
 
 ##### Windows endline workaround ####
 ^V means CTRL+V and
