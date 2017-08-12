@@ -6,12 +6,13 @@
 ### Getting help
 
 ~~~~
-:help			          // help menu
-:help subject		    // search for a subject
+:help                 // help menu
+:help subject         // search for a subject
 :help subject<CTRL-D> // list all possible matches for the subject
 ~~~~
 
-list all possible matches for an unfinished command:
+To list all possible matches for an unfinished command, press `<CTRL-D>`.
+Example:
 
 ~~~~
 :col <CTRL-D>
@@ -42,18 +43,25 @@ Go the end of the file:
 G 
 ~~~~
 
-Position the cursor to top/center/bottom of the screen:
+Position the screen, while keeping the cursor fixed (top/center/bottom):
 
 - top:    `zt`
 - center:` zz`
 - bottom: `zb`
 
-go the line no. {linenumber}
+Position the cursor, while keeping the screen fixed (top/center/bottom):
+
+- top:    `H`
+- center: `M`
+- bottom: `L`
+
+
+Go the line no. {linenumber}
 ~~~~
 {linenumber}G
 ~~~~
 
-previous position:
+Previous position:
 ~~~~
 ''
 ~~~~
@@ -84,11 +92,47 @@ Scroll windows downwards by half a screen:
 CTRL-D
 ~~~~
 
-## Move till you find space
-# Useful for visual selection when 'w' does not work as you would want
+Move till you find space:
+~~~~
 f <space>
+~~~~
 
 
+### Text editing
+
+Visual replace:
+
+1. Press `v`.
+2. Select block.
+3. `c` change
+
+
+Select the whole document:
+~~~~
+ggVG 
+~~~~
+
+### Delete
+
+Delete including <char>:
+
+~~~~
+df<char>
+~~~~
+
+Delete till <char>:
+
+~~~~
+dt<char>
+~~~~
+
+## Tabs
+
+Split current tab into two:
+
+~~~
+:tab split
+~~~
 
 ## Folding
 
@@ -99,126 +143,149 @@ f <space>
 - `zm`: fold more
 
 
+## Macros
+
+Recording a macro on the fly by:
+~~~~
+:q{macroletter}
+~~~~
+
+Replay macro by:
+~~~~
+@{macroletter}
+~~~~
+
+Apply macro to lines 5 through 10:
+
+~~~~
+:5,10norm! @a
+~~~~
+
+## Spellcheck
+
+~~~~
+:set spell spelllang=en_us
+~~~~
+
+##  Searching for an expression
+
+`/`: forwards search
+`?`: backwards search
+
+`*`: search for the expression under the cursor
+
+`n` - next match
+`N` - previous match 
+
+Ignore the case of the letter:
+~~~~
+:set ignorecase
+~~~~
+
+Distinguish the case:
+~~~~
+:set noignorecase
+~~~~
+
+Disable the highlighting:
+~~~~
+:nohlsearch
+~~~~
+
 ## Various (unsorted)
 
-# Delete including <char>
-df<char>
-
-# Delete till <char>
-dt<char>
-
-# example:
-dfc
-dtc
-
-### Spellcheck
-:set spell spelllang=en_us
-
-
-
-# Open same file in new tabe
-:tab split
-
-#####  Commenting a section ####
-CTRL-V (block mode)
-c
-{comment characters}
-ESC
-
-
-##### Text editing  ####
-visual replace:
-v  // select block
-c  // change
-
-ggVG // select all
-
-:set paste   // paste mode
+~~~~
+:set paste
 :set nopaste 
+~~~~
 
 
-Join lines together
+Join lines together:
+~~~~
 J
+~~~~
 
-Break long lines into multiple lines
+Break long lines into multiple lines:
+
+~~~~
 gq{motion}
 {Visual}gq
 gqq
-...
+~~~~
 
+
+Adjust textwidth:
+~~~~
 :set tw=80
-(textwidth)
+~~~~
 
 
-###### Split window ######
+Commenting a section:
+
+1. `CTRL-V` (block mode)
+2. `c`
+3. `{comment characters}`
+4. `ESC`
+
+
+Split window:
+
+~~~~
 :split OR :sp
 :vsplit OR :vsp
+~~~~
 
-Switching screens:
+Switching between splits:
+
+~~~~
 CTRL+w left/right
+~~~~
 
+Show name of the file currently being edited:
+~~~~
+CTRL+g
+~~~~
 
-###### Path to file ######
-CTRL+g filename
-1 CTRL+g full path
+Show the full path of the file currently being edited:
+~~~~
+1 CTRL+g
+~~~~
 
-##### Differentiating ######
+Differentiating:
+
+~~~~
 :diffthis
+~~~~
 
 
+Tabulation and spaces:
 
-#####  Searching for an expression  #####
-/ forwards search
-? backwards search
-
-* search for the expression under the cursor
-
-n - next match
-N - previous match 
-
-ignore the case of the letter:
-	:set ignorecase
-distinguish the case:
-	:set noignorecase
-
-disable the highlighting
-	:nohlsearch
-
-
-###### Tabulation and spaces ######
+~~~~
 :set tabstop=2
 :set noexpandtab
 :retab!
+~~~~
 
+Automatic file completion:
 
-###### Automatic file completion ######
+~~~~
 CTRL-X CTRL-F
-/home/edy/lib/files/
+~~~~
 
 
-###### Repetitive procedures ######
-# - recording a macro on the fly by
-:q{macroletter}
-# - playing it by
-@{macroletter}
-
-# - Apply it to lines 5 through 10
-:5,10norm! @a
-
-##### Syntax highlighting #####
+Syntax highlighting:
+~~~~
 :colorscheme evening
+~~~~
 
-##### Word wrap on the a selected interval of lines
+Word wrap on the a selected interval of lines:
+~~~~
 :101,141!fold -w100
+~~~~
 
-## Folding
-
-
-##### Windows endline workaround ####
+Endline workaround (forgot what this was?)::
+~~~~
 ^V means CTRL+V and
 ^M means CTRL+M
 :%s/^V^M/^V^M/g
-
-
-# sfdasdfsd
-# sdfasdfasd
+~~~~
