@@ -22,13 +22,13 @@ Example:
 
 ### Moving around the file
 
-Go the beginning of the file:
+Move cursor the beginning of the file:
 
 ~~~~
 gg
 ~~~~
 
-Go the end of the file:
+Move cursor the end of the file:
 
 ~~~~
 G 
@@ -47,22 +47,29 @@ Position the cursor, while keeping the screen fixed (top/center/bottom):
 - bottom: `L`
 
 
-Go the line no. {linenumber}
+Move cursor the line no. {linenumber}
+
 ~~~~
 {linenumber}G
 ~~~~
 
-Previous position:
+or 
+
+~~~~
+{linenumber}gg
+~~~~
+
+Move cursor to revious position:
 ~~~~
 ''
 ~~~~
 
-Older positions:
+Move cursor the previous positions:
 ~~~~
 CTRL-O
 ~~~~
 
-Newer positions:
+Move cursor to recent positions:
 ~~~~
 CTRL-I
 ~~~~
@@ -83,7 +90,7 @@ Scroll windows downwards by half a screen:
 CTRL-D
 ~~~~
 
-Move till you find space:
+Move forward till you find space in a line:
 ~~~~
 f <space>
 ~~~~
@@ -190,6 +197,41 @@ Distinguish the case:
 Disable the highlighting:
 ~~~~
 :nohlsearch
+~~~~
+
+## Substitution
+
+
+~~~~
+:s/old/new/g       // changes all old to new in the current line
+:11,15s/old/new/g  // changes lines 11 to 15 inclusive
+:%s/old/new/g      // changes all lines 
+~~~~
+
+~~~~
+:s/^/new text /       // Insert "new text " at the beginning of the line. 
+:s/$/ new text/       // Append " new text" to the end of the line.
+:s/green/bright &/g   // Replace each "green" with "bright green" everywhere.
+~~~~
+
+Substitute every instance of the last searched pattern (could be highlighted string with `*`) to
+'new string':
+
+~~~~
+:%s//new-string/g
+~~~~
+
+Add a string to the end of the line, e.g. add a `*` to the end:
+~~~~
+:%s/$/\*/g 
+~~~~
+
+Insert a specific character along all lines on a specific column:
+
+~~~~
+:%s/$/                                        /
+:v/|/s/^\(........................................\)/\1|/
+:%s/  *$//
 ~~~~
 
 ## Various (unsorted)
