@@ -1,6 +1,0 @@
-# - List of annoyances / things to look up how to improve on:
-
-# Create a toggle for cursorline
-# Ag search, go key
-:set cursorline
-:hi CursorLine ctermbg=18
