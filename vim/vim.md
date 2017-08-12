@@ -143,11 +143,26 @@ Split current tab into two:
 
 ## Folding
 
-- `zR`: fold remove
+- `zR`: open all folds
 - `zo`: fold open
 - `zc`: fold close
 - `zr`: fold reduce
 - `zm`: fold more
+- `zM`: close all fold
+
+If you
+~~~~
+:set foldmethod=syntax
+~~~~
+
+the folds will be specified from the syntax definitions.
+
+If you prefer you can
+~~~~
+:set foldmethod=indent
+~~~~
+to have the indentation define the folds.
+
 
 
 ## Registers
@@ -243,6 +258,32 @@ Apply macro to lines 5 through 10:
 
 ~~~~
 :5,10norm! @a
+~~~~
+
+
+## Aliases
+
+Full path of the current file:
+~~~~
+%:p 
+~~~~
+
+Full path to the directory of the current file:
+
+~~~~
+%:p:h
+~~~~
+
+Example:
+change the working directory to the current file
+
+~~~~
+:cd %:p:h
+~~~~
+
+change the working directory of the active window to the current file:
+~~~~
+:lcd %:p:h
 ~~~~
 
 ## Spellcheck
