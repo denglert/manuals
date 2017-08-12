@@ -1,3 +1,9 @@
+# `const`
+
+(to be filled up)
+
+## Etc
+
 X const& x is equivalent to const X& x, and X const* x is equivalent to const X*
 x.
 

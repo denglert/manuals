@@ -313,14 +313,27 @@ cd <pkg>
 git checkout <tag>/<commit>
 ~~~~
 
-3. Commit the changes
+3. Add to the staging area and then commit the changes
 
 ~~~~
 cd ..
+git add <pkg> .gitmodules
 git commit -m "Added `<pkg>` with tag/commit."
 ~~~~
 
 
+### Update a submodule to the version of the latest commit
+
+Source:
+https://stackoverflow.com/questions/5828324/update-git-submodule-to-latest-commit-on-origin
+
+~~~~
+cd <submodule>
+git pull origin master
+cd ..
+git add <submodule>
+git commit -m "Updated <submodule>."
+~~~~
 
 # Troubleshooting
 
