@@ -12,21 +12,12 @@
 ~~~~
 
 To list all possible matches for an unfinished command, press `<CTRL-D>`.
+
 Example:
 
 ~~~~
 :col <CTRL-D>
 ~~~~
-
-### Insert
-
-Insert before:
-
-1. yank the text you want to paste
-2. `CTRL+V` the lines
-3. Press `I`
-4. `CTRL+R`
-5. `"`
 
 
 ### Moving around the file
@@ -97,7 +88,6 @@ Move till you find space:
 f <space>
 ~~~~
 
-
 ### Text editing
 
 Visual replace:
@@ -125,6 +115,16 @@ Delete till <char>:
 ~~~~
 dt<char>
 ~~~~
+
+## Insert
+
+Insert before:
+
+1. yank the text you want to paste
+2. `CTRL+V` the lines
+3. Press `I`
+4. `CTRL+R`
+5. `"`
 
 ## Tabs
 
