@@ -24,3 +24,9 @@ Attempt to kill the process running on port `<port-number>`, via `fuser`:
 ~~~~
 fuser -k <port-number>/tcp
 ~~~~
+
+List all active connections:
+
+~~~~
+netstat -tulpn
+~~~~
