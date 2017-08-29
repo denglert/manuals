@@ -132,6 +132,24 @@ ax.set_xlim(0.0, 1.0)
 ax.set_ylim(0.0, 1.0)
 ~~~~
 
+## Legend
+
+Sometimes the legend doesn't appear within the `jupyter` environment.
+Try the following so that it is displayed:
+
+~~~~
+f,a = plt.subplots()
+a.plot(x,y, label='y')
+handles, labels = a.get_legend_handles_labels()
+a.legend(handles, labels)
+~~~~
+
+If you wish to place the legend outside the plot, call with this options:
+
+~~~~
+plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
+~~~~
+
 ## Pixel plot
 
 Make a grid pixel plot
