@@ -21,7 +21,4 @@ of the PDF that is associated with the current value of the index category. Exte
 fitting is supported if all components support extended likelihood mode. The expected number of
 events by a RooSimultaneous is that of the component p.d.f. selected by the index category 
 
-## References
 
-- http://roofit.sourceforge.net/
-- https://root.cern.ch/doc/v608/group__Roofitcore.html
