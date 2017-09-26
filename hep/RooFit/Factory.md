@@ -34,10 +34,11 @@ x[5]        // Create initially constant variable
 
 ### Functions or PDF objects
 
+Syntax: 
+
 ~~~~
 ClassName::Objectname(arg1,[arg2],...)
 ~~~~
-
 
 Note:
 - Leading ‘Roo’ in class name can be omitted

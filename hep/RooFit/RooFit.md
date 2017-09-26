@@ -2,6 +2,15 @@
 
 ## Basic classes
 
+
+### `RooRealVar`
+
+RooFit variables
+
+### `RooAbsReal`
+
+RooFit functions
+
 ### `RooAbsPdf`
 
 `RooAbsPdf` is the abstract interface for all probability density functions. The class provides
