@@ -32,5 +32,3 @@ parser.add_argument("key",    help="key")
 parser.add_argument('-c', '--complib', dest='complib', help="Compression library used")
 parser.add_argument('-f', '--format',  dest='format',   help="Format pytables: table or fixed.")
 ~~~~
-
-
