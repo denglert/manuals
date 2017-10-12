@@ -317,8 +317,21 @@ Disable the highlighting:
 :nohlsearch
 ~~~~
 
-## Substitution
+## Delete lines containing a pattern
 
+http://vim.wikia.com/wiki/Delete_all_lines_containing_a_pattern
+
+~~~~
+:g/<pattern>/d
+~~~~
+
+E.g.:
+
+~~~~
+:g/figure/d
+~~~~
+
+## Substitution
 
 ~~~~
 :s/old/new/g       // changes all old to new in the current line
