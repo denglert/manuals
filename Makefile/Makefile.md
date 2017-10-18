@@ -56,7 +56,7 @@ variable2 = value2
         If the target name in an explicit rule does not end with a recognized suffix, `$*` is set to the empty string for that rule. 
 
 
-[A more compact explanation](autovar2):
+[A more compact explanation][autovar2]:
 
 - `$@`: full target name of the current target
 - `$?`: returns the dependencies that are newer than the current target
