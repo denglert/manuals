@@ -4,6 +4,7 @@
 
 - http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/
 - https://www.gnu.org/software/make/manual/make.html
+- http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/
 
 ## Variables
 
@@ -12,23 +13,21 @@ variable1 = value1
 variable2 = value2
 ~~~~
 
-### Variable manipulation
+### Special variables
 
-#### Substitution refrences
+- `.VARIABLES`
 
-For each word in 'name' replace 'string1' with 'string2'.
+- `VPATH`:
+    This is where Makefile tries to look for src files.
+    
+    Example:
+    ~~~~
+    VPATH = ./src ./rambo ./DHELAS ./alpha_QCD ./CTEQ5
+    ~~~~
 
-~~~~
-$(var:pattern=replacement)
-~~~~
+VPATH = src:rambo:DHELAS:alpha_QCD:CTEQ5
 
-**Example:**
 
-Replace the suffix `.c` of all words in the macro `SRCS` with the `.o` suffix.
-
-~~~~
-OBJS = $(SRCS:.c=.o)
-~~~~
 
 ### Automatic variables
 
@@ -88,11 +87,30 @@ OBJS = $(SRCS:.c=.o)
 
 [A more compact explanation][autovar2]:
 
-- `$@`: full target name of the current target
-- `$?`: returns the dependencies that are newer than the current target
-- `$*`: returns the text that corresponds to % in the target
-- `$<`: name of the first dependency
-- `$^`: name of all the dependencies with space as the delimiter
+- `$@`: Full target name of the current target
+- `$?`: Returns the dependencies that are newer than the current target
+- `$*`: Returns the text that corresponds to % in the target
+- `$<`: First item in the dependencies list
+- `$^`: Name of all the dependencies with space as the delimiter
+
+
+### Variable manipulation
+
+#### Substitution refrences
+
+For each word in 'name' replace 'string1' with 'string2'.
+
+~~~~
+$(var:pattern=replacement)
+~~~~
+
+**Example:**
+
+Replace the suffix `.c` of all words in the macro `SRCS` with the `.o` suffix.
+
+~~~~
+OBJS = $(SRCS:.c=.o)
+~~~~
 
 ## Rule syntax
 
@@ -111,45 +129,41 @@ targets : prerequisites
 
 ## Tricks
 
-### Run a shell command, and the pass the result to a Makefile variable:
+
+### Automatic dependency generation
+
+See:
+- http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/
+
+[Example makefile](./examples/auto_dependency_gen.make)
 
 
-~~~~
-VAR_RUN = $(shell echo '$(.VARIABLES)' | awk -v RS=' ' '/run_/' | sed 's/run_//g' )
-~~~~
+### Extract list of variables with starting with a specific string
 
-
-## Pitfalls
- 
-
-### Symptom: `make` doesn't build all binaries.
-
-Make sure `all` comes first, so it should be
+**Example:**
 
 ~~~~
-all :  ../bin/runFitCrossCheckForLimits ../bin/getCLsLimit
+form_dat_job_tag = Hybrid_mH_eq_mHc_500_mA_150-400_8bins_pert_8pi
+form_dat_out_tag = output_form_dat_mA_$(form_dat_mA)
 
-### --- Binary --- ###
-../bin/runFitCrossCheckForLimits: $(OBJ_FitCrossCheckForLimits)
-   $(CC) $^ $(CLFLAGS) -o $@
+VAR_FORM_DAT    := $(shell echo '$(.VARIABLES)' |  awk -v RS=' ' '/form_dat/')
+EXPORT_FORM_DAT := $(foreach v,$(VAR_FORM_DAT),$(v)='$($(v))')
 
-   ../bin/getCLsLimit: $(OBJ_getCLsLimit)
-      $(CC) $^ $(CLFLAGS) -o $@
-
+format_data : 
+	@cd output/$(form_dat_job_tag); $(EXPORT_FORM_DAT) ../../awk/format_data.sh; echo $(EXPORT_FORM_DAT) | tr " " "\n" | awk 'NF > 0' | sort > $(form_dat_out_tag).config
 ~~~~
 
-NOT:
+
+### Using wildcards
 
 ~~~~
-### --- Binary --- ###
-../bin/runFitCrossCheckForLimits: $(OBJ_FitCrossCheckForLimits)
-   $(CC) $^ $(CLFLAGS) -o $@
+srcs := $(wildcard src/*.tex)
 
-../bin/getCLsLimit: $(OBJ_getCLsLimit)
-    $(CC) $^ $(CLFLAGS) -o $@
-
-all :  ../bin/runFitCrossCheckForLimits ../bin/getCLsLimit
+%.pdf : %.tex $(srcs)
+	pdflatex $(INTER) $<
+	bibtex note
 ~~~~
+
 
 [autovar1]: https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html 
 [autovar2]: http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/
