@@ -44,16 +44,16 @@ variable2 = value2
         target is dir/a.foo.b and the target pattern is a.%.b then the stem is dir/foo. The stem
         is useful for constructing names of related files.
 
-        In a static pattern rule, the stem is part of the file name that matched the `%` in the target pattern.
-
-        In an explicit rule, there is no stem; so `$*` cannot be determined in that way.
-        Instead, if the target name ends with a recognized suffix (see Old-Fashioned Suffix
-        Rules), `$*` is set to the target name minus the suffix. For example, if the target name
-        is ‘foo.c’, then `$*` is set to ‘foo’, since ‘.c’ is a suffix. GNU make does this bizarre
-        thing only for compatibility with other implementations of make. You should generally
-        avoid using `$*` except in implicit rules or static pattern rules.
-        
-        If the target name in an explicit rule does not end with a recognized suffix, `$*` is set to the empty string for that rule. 
+    In a static pattern rule, the stem is part of the file name that matched the `%` in the target pattern.
+    
+    In an explicit rule, there is no stem; so `$*` cannot be determined in that way.
+    Instead, if the target name ends with a recognized suffix (see Old-Fashioned Suffix
+    Rules), `$*` is set to the target name minus the suffix. For example, if the target name
+    is ‘foo.c’, then `$*` is set to ‘foo’, since ‘.c’ is a suffix. GNU make does this bizarre
+    thing only for compatibility with other implementations of make. You should generally
+    avoid using `$*` except in implicit rules or static pattern rules.
+    
+    If the target name in an explicit rule does not end with a recognized suffix, `$*` is set to the empty string for that rule. 
 
 
 [A more compact explanation][autovar2]:
