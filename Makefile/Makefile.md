@@ -40,9 +40,10 @@ variable2 = value2
 
 - `$|`: The names of all the order-only prerequisites, with spaces between them.
 
-- `$*`: The stem with which an implicit rule matches (see How Patterns Match). If the
-        target is dir/a.foo.b and the target pattern is a.%.b then the stem is dir/foo. The stem
-        is useful for constructing names of related files.
+- `$*`:
+    The stem with which an implicit rule matches (see How Patterns Match). If the
+    target is dir/a.foo.b and the target pattern is a.%.b then the stem is dir/foo. The stem
+    is useful for constructing names of related files.
 
     In a static pattern rule, the stem is part of the file name that matched the `%` in the target pattern.
     
