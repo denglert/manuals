@@ -10,7 +10,7 @@ variable2 = value2
 
 ## Automatic variables
 
-[From the official manual](autovar1):
+[From the official manual][autovar1]:
 
 - `$@`: The file name of the target of the rule. If the target is an archive member, then
         `$@` is the name of the archive file. In a pattern rule that has multiple targets (see
