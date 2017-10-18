@@ -1,5 +1,9 @@
 # `Makefile` manuals
 
+## References
+
+- http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/
+- https://www.gnu.org/software/make/manual/make.html
 
 ## Variables
 
@@ -8,37 +12,62 @@ variable1 = value1
 variable2 = value2
 ~~~~
 
-## Automatic variables
+### Variable manipulation
+
+#### Substitution refrences
+
+For each word in 'name' replace 'string1' with 'string2'.
+
+~~~~
+$(var:pattern=replacement)
+~~~~
+
+**Example:**
+
+Replace the suffix `.c` of all words in the macro `SRCS` with the `.o` suffix.
+
+~~~~
+OBJS = $(SRCS:.c=.o)
+~~~~
+
+### Automatic variables
 
 [From the official manual][autovar1]:
 
-- `$@`: The file name of the target of the rule. If the target is an archive member, then
-        `$@` is the name of the archive file. In a pattern rule that has multiple targets (see
-        Introduction to Pattern Rules), `$@` is the name of whichever target caused the rule’s
-        recipe to be run.
+- `$@`:
+    The file name of the target of the rule. If the target is an archive member, then
+    `$@` is the name of the archive file. In a pattern rule that has multiple targets (see
+    Introduction to Pattern Rules), `$@` is the name of whichever target caused the rule’s
+    recipe to be run.
 
-- `$%`: The target member name, when the target is an archive member. See Archives. For
-        example, if the target is foo.a(bar.o) then `$%` is bar.o and `$@` is foo.a. `$%` is empty
-        when the target is not an archive member.
+- `$%`:
+    The target member name, when the target is an archive member. See Archives. For
+    example, if the target is foo.a(bar.o) then `$%` is bar.o and `$@` is foo.a. `$%` is empty
+    when the target is not an archive member.
 
-- `$<`: The name of the first prerequisite. If the target got its recipe from an implicit
-        rule, this will be the first prerequisite added by the implicit rule (see Implicit Rules).
+- `$<`:
+    The name of the first prerequisite. If the target got its recipe from an implicit
+    rule, this will be the first prerequisite added by the implicit rule (see Implicit Rules).
 
-- `$?`: The names of all the prerequisites that are newer than the target, with spaces
-        between them. For prerequisites which are archive members, only the named member is used.
+- `$?`:
+    The names of all the prerequisites that are newer than the target, with spaces
+    between them. For prerequisites which are archive members, only the named member is used.
 
-- `$^`: The names of all the prerequisites, with spaces between them. For prerequisites
-        which are archive members, only the named member is used. A target has only
-        one prerequisite on each other file it depends on, no matter how many times each file is
-        listed as a prerequisite. So if you list a prerequisite more than once for a target, the
-        value of `$^` contains just one copy of the name. This list does not contain any of the
-        order-only prerequisites; for those see the `$|` variable, below.
+- `$^`:
+    The names of all the prerequisites, with spaces between them. For prerequisites
+    which are archive members, only the named member is used. A target has only
+    one prerequisite on each other file it depends on, no matter how many times each file is
+    listed as a prerequisite. So if you list a prerequisite more than once for a target, the
+    value of `$^` contains just one copy of the name. This list does not contain any of the
+    order-only prerequisites; for those see the `$|` variable, below.
 
-- `$+`: This is like `$^`, but prerequisites listed more than once are duplicated in the
-        order they were listed in the makefile. This is primarily useful for use in linking
-        commands where it is meaningful to repeat library file names in a particular order.
+- `$+`:
+    This is like `$^`, but prerequisites listed more than once are duplicated in the
+    order they were listed in the makefile. This is primarily useful for use in linking
+    commands where it is meaningful to repeat library file names in a particular order.
 
-- `$|`: The names of all the order-only prerequisites, with spaces between them.
+- `$|`:
+    The names of all the order-only prerequisites, with spaces between them.
 
 - `$*`:
     The stem with which an implicit rule matches (see How Patterns Match). If the
@@ -72,6 +101,12 @@ targets : prerequisites
         recipe
         ...
 ~~~
+
+## Functions
+
+### Functions for String Substitution and Analysis
+
+#### `$(patsubst pattern,replacement,text)`
 
 
 ## Tricks
