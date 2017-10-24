@@ -242,6 +242,10 @@ There are two types of tags:
 - lightweight
 - annotated
 
+Note:
+- By default, the git push command doesn’t transfer tags to remote servers. You will have to
+explicitly push tags to a shared server after you have created them.
+
 ### List available tags
 
 **List tags:**
@@ -311,6 +315,25 @@ Warning: This will make the repo into a HEADLESS state!
 
 ~~~~
 git checkout tags/<tag-name>
+~~~~
+
+### Sharing tags
+
+To push tags to a shared server after you have created them:
+
+~~~~
+git push origin <tag-name>
+~~~~
+
+Example:
+~~~~
+git push origin v1.5
+~~~~
+
+To push all tags to the remote repository:
+
+~~~~
+git push origin --tags
 ~~~~
 
 ## Syncing a fork
