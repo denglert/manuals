@@ -154,6 +154,18 @@ git difftool <commit1> <commit2>
 
 ## Checkout
 
+**Check out a commit by a specific date:**
+
+~~~~
+git checkout 'master@{1979-02-26 18:30:00}'
+~~~~
+
+**Check out a commit made some time ago:**
+
+~~~~
+git checkout master@{1 month 2 weeks 3 days 1 hour 1 second ago}
+~~~~
+
 **Undo to last commit, getting rid of all changes since the last commit for octocat.txt:**
 
 ~~~~
@@ -170,6 +182,12 @@ git checkout 'master@{7 days ago}' -- path/to/file.txt
 
 ~~~~
 wget <github.url>
+~~~~
+
+Going back to `master` branch:
+
+~~~~
+git checkout master
 ~~~~
 
 ## Branches
