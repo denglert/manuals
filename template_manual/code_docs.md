@@ -12,4 +12,6 @@
 
 ## Program flow
 
+## Functions
+
 ## Pending questions
