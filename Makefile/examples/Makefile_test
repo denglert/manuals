@@ -1,0 +1,30 @@
+all :
+
+string = "Cheesus   Christ is in Heaven now toplel.cpp mouse.cpp miau.o vau.f"
+
+echo :
+	@echo "$(string)"
+
+subst_test :
+	@echo "$(subst Cheesus,Jesus,$(string))"
+
+patsubst_test :
+	@echo "$(patsubst %.cpp,%.c,$(string))"
+	@echo "$(string:%.cpp=%.c)"
+
+strip_test :
+	@echo "$(strip $(string))"
+
+findstring_test :
+	@echo "$(findstring Che,$(string))"
+	@echo "$(findstring Lambda,$(string))"
+	@echo "$(findstring Christ,$(string))"
+
+filter_test :
+	@echo "$(filter %.cpp,$(string))"
+
+filter-out_test :
+	@echo "$(filter-out %.cpp,$(string))"
+
+sort :
+	@echo "$(sort $(string))"
