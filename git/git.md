@@ -14,6 +14,11 @@ git init
 git status
 ~~~~
 
+**Checking log:**
+
+~~~~
+git log
+~~~~
 
 ## Log
 
