@@ -14,22 +14,11 @@ git init
 git status
 ~~~~
 
-**Check log:**
-
-Docs:
-http://schacon.github.io/git/git-log.html
-
-~~~~
-git log
-~~~~
-
-Get the info about the latest commit in a specific format:
-
-~~~~
-git log -1 --format=%H\ -\ %cd
-~~~~
 
 ## Log
+
+More detailed docs:
+http://schacon.github.io/git/git-log.html
 
 Check the log history of the repo:
 
@@ -37,8 +26,20 @@ Check the log history of the repo:
 git log
 ~~~~
 
+### Get the info about the latest commit in a specific format
+
+#### Commit checksum
+
 ~~~~
+git log -1 --format=%H
 ~~~~
+
+#### Commit checksum and time stamp
+
+~~~~
+git log -1 --format=%H\ -\ %cd
+~~~~
+
 
 ## Configuration
 
