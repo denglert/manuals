@@ -7,18 +7,34 @@ Search in bash
 CTRL+R
 ~~~~
 
-## Syntax
+## Variables
+
+**Assignment:**
+
+~~~~
+a="hello"
+~~~~
 
 **Return value of a variable:**
+
+~~~~
 ${a}
-
-**String concatenation:**
-
-~~~~
-${string1}${string2}
 ~~~~
 
-# Shell special variables
+**Replace string in the value of variable:**
+
+~~~~
+${var//old/new}
+~~~~
+
+**String concatenatation:**
+
+~~~~
+concatenated=${string1}${string2}
+~~~~
+
+
+## Shell special variables
 
 - `$0`: the filename of the current script
 - `$#`: the number of arguments supplied to a script
