@@ -7,7 +7,6 @@
 - [compression]
 - [document_manipulation]
 - [environment]
-- [file_op]
 - [file_io]
 - [filesystem]
 - [job-handling]
