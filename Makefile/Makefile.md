@@ -13,6 +13,13 @@ variable1 = value1
 variable2 = value2
 ~~~~
 
+**Get the basename of a file:**
+
+~~~~
+${PIDconfigfile##*/}
+~~~~
+
+
 ### Special variables
 
 - `.VARIABLES`
