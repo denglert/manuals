@@ -30,3 +30,9 @@ List all active connections:
 ~~~~
 netstat -tulpn
 ~~~~
+
+Add a jupyter kernel by hand:
+
+~~~~
+python -m ipykernel install --user --name environment_name --display-name "Python (environment_name)"
+~~~~
