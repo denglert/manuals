@@ -12,12 +12,12 @@
 
 ### Anchors:
 
-|  Symbol |        Meaning        |
-| ------- | --------------------- |
-| `\b`    | Word Boundary         |
-| `\B`    | Not a Word Boundary   |
-| `^`     | Beginning of a String |
-| `$`     | End of a String       |
+|  PCRE   |   `vim`   |        Meaning        |
+| ------- |---------- | --------------------- |
+| `\b`    | `\<` `\>` | Word Boundary         |
+| `\B`    |     ?     | Not a Word Boundary   |
+| `^`     |     ?     | Beginning of a String |
+| `$`     |     ?     | End of a String       |
 
 
 | Symbol  |              Meaning               |
