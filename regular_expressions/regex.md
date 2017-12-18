@@ -12,29 +12,29 @@
 
 ### Anchors:
 
-|  Symbol | Meaning |
-| ---- | ------------- |
-| `\b` | Word Boundary |
-| `\B` | Not a Word Boundary |
-| `^`  | Beginning of a String |
-| `$`  | End of a String |
+|  Symbol |        Meaning        |
+| ------- | --------------------- |
+| `\b`    | Word Boundary         |
+| `\B`    | Not a Word Boundary   |
+| `^`     | Beginning of a String |
+| `$`     | End of a String       |
 
 
-| -       | Meaning |
-| ------- | ------------------------------- |
-| `[]`    | Matches Characters in brackets |
+| Symbol  |              Meaning               |
+| ------- | ---------------------------------- |
+| `[]`    | Matches Characters in brackets     |
 | `[^ ]`  | Matches Characters NOT in brackets |
-| `|`     | Either Or |
-| `( )`   | Group |
+| `|`     | Either Or                          |
+| `( )`   | Group                              |
 
 ### Quantifiers:
 
-|  Symbol | Meaning |
-| ------- | ---------- |
-| `*`     | 0 or More |
-| `+`     | 1 or More |
-| `?`     | 0 or One |
-| `{3}`   | Exact Number |
+|  Symbol |                Meaning              |
+| ------- | ----------------------------------- |
+| `*`     | 0 or More                           |
+| `+`     | 1 or More                           |
+| `?`     | 0 or One                            |
+| `{3}`   | Exact Number                        |
 | `{3,4}` | Range of Numbers (Minimum, Maximum) |
 
 
