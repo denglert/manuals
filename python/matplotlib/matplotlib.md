@@ -1,6 +1,5 @@
 # Matplotlib commands
 
-
 ## Basics
 
 Import matplotlib
@@ -28,82 +27,6 @@ Save figure
 
 ~~~~
 plt.savefig( 'fig.pdf' )
-~~~~
-
-## Global style configuration
-
-**Print available styles:**
-
-~~~~
-print(plt.style.available)
-~~~~
-
-E.g. select ggplot:
-
-~~~~
-plt.style.use('ggplot')
-~~~~
-
-You can also load in a style configurations file.
-
-Contents of default.mplstyle:
-
-~~~~
-axes.titlesize : 24
-axes.labelsize : 20
-lines.linewidth : 3
-lines.markersize : 10
-xtick.labelsize : 16
-ytick.labelsize : 16
-~~~~
-
-Load in style sheet:
-
-~~~~
-plt.style.use('default.mplstyle')
-~~~~
-
-**Reset to default:**
-
-~~~~
-import matplotlib as mpl
-mpl.rcParams.update(mpl.rcParamsDefault)
-~~~~
-
-or for inline this might help too:
-
-~~~~
-inline_rc = dict(mpl.rcParams)
-mpl.rcParams.update(inline_rc)
-~~~~
-
-## Heat map
-
-
-### With `pcolor`
-
-~~~~
-cba = np.linspace(-1.0,  1.0, 100, endpoint=True)
-tb  = np.linspace(0.0,  10.0, 100, endpoint=True)
-
-X, Y = np.meshgrid(cba,tb)
-K_HDD = k_hdd(X,Y)
-
-f, a = plt.subplots()
-c = a.pcolor(X, Y, K_HUU, cmap='RdBu_r', vmin=-2.0, vmax=2.0 )
-~~~~
-
-## Contour plot
-
-Example for a simple contour plot:
-
-~~~~
-k_hdd = lambda cba, tb: np.sqrt(1.0-cba*cba) - cba * tb
-cba   = np.linspace(-1.0, 1.0, 100, endpoint=True)
-tb    = np.linspace(0.0, 30.0, 100, endpoint=True)
-X, Y  = np.meshgrid(cba,tb)
-Z     = k_hdd(X,Y)
-c = plt.contourf(X,Y,Z, 10,  cmap='RdBu_r',  extend='both')
 ~~~~
 
 ## Axis options
@@ -150,27 +73,6 @@ If you wish to place the legend outside the plot, call with this options:
 plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
 ~~~~
 
-## Pixel plot
-
-Make a grid pixel plot
-
-~~~~
-grid = np.array([
-        [1,2,3],
-        [4,5,6],
-        [7,8,9]
-        ])
-
-plt.imshow(grid,  interpolation='nearest', cmap='gnuplot' )
-~~~~
-
-
-Make a grid pixel plot, with specifying extent (didn't really managed to make it work so far)
-
-~~~~
-plt.imshow(grid, extent=[-0.65, 0.65, 0, 20.5], interpolation='nearest', cmap='gnuplot' )
-~~~~
-
 ## Subplots
 
 **Make a 3x2 grid of subfplots:**
@@ -178,9 +80,20 @@ plt.imshow(grid, extent=[-0.65, 0.65, 0, 20.5], interpolation='nearest', cmap='g
 ~~~~
 fig, ax = plt.subplots(ncols=3, nrows=2)
 fig.set_size_inches(10,10)
-plt.subplots_adjust(wspace=0.2, hspace=0.2)
 ~~~~
 
+### Adjusting subplot size and spacing between subplots
+
+~~~~
+f, a = plt.subplots(nrows=3, ncols=2)
+f.tight_layout()
+~~~~
+
+or 
+
+~~~~
+f.subplots_adjust(wspace=0.2, hspace=0.2)
+~~~~
 
 ## Colorbar
 
