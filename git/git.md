@@ -393,6 +393,12 @@ git merge upstream/master
 ## Submodules
 
 
+### Downloading a repository including its submodules
+
+~~~~
+git clone --recursive <url>
+~~~~
+
 ### Add a specific version of a package to your repo
 
 1. Add the submodule to your repo:
