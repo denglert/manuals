@@ -82,6 +82,11 @@ git reset octodog.txt
 git commit -m "Add cute octocat story"
 ~~~~
 
+**Amend a commit:**
+~~~~
+git commit --amend
+~~~~
+
 ## Repositiories
 
 **Add remote repository named 'origin':**
