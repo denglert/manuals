@@ -404,6 +404,13 @@ git merge upstream/master
 git clone --recursive <url>
 ~~~~
 
+If you already cloned the repo but forgot `--recursive`, you can still fetch the submodules after
+the fact with:
+
+~~~~
+git submodule update --init
+~~~~
+
 ### Add a specific version of a package to your repo
 
 1. Add the submodule to your repo:
@@ -426,6 +433,8 @@ cd ..
 git add <pkg> .gitmodules
 git commit -m "Added `<pkg>` with tag/commit."
 ~~~~
+
+
 
 
 ### Update a submodule to the version of the latest commit
