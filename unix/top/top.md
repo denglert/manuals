@@ -15,7 +15,8 @@ top -H
 Note: You might need a recent version of `top` for this to work.
 
 1. press `o`
-2. ~~~~
+2. Create a new filter:
+   ~~~~
    COMMAND=python
    ~~~~
 
