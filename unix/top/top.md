@@ -12,6 +12,8 @@ top -H
 
 **Filtering**
 
+Note: You might need a recent version of `top` for this to work.
+
 ~~~~
 press 'o'
 COMMAND=python
