@@ -14,7 +14,10 @@ top -H
 
 Note: You might need a recent version of `top` for this to work.
 
-~~~~
-press 'o'
-COMMAND=python
-~~~~
+1. press `o`
+2. ~~~~
+   COMMAND=python
+   ~~~~
+
+To clear all filters:
+press `=`
