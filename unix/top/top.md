@@ -2,13 +2,18 @@
 
 ## Flags
 
-
-
 **Also display threads**
 
 ~~~~
 top -H 
 ~~~~
+
+**Watch processes of a specific user:**
+
+~~~~
+top -u <user>
+~~~~
+
 
 ## Filtering
 
@@ -27,11 +32,10 @@ Live filtering:
 To clear all filters:
 press `=`
 
-~~~~
-top -u <user>
-~~~~
+**Watch processes of a specific user:**
 
-or press `u` then type the username while running `top`
+1. Press `u`
+2. Type the username, then enter
 
 ## Older versions of top 
 
