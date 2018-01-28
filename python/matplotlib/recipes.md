@@ -53,6 +53,10 @@ c = plt.contourf(X,Y,Z, 10,  cmap='RdBu_r',  extend='both')
 
 #### `matplotlib.mlab.griddata()` 
 
+Reference:
+- https://matplotlib.org/examples/pylab_examples/griddata_demo.html
+- https://stackoverflow.com/questions/20456961/contour-plot-in-python-importing-txt-table-file
+
 ~~~~
 import matplotlib.pyplot as plt
 from matplotlib.mlab import griddata
