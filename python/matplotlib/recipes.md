@@ -32,6 +32,8 @@ c = a.pcolor(X, Y, K_HUU, cmap='RdBu_r', vmin=-2.0, vmax=2.0 )
 
 ## Contour plot
 
+Reference:
+- https://matplotlib.org/examples/pylab_examples/contour_demo.html
 
 ### `z=f(x,y)` function
 
@@ -68,6 +70,12 @@ if gaussian_filter_sigma is not None:
 zi = griddata(x, y, z, xi, yi, interp='linear')
 cs = plt.contour(xi, yi, zi)
 ~~~~
+
+
+## Contourf plot
+
+Reference:
+- https://matplotlib.org/gallery/images_contours_and_fields/contourf_demo.html?highlight=contourf
 
 ## Pixel plot
 
