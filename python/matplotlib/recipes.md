@@ -13,6 +13,7 @@ plt.scatter(x, y, s=area, c=colors, alpha=0.5)
 plt.show()
 ~~~~
 
+
 ## Heat map
 
 ### With `pcolor`
@@ -31,6 +32,9 @@ c = a.pcolor(X, Y, K_HUU, cmap='RdBu_r', vmin=-2.0, vmax=2.0 )
 
 ## Contour plot
 
+
+### `z=f(x,y)` function
+
 Example for a simple contour plot:
 
 ~~~~
@@ -42,6 +46,28 @@ Z     = k_hdd(X,Y)
 c = plt.contourf(X,Y,Z, 10,  cmap='RdBu_r',  extend='both')
 ~~~~
 
+### From a `pandas.DataFrame()`
+
+
+#### `matplotlib.mlab.griddata()` 
+
+~~~~
+import matplotlib.pyplot as plt
+from matplotlib.mlab import griddata
+
+x, y, z = df[x_col], df[y_col], df[z_col]
+xmin, xmax = x.min(), x.max()
+ymin, ymax = y.min(), y.max()
+
+xi = np.linspace( xmin,  xmax, x_num, endpoint=True )
+yi = np.linspace( ymin,  ymax, y_num, endpoint=True )
+
+if gaussian_filter_sigma is not None:
+    z = gaussian_filter(z, gaussian_filter_sigma)
+
+zi = griddata(x, y, z, xi, yi, interp='linear')
+cs = plt.contour(xi, yi, zi)
+~~~~
 
 ## Pixel plot
 
