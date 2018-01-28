@@ -1,5 +1,18 @@
 # `matplotlib` plot recipes
 
+## Scatter plot
+
+~~~~
+N = 50
+x = np.random.rand(N)
+y = np.random.rand(N)
+colors = np.random.rand(N)
+area = np.pi * (15 * np.random.rand(N))**2  # 0 to 15 point radii
+
+plt.scatter(x, y, s=area, c=colors, alpha=0.5)
+plt.show()
+~~~~
+
 ## Heat map
 
 ### With `pcolor`
@@ -50,3 +63,4 @@ Make a grid pixel plot, with specifying extent (didn't really managed to make it
 ~~~~
 plt.imshow(grid, extent=[-0.65, 0.65, 0, 20.5], interpolation='nearest', cmap='gnuplot' )
 ~~~~
+
