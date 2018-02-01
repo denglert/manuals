@@ -1,8 +1,15 @@
 # `ROOT` tips and tricks
 
 
-## Iterate over objects in `TFile`
+## See contents of a .root file
 
+
+~~~~
+root -l <filename>
+_file0.ls()
+~~~~
+
+## Iterate over objects in `TFile`
 
 ~~~~
 TFile *f1 = TFile::Open("hsimple.root");
@@ -15,3 +22,4 @@ while ((key = (TKey*)next()))
     print(cl->GetName());
 }
 ~~~~
+
