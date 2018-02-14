@@ -27,3 +27,19 @@ crosssection_h = hv.DynamicMap(lambda y: img.sample(y=y if y else 0), streams=[p
 %%opts Image [tools=['hover'] invert_yaxis=False colorbar=True width=325 toolbar='above' xrotation=90]
 layout = ((img * vline * hline) << crosssection_v.redim(z=dict(range=(0,5))) <<  crosssection_h.redim(z=dict(range=(0,5))))
 ~~~~
+
+## `hv.Dataset`
+
+~~~~
+ds = hv.Dataset(df)
+
+
+p1 = all_ds.to(hv.Points, kdims=['cba', 'tb'], vdims=[], groupby=['mH_bin'])
+p2 = p1.map(lambda x: x.clone(kdims=['mH', 'mHc'], vdims=[]), [hv.Points])
+p3 = p1.map(lambda x: x.clone(kdims=['mH', 'Gamma_H'], vdims=[]), [hv.Points])
+br1 = p1.map(lambda x: x.clone(kdims=['br_H_tt', 'br_H_bb'], vdims=[]), [hv.Points])
+br2 = p1.map(lambda x: x.clone(kdims=['br_H_ZA', 'br_H_tautau'], vdims=[]), [hv.Points])
+br3 = p1.map(lambda x: x.clone(kdims=['br_H_ZA', 'br_H_AA'], vdims=[]), [hv.Points])
+
+(p1 + p2 + p3 + br1 + br2 + br3).cols(2)
+~~~~
