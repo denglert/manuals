@@ -54,4 +54,3 @@ curve  = curve.redim.label(Hertz='Frequency (Hz)')
 ~~~~
 p2 = p1.map(lambda x: x.clone(kdims=[('mA', 'mA [GeV]'), ('xs_ggFH_br_H_hh', 'σ(pp->H->hh) [pb]')], vdims=[]), [hv.Points])
 ~~~~
-
