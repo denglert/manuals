@@ -20,28 +20,6 @@ Write to a whitspace seperated datafile
 pd.read_csv( 'file.dat', sep=' ', index=False, float_format='%.3e', index=False)
 ~~~~
 
-## Concatenation
-
-~~~~
-dfiles = glob.glob(  './data/*.dat' )
-df_list = []
-
-for f in dfiles:
-    df_temp = pd.read_csv(f, delim_whitespace=True)
-    df_list.append( df_temp )
-
-df = pd.concat(df_list)
-~~~~
-
-## Merge
-
-### How to merge a list of dataframes
-
-~~~~
-import functools
-df = functools.reduce(lambda left,right: pd.merge(left,right,on=['shat', 'f', 'k_hzz', 'k_hqq'], how='inner'), dfs)
-
-~~~~
 ## Manipulating data
 
 **Rename columns:**
