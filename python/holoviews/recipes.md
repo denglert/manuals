@@ -43,3 +43,5 @@ br3 = p1.map(lambda x: x.clone(kdims=['br_H_ZA', 'br_H_AA'], vdims=[]), [hv.Poin
 
 (p1 + p2 + p3 + br1 + br2 + br3).cols(2)
 ~~~~
+
+
