@@ -58,3 +58,10 @@ for i, df_chunk in enumerate(reader):
 
 hdf_out.close()
 ~~~~
+
+
+## Drop all duplicates
+
+~~~~
+df = df.drop_duplicates(subset=['mh2', 'sina'], keep=False)
+~~~~
