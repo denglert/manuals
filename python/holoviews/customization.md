@@ -45,6 +45,14 @@ p1(style={'Points': dict(color='orange')}).relabel(label='95% CL upper limit fro
 
 ## Renaming labels
 
+**Dataset:**
+
+~~~~
+ds = ds.redim(mH=('mH', 'mH [GeV]'))
+~~~~
+
+**Curve, points:**
+
 ~~~~
 curve  = curve.redim.label(Hertz='Frequency (Hz)')
 ~~~~
