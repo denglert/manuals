@@ -1,9 +1,0 @@
-# Load in a package
-<<PackageName`
-
-#e.g.
-<<FeynArts`
-<<FeynCalc`
-
-# Look at folder
-FileNameJoin[{$UserBaseDirectory, "Applications"}]
