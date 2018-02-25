@@ -1,5 +1,21 @@
 # Mathematica basics
 
+## Algebraic manipulations
+
+`Simplfy` performs a sequence of algebraic and other transformations on expr and returns the
+simplest form it finds.
+
+~~~~
+Simplify[expr]
+~~~~
+
+
+**Collecting together terms involving the same powers of objects matching x:**
+
+~~~~
+Collect[expr,x]
+~~~~
+
 ## Differentiation
 
 
