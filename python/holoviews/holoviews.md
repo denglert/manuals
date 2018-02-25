@@ -80,6 +80,6 @@ al.name1
 **Save output**
 
 ~~~~
-hv.renderer('bokeh')
+renderer = hv.renderer('bokeh')
 renderer.save(layout, 'layout.html')
 ~~~~
