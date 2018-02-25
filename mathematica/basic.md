@@ -1,6 +1,6 @@
 # Mathematica basics
 
-## Algebraic manipulations
+## Algebra
 
 `Simplfy` performs a sequence of algebraic and other transformations on expr and returns the
 simplest form it finds.
@@ -16,15 +16,25 @@ Simplify[expr]
 Collect[expr,x]
 ~~~~
 
-## Differentiation
+### Solving equations
 
+#### Single equation
 
-Partial derivative of `f`, with respect to `x`:
+Solve an equation for x:
+
 ~~~~
-D[f,x]
+Solve[lhs==rhs,x]
 ~~~~
 
-## Complex numbers
+#### Set of equations
+
+Solve a set of simultaneous equations for x, y, ...:
+
+~~~~
+Solve[{lhs1==rhs1,lhs2==rhs2,…},{x,y,…}]
+~~~~
+
+### Complex numbers
 
 - http://reference.wolfram.com/language/tutorial/ExpressionsInvolvingComplexVariables.html
 
@@ -40,4 +50,20 @@ ComplexExpand[expr]
 Expandng `expr` assuming that the xi are complex:
 ~~~~
 ComplexExpand[expr,{x1,x2,…}]
+~~~~
+
+## Matrices
+
+Give a list of the eigenvalues of the square matrix m.
+~~~~
+Eigenvalues[m]
+~~~~
+
+## Calculus
+
+### Differentiation
+
+Partial derivative of `f`, with respect to `x`:
+~~~~
+D[f,x]
 ~~~~
