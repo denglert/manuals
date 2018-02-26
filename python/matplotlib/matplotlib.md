@@ -55,6 +55,7 @@ ax.set_xlim(0.0, 1.0)
 ax.set_ylim(0.0, 1.0)
 ~~~~
 
+
 ## Legend
 
 Sometimes the legend doesn't appear within the `jupyter` environment.
@@ -78,8 +79,22 @@ plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
 **Make a 3x2 grid of subfplots:**
 
 ~~~~
-fig, ax = plt.subplots(ncols=3, nrows=2)
+fig, axes = plt.subplots(ncols=3, nrows=2)
 fig.set_size_inches(10,10)
+~~~~
+
+**Specify the height ratio of the subplots:**
+
+~~~~
+f,(a1,a2) = plt.subplots(nrows=2, gridspec_kw={'height_ratios':[2, 1]})
+~~~~
+
+
+### Grid
+
+~~~~
+ax1 = plt.subplot2grid((6,1), (0,0), rowspan=5, colspan=1)
+ax2 = plt.subplot2grid((6,1), (5,0), rowspan=1, colspan=1, sharex=ax1)
 ~~~~
 
 ### Adjusting subplot size and spacing between subplots
@@ -112,4 +127,15 @@ sc    = a.scatter(x,y, c=z, cmap='Blues', rasterized=True, s=3, vmin=-5.0, vmax=
 cb    = plt.colorbar(sc, ticks=tick_lock)
 cb_ax = cb.ax
 cb_ax.set_ylabel('colorbar label') 
+~~~~
+
+## Multiple plots
+
+Plots with two different scales
+
+~~~~
+fig, ax1 = plt.subplots()
+ax1.plot(t, s1, 'b-')
+ax2 = ax1.twinx()
+ax2.plot(t, s2, 'r.')
 ~~~~

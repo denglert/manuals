@@ -76,3 +76,10 @@ import holoviews as hv
 al = hv.util.Aliases(name1='Long label', name2='Long label 2')
 al.name1
 ~~~~
+
+**Save output**
+
+~~~~
+renderer = hv.renderer('bokeh')
+renderer.save(layout, 'layout.html')
+~~~~
