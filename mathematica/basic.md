@@ -16,6 +16,32 @@ Simplify[expr]
 Collect[expr,x]
 ~~~~
 
+**Replacing subparts of an expression:**
+
+~~~~
+expr/.rules 
+~~~~
+
+~~~~
+ReplaceAll[rules]
+~~~~
+
+Example:
+
+~~~~
+{x, x^2, y, z} /. x -> 1
+~~~~
+
+or 
+
+~~~~
+MassMatrix = 
+ ReplaceAll[{m^2 -> -(1/2) Subscript[\[Lambda], 1] v^2 - 
+       1/2 Subscript[\[Lambda], 3]
+               x^2, \[Mu]^2 -> -(1/2) Subscript[\[Lambda], 2] x^2 - 
+                     1/2 Subscript[\[Lambda], 3] v^2}][MassMatrix]
+~~~~
+
 ### Solving equations
 
 #### Single equation
