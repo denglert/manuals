@@ -93,3 +93,27 @@ Partial derivative of `f`, with respect to `x`:
 ~~~~
 D[f,x]
 ~~~~
+
+## Numerical methods
+
+Generate a list of `expr` with `i` evaluated from `imin` to `imax` in steps of `di`:
+
+~~~~
+Table[expr,{i,imin,imax,di}]
+~~~~
+
+### Integration
+
+Numerical approximation to the integral:
+
+~~~~
+NIntegrate[f,{x,xmin,xmax}]
+~~~~
+
+### Exporting
+
+Exporting data to a file, converting it to the format corresponding to the file extension ext.:
+
+~~~~
+Export["file.ext",expr]
+~~~~
