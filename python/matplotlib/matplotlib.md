@@ -55,6 +55,15 @@ ax.set_xlim(0.0, 1.0)
 ax.set_ylim(0.0, 1.0)
 ~~~~
 
+**Plots with two different scales:**
+
+~~~~
+fig, ax1 = plt.subplots()
+ax1.plot(t, s1, 'b-')
+ax2 = ax1.twinx()
+ax2.plot(t, s2, 'r.')
+~~~~
+
 
 ## Legend
 
@@ -72,6 +81,32 @@ If you wish to place the legend outside the plot, call with this options:
 
 ~~~~
 plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
+~~~~
+
+**Location:**
+
+| Location string | Location code |
+| --------------- | ------------- |
+| 'best'          | 0 |
+| 'upper right'   | 1 |
+| 'upper left'    | 2 |
+| 'lower left'    | 3 |
+| 'lower right'   | 4 | 
+| 'right'         | 5 | 
+| 'center left'   | 6 | 
+| ...             | ... |
+
+
+Retrieve the legend from the axis:
+
+~~~~
+legend = a1.get_legend()
+~~~~
+
+then set its position:
+
+~~~~
+legend.set_bbox_to_anchor((1.0, 0.5))
 ~~~~
 
 ## Subplots
@@ -127,15 +162,4 @@ sc    = a.scatter(x,y, c=z, cmap='Blues', rasterized=True, s=3, vmin=-5.0, vmax=
 cb    = plt.colorbar(sc, ticks=tick_lock)
 cb_ax = cb.ax
 cb_ax.set_ylabel('colorbar label') 
-~~~~
-
-## Multiple plots
-
-Plots with two different scales
-
-~~~~
-fig, ax1 = plt.subplots()
-ax1.plot(t, s1, 'b-')
-ax2 = ax1.twinx()
-ax2.plot(t, s2, 'r.')
 ~~~~
