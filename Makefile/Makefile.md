@@ -6,6 +6,7 @@
 - https://www.gnu.org/software/make/manual/make.html
 - http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/
 
+
 ## Variables
 
 ~~~~
@@ -128,6 +129,18 @@ targets : prerequisites
 ~~~
 
 ## Functions
+
+### Custom functions
+
+~~~~
+define generate_file
+    sed 's/{NAME}/$(1)/' greetings.tmpl >$(2).txt
+endef
+
+all:
+    $(call generate_file,John Doe,101)
+    $(call generate_file,Peter Pan,102)
+~~~~
 
 ### Functions for String Substitution and Analysis
 
