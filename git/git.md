@@ -263,10 +263,22 @@ git merge <branch>
 git merge upstream/master
 ~~~~
 
-To stop the merge process where you've encounter conflicts:
+**To stop the merge process where you've encounter conflicts:**
 
 ~~~~
 git merge --abort
+~~~~
+
+**Keep their (e.g. remote) version of a file during merge:**
+
+~~~~
+git checkout --theirs /path/to/file
+~~~~
+
+**Keep our version of a file during merge:**
+
+~~~~
+git checkout --ours /path/to/file
 ~~~~
 
 ## Tags
