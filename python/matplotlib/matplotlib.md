@@ -124,6 +124,13 @@ fig.set_size_inches(10,10)
 f,(a1,a2) = plt.subplots(nrows=2, gridspec_kw={'height_ratios':[2, 1]})
 ~~~~
 
+## Spines
+
+**Set color of spines:**
+
+~~~~
+a.spines['left'].set_color('C0')
+~~~~
 
 ### Grid
 

@@ -37,13 +37,26 @@ df_sorted = df.sort_values(by=['mHc'], ascending=[False])
 ## Plotting
 
 ~~~~
-df.plot(x, y, kind='scatter')
+a = df.plot(x, y, kind='scatter')
 ~~~~
 
 or:
 
 ~~~~
-df.plot.scatter(x, y)
+a = df.plot.scatter(x, y)
+~~~~
+
+Legends:
+
+~~~~
+a = df.plot(label='price', legend=True)
+~~~~
+
+Rotate labels:
+
+
+~~~~
+a = df.plot(rot=45)
 ~~~~
 
 ## Read in chunks
@@ -99,6 +112,12 @@ object.:
 
 ~~~~
 DataFrame.set_index(keys, drop=True, append=False, inplace=False, verify_integrity=False)
+~~~~
+
+Get index values:
+
+~~~~
+df.index.levels
 ~~~~
 
 ### Multi-index DataFrames
