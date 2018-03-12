@@ -65,3 +65,75 @@ hdf_out.close()
 ~~~~
 df = df.drop_duplicates(subset=['mh2', 'sina'], keep=False)
 ~~~~
+
+## `.loc`
+
+From https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.loc.html:
+
+Purely label-location based indexer for selection by label.
+
+`DataFrame.loc`
+
+`.loc[]` is primarily label based, but may also be used with a boolean array.
+
+Allowed inputs are:
+
+- A single label, e.g. 5 or 'a', (note that 5 is interpreted as a label of the index, and never as an integer position along the index).
+- A list or array of labels, e.g. ['a', 'b', 'c'].
+- A slice object with labels, e.g. 'a':'f' (note that contrary to usual python slices, both the start and the stop are included!).
+- A boolean array.
+- A callable function with one argument (the calling Series, DataFrame or Panel) and that returns valid output for indexing (one of the above)
+
+.loc will raise a KeyError when the items are not found.
+
+## Index
+
+Get index names:
+
+~~~~
+df.index.names
+~~~~
+
+Set the DataFrame index (row labels) using one or more existing columns. By default yields a new
+object.:
+
+~~~~
+DataFrame.set_index(keys, drop=True, append=False, inplace=False, verify_integrity=False)
+~~~~
+
+### Multi-index DataFrames
+
+**References:**
+- https://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing
+- https://www.datacamp.com/community/tutorials/pandas-multi-index
+
+**Pitfalls:**
+- https://github.com/pandas-dev/pandas/issues/10440
+- https://github.com/pandas-dev/pandas/issues/18120
+
+Set the `DataFrame` index (row labels) using existing columns.
+Example:
+
+~~~~
+df.set_index(['ticker', 'Date'], inplace=True)
+~~~~
+
+#### Cross section
+
+Return a cross-section (row(s) or column(s)) from the Series/DataFrame. Defaults to cross-section on
+the rows (axis=0):
+~~~~
+DataFrame.xs(key, axis=0, level=None, drop_level=True)
+~~~~
+
+Example:
+
+~~~~
+df.xs('III.L', level='ticker')
+~~~~
+
+#### Assigning values
+
+~~~~
+df_main.loc['EZJ.L', 'RSI_SMA'] = a.values
+~~~~
