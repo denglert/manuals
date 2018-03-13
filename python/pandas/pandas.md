@@ -1,6 +1,5 @@
 # List of useful pandas commands
 
-
 ## Conversion
 
 ~~~~
@@ -32,31 +31,6 @@ df.rename(columns={'k_huu':'k_hdd', 'k_hdd':'k_huu'}, inplace=True)
 
 ~~~~
 df_sorted = df.sort_values(by=['mHc'], ascending=[False])
-~~~~
-
-## Plotting
-
-~~~~
-a = df.plot(x, y, kind='scatter')
-~~~~
-
-or:
-
-~~~~
-a = df.plot.scatter(x, y)
-~~~~
-
-Legends:
-
-~~~~
-a = df.plot(label='price', legend=True)
-~~~~
-
-Rotate labels:
-
-
-~~~~
-a = df.plot(rot=45)
 ~~~~
 
 ## Read in chunks

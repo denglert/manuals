@@ -29,6 +29,14 @@ Save figure
 plt.savefig( 'fig.pdf' )
 ~~~~
 
+## Figure options
+
+Create a figure with a specific size and dpi:
+
+~~~~
+plt.figure(figsize=(20,10), dpi=80)
+~~~~
+
 ## Axis options
 
 **Axis labels:**
