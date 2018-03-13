@@ -37,6 +37,21 @@ Create a figure with a specific size and dpi:
 plt.figure(figsize=(20,10), dpi=80)
 ~~~~
 
+
+### Margins
+
+Adjust margins:
+
+~~~~
+f.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
+~~~~
+
+Tight layout:
+
+~~~~
+f.tight_layout()
+~~~~
+
 ## Axis options
 
 **Axis labels:**
