@@ -54,14 +54,22 @@ f.tight_layout()
 
 ## Axis options
 
-**Axis labels:**
+### Axis label
+
+Setting labels:
 
 ~~~~
 ax.set_xlabel( r'$\cos(\beta - \alpha)$' )
 ax.set_ylabel( r'$\sigma$ [pb]' )
 ~~~~
 
-**Setting axis ticks and labels:**
+Color labels:
+
+~~~~
+ax.xaxis.label.set_color('red')
+~~~~
+
+### Setting axis ticks and labels
 
 ~~~~
 fix, ax = plt.subplots(nrows=1, ncols=1, sharex=True )
@@ -71,14 +79,14 @@ ax.set_yticks(      np.linspace(0, 1, 5) )
 ax.set_yticklabels( np.linspace(0, 1, 5) )
 ~~~~
 
-**Axis ranges:**
+### Axis ranges
 
 ~~~~
 ax.set_xlim(0.0, 1.0)
 ax.set_ylim(0.0, 1.0)
 ~~~~
 
-**Plots with two different scales:**
+### Plots with two different scales
 
 ~~~~
 fig, ax1 = plt.subplots()
