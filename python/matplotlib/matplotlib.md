@@ -98,6 +98,8 @@ ax2.plot(t, s2, 'r.')
 
 ## Legend
 
+**Associated notebook:** [customizing_legends.ipynb](./notebooks/customizing_legends.ipynb)
+
 Sometimes the legend doesn't appear within the `jupyter` environment.
 Try the following so that it is displayed:
 
@@ -117,15 +119,18 @@ plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
 **Location:**
 
 | Location string | Location code |
-| --------------- | ------------- |
-| 'best'          | 0 |
-| 'upper right'   | 1 |
-| 'upper left'    | 2 |
-| 'lower left'    | 3 |
-| 'lower right'   | 4 | 
-| 'right'         | 5 | 
-| 'center left'   | 6 | 
-| ...             | ... |
+| ------------ | --- |
+| best         |  0  |
+| upper right  |  1  |
+| upper left   |  2  |
+| lower left   |  3  |
+| lower right  |  4  |
+| right        |  5  |
+| center left  |  6  | 
+| center right |  7  |
+| lower center |  8  |
+| upper center |  9  | 
+| center       | 10  |
 
 
 Retrieve the legend from the axis:
