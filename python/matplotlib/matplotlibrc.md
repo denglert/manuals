@@ -1,5 +1,8 @@
 ## Global style configuration
 
+Template available at:
+https://github.com/matplotlib/matplotlib/blob/master/matplotlibrc.template
+
 **Print available styles:**
 
 ~~~~
