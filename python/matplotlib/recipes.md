@@ -1,5 +1,6 @@
 # `matplotlib` plot recipes
 
+
 ## Scatter plot
 
 ~~~~
@@ -12,6 +13,7 @@ area = np.pi * (15 * np.random.rand(N))**2  # 0 to 15 point radii
 plt.scatter(x, y, s=area, c=colors, alpha=0.5)
 plt.show()
 ~~~~
+
 
 
 ## Heat map
@@ -28,6 +30,7 @@ K_HDD = k_hdd(X,Y)
 f, a = plt.subplots()
 c = a.pcolor(X, Y, K_HUU, cmap='RdBu_r', vmin=-2.0, vmax=2.0 )
 ~~~~
+
 
 
 ## Contour plot
@@ -49,7 +52,6 @@ c = plt.contourf(X,Y,Z, 10,  cmap='RdBu_r',  extend='both')
 ~~~~
 
 ### From a `pandas.DataFrame()`
-
 
 #### `matplotlib.mlab.griddata()` 
 
@@ -81,6 +83,8 @@ cs = plt.contour(xi, yi, zi)
 Reference:
 - https://matplotlib.org/gallery/images_contours_and_fields/contourf_demo.html?highlight=contourf
 
+
+
 ## Pixel plot
 
 Make a grid pixel plot
@@ -102,3 +106,27 @@ Make a grid pixel plot, with specifying extent (didn't really managed to make it
 plt.imshow(grid, extent=[-0.65, 0.65, 0, 20.5], interpolation='nearest', cmap='gnuplot' )
 ~~~~
 
+
+
+## Errorbar plot
+
+Reference:
+- https://matplotlib.org/examples/statistics/errorbar_demo_features.html
+
+### Symmetric error bars
+
+~~~~
+x = np.arange(0.1, 4, 0.5)
+error = 0.1 + 0.2 * x
+a.errorbar(x, y, yerr=error, fmt='-o')
+~~~~
+
+### Asymmetric error bars
+
+~~~~
+f,a = plt.subplots()
+lower_error = 0.4 * error
+upper_error = error
+asymmetric_error = [lower_error, upper_error]
+a.errorbar(x, y, xerr=asymmetric_error, fmt='o')
+~~~~
