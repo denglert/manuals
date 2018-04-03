@@ -1,34 +1,34 @@
-# `svn` commands
+# `svn` manuals
 
-## Setup
-
-If your local username differs from your the svn host username, you might want
-to add the following to the svn config file at `~/.subversion/server`.
-
-~~~~
-[groups]
-<group-name> = <host-address>
-
-[group-name]
-username = <yourusername>
-~~~~
-
-Example:
-
-~~~~
-[groups]
-cern_svn = svn.cern.ch
-
-[cern_svn]
-username = user1234
-~~~~
-
-To specify your username on a one-off basis:
-
-~~~~
-svn co --username=<yourusername> ...
-~~~~
 
 ## References
 
-- http://stackoverflow.com/questions/405690/in-subversion-can-i-be-a-user-other-than-my-login-name
+- http://svnbook.red-bean.com
+
+
+## Basic
+
+### Update working copy
+
+`svn` update brings changes from the repository into your working copy. If no revision is given, it
+brings your working copy up to date with the HEAD revision. Otherwise, it synchronizes the working
+copy to the revision given by the --revision (-r) option. As part of the synchronization, svn update
+also removes any stale locks (see the section called “Sometimes You Just Need to Clean Up”) found in
+the working copy.
+
+~~~~
+svn update [PATH...]
+~~~~
+
+
+### Commit changes
+
+Send changes from your working copy to the repository.
+
+~~~~
+svn commit [PATH...]
+~~~~
+
+~~~~
+svn commit -m "commit message"
+~~~~
