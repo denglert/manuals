@@ -32,3 +32,16 @@ svn commit [PATH...]
 ~~~~
 svn commit -m "commit message"
 ~~~~
+
+
+### log
+
+~~~~
+svn log
+~~~~
+
+### Status
+
+~~~~
+svn status
+~~~~
