@@ -39,6 +39,8 @@ parser.add_argument('-f', '--format',  dest='format',   help="Format pytables: t
 
 ## Default value if not specified
 
+Example: [default_if_not_specified.py](examples/default_if_not_specified.py)
+
 Reference:
 - https://docs.python.org/3/library/argparse.html#nargs
 
