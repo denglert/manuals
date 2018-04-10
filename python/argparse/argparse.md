@@ -1,5 +1,9 @@
 # `argparse` manual
 
+## References
+
+- https://docs.python.org/3/library/argparse.html
+
 ## Examples
 
 - [minimal.py](./examples/minimal.py)
@@ -35,11 +39,23 @@ parser.add_argument('-f', '--format',  dest='format',   help="Format pytables: t
 
 ## Default value if not specified
 
+Reference:
+- https://docs.python.org/3/library/argparse.html#nargs
+
+
+## Options string is present but not followed by a command-line arguments (`const`)
+
 ~~~~
 parser.add_argument('--value', '-v', dest='target_value', nargs='?', const=1, type=int)
 ~~~~
 
-Options:
+where the options:
 - `nargs='?'` means 0 or 1 argument.
 - `const=1` default value if not specified.
 - `type=int` converts the argument to int.
+
+## No command-line argument is present, the value from default will be produced. (`default`)
+
+~~~~
+parser.add_argument("-p", "--port", dest="port", default=500, type=int, help="specify port")
+~~~~
