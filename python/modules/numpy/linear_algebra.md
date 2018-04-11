@@ -44,3 +44,13 @@ The boolean map can be converted to integers:
 ~~~~
 y = boolean_map*1
 ~~~~
+
+## Insert
+
+**Example:**
+
+Insert a vector of `1`s  in front of a matrix:
+
+~~~~
+M_new = np.insert(M, 0, 1, axis=1)
+~~~~
