@@ -38,6 +38,12 @@ plt.figure(figsize=(20,10), dpi=80)
 ~~~~
 
 
+Get the figure handle of an already existing figure:
+
+~~~~
+f = plt.gcf()
+~~~~
+
 ### Margins
 
 Adjust margins:
@@ -53,6 +59,12 @@ f.tight_layout()
 ~~~~
 
 ## Axis options
+
+Get the axis handle of an already existing axis:
+
+~~~~
+a = plt.gca()
+~~~~
 
 ### Axis label
 
@@ -106,7 +118,8 @@ ax2.plot(t, s2, 'r.')
 
 **Associated notebook:** [customizing_legends.ipynb](./notebooks/customizing_legends.ipynb)
 
-Sometimes the legend doesn't appear within the `jupyter` environment.
+### Bug: sometimes the legend doesn't appear within the `jupyter` environment.
+
 Try the following so that it is displayed:
 
 ~~~~
@@ -116,13 +129,16 @@ handles, labels = a.get_legend_handles_labels()
 a.legend(handles, labels)
 ~~~~
 
+### Location of the legend
+
+
 If you wish to place the legend outside the plot, call with this options:
 
 ~~~~
 plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
 ~~~~
 
-**Location:**
+**Other location strings:**
 
 | Location string | Location code |
 | ------------ | --- |
@@ -138,8 +154,7 @@ plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
 | upper center |  9  | 
 | center       | 10  |
 
-
-Retrieve the legend from the axis:
+### Retrieve the legend from the axis
 
 ~~~~
 legend = a1.get_legend()
@@ -149,6 +164,45 @@ then set its position:
 
 ~~~~
 legend.set_bbox_to_anchor((1.0, 0.5))
+~~~~
+
+### Custom legend markers
+
+A legend doesn't have to be associated to an existing curve - you can also create a legend yourself:
+
+~~~~
+import matplotlib.lines as mlines
+red_patch = mpatches.Patch(color='red', label='The red data')
+blue_line = mlines.Line2D([], [], color='blue', marker='*',
+                          markersize=15, label='Blue stars')
+legend_handles = [red_patch, blue_line]
+f,a = plt.subplots()
+leg = a.legend(handles=legend_handles)
+~~~~
+
+### Multiple legends on the same plot
+
+Reference:
+https://matplotlib.org/users/legend_guide.html#multiple-legends-on-the-same-axes
+
+~~~~
+legend1 = pyplot.legend([lines[i] for i in [0,1,2]], ["algo1", "algo2", "algo3"], loc=1)
+legend2 = pyplot.legend([lines[i] for i in [0,3,6]], parameters, loc=4)
+a.add_artist(legend1)
+a.add_artist(legend2)
+~~~~
+
+### Remove legends
+
+~~~~
+ax.legend_.remove()
+~~~~
+
+or 
+
+~~~~
+legend = ax.legend(...)
+legend.remove()
 ~~~~
 
 ## Subplots
