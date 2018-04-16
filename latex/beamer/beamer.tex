@@ -5,9 +5,24 @@
 
 ### `href`
 
-Colourful links:
+#### Settings
+
 ~~~~
 \hypersetup{colorlinks,linkcolor=,urlcolor=blue}
+~~~~
+
+#### Reference withing the document
+
+Create a link (source):
+
+~~~~
+\hyperlink{target_label}{\beamerbutton{References}
+~~~~
+
+and place the target with:
+
+~~~~
+\hypertarget<1>{target_label}{\beamerbutton{References}}
 ~~~~
 
 
@@ -26,3 +41,4 @@ Using the `todonotes`:
 
 \end{document}
 ~~~~
+
