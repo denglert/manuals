@@ -4,26 +4,33 @@
 - [customizing_legends.ipynb](./notebooks/customizing_legends.ipynb)
 - [figure_top_caption_box.ipynb](./notebooks/figure_top_caption_box.ipynb)
 
-**References:**
+**All references:**
 - https://stackoverflow.com/questions/29639973/custom-legend-in-pandas-bar-plot-matplotlib
 - https://matplotlib.org/users/legend_guide.html
 - https://stackoverflow.com/questions/47307315/circle-patch-as-matplotlib-legend-marker?noredirect=1&lq=1
 
-## Bug: sometimes the legend doesn't appear within the `jupyter` environment.
+## Legend options
 
-Try the following so that it is displayed:
+**Relevant reference:**
+- https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html
 
-~~~~
-f,a = plt.subplots()
-a.plot(x,y, label='y')
-handles, labels = a.get_legend_handles_labels()
-a.legend(handles, labels)
-~~~~
+**Options**
+- `handles`
+- `labels`
+- `loc`
+- `bbox_to_anchor`
+- `ncol`
+- `fontsize`
+- `fontsize`
+- `facecolor`
+- `frameon`
+- `labelspacing`
+- `columnspacing`
 
-## Location of the legend
+### Location of the legend
 
-
-If you wish to place the legend outside the plot, call with this options:
+Example:
+if you wish to place the legend outside the plot, call with this options:
 
 ~~~~
 plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
@@ -45,6 +52,12 @@ plt.legend(bbox_to_anchor=(1, 1), loc='upper left', ncol=1)
 | upper center |  9  | 
 | center       | 10  |
 
+
+`loc` also accepts a tuple position e.g:
+~~~~
+plt.legend(loc=(0.6, 0.8))
+~~~~
+
 ## Retrieve the legend from the axis
 
 ~~~~
@@ -58,6 +71,9 @@ legend.set_bbox_to_anchor((1.0, 0.5))
 ~~~~
 
 ## Custom legend markers
+
+**Associated notebook(s):**
+- [customizing_legends.ipynb](./notebooks/customizing_legends.ipynb)
 
 A legend doesn't have to be associated to an existing curve - you can also create a legend yourself:
 
@@ -83,7 +99,6 @@ a.add_artist(legend1)
 a.add_artist(legend2)
 ~~~~
 
-
 ## Remove legends
 
 ~~~~
@@ -102,6 +117,9 @@ legend.remove()
 **Associated notebook:**
 [figure_top_caption_box.ipynb](./notebooks/figure_top_caption_box.ipynb)
 
+Reference:
+- https://stackoverflow.com/questions/41469207/how-to-draw-rectangle-outside-of-the-plot-frame-in-matplotlib
+
 ~~~~
 f.subplots_adjust(top=0.8)
 caption_box = mpatches.Rectangle((0.0, 1.0), 1.0, 0.2, clip_on=False, transform=a.transAxes,
@@ -110,3 +128,15 @@ a.text(0.4, 1.09, 'This text is inside the top figure caption box', horizontalal
 transform=a.transAxes)
 a.add_artist(caption_box)
 ~~~~
+
+## Bug: sometimes the legend doesn't appear within the `jupyter` environment.
+
+Try the following so that it is displayed:
+
+~~~~
+f,a = plt.subplots()
+a.plot(x,y, label='y')
+handles, labels = a.get_legend_handles_labels()
+a.legend(handles, labels)
+~~~~
+
