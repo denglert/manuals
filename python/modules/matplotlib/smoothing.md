@@ -13,8 +13,9 @@ import matplotlib.pyplot as plt
 data = np.loadtxt('data.txt')
 
 # Resample your data grid by a factor of 3 using cubic spline interpolation.
-data = scipy.ndimage.zoom(data, 3)
 
+~~~~
+data = scipy.ndimage.zoom(data, 3)
 plt.contour(data)
 ~~~~
 
