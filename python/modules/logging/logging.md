@@ -1,5 +1,44 @@
 # `logging` module
 
+**References:**
+- https://docs.python.org/3/library/logging.html
+- https://docs.python.org/3/howto/logging.html#logging-basic-tutorial
+- Youtube tutorials:
+    - https://youtu.be/-ARI4Cz-awo
+    - https://youtu.be/jxmzY9soFXg
+
+
+## Basic example
+
+~~~~
+import logging
+logger = logging.getLogger(__name__)
+
+file_handler = logging.FileHandler(path_to_file)
+file_handler.setLevel(logging.WARNING)
+
+logger.add(file_handler)
+~~~~
+
+## Handlers
+
+
+`StreamHandler`:
+
+~~~~
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.INFO)
+~~~~
+
+`FileHandler`:
+
+~~~~
+file_handler = logging.FileHandler(path_to_file)
+file_handler.setLevel(logging.WARNING)
+~~~~
+
+## Logging levels
+
 - `DEBUG`: Detailed information, typically of interest only when diagnosing problems.
 - `INFO`: Confirmation that things are working as expected.
 - `WARNING`: An indication that something unexpected happened, or indicative of some problem in the
@@ -34,10 +73,3 @@ If you want to include the TraceBack use `.exception()`
 ~~~
 logger.exception('Something bad happened!')
 ~~~
-
-## Reference
-
-Corey Schafer:
-- https://youtu.be/-ARI4Cz-awo
-- https://youtu.be/jxmzY9soFXg
-
