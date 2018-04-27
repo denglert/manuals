@@ -18,3 +18,10 @@ Specify datetime:
 ~~~~
 time = datetime.datetime(year,month,day,hour,minute)
 ~~~~
+
+
+Get current datetime:
+
+~~~~
+time_now = datetime.datetime.now()
+~~~~
