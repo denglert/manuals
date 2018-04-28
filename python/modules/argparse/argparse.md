@@ -1,28 +1,35 @@
 # `argparse` manual
 
-## References
+**All references**
 
 - https://docs.python.org/3/library/argparse.html
+- https://stackoverflow.com/questions/11154946/require-either-of-two-arguments-using-argparse
+- https://stackoverflow.com/questions/7336181/python-pass-arguments-to-different-methods-from-argparse
 
 ## Examples
 
 - [minimal.py](./examples/minimal.py)
 - [pd_ascii_hdf5.py](./examples/pd_ascii_hdf5.py)
+- [default_if_not_specified](./examples/default_if_not_specified.py)
 
-## Create a parser
+## Basic
+
+Create a parser:
 
 ~~~~
 import argparse
 parser = argparse.ArgumentParser(description='Some text describing the program')
 ~~~~
 
-## Parse arguments
+Parse arguments
 
 ~~~~
 args = parser.parse_args()
 ~~~~
 
-## Positional arguments
+## Arguments
+
+### Positional arguments
 
 ~~~~
 parser.add_argument("input",  help="input file")
@@ -30,12 +37,24 @@ parser.add_argument("output", help="output file")
 parser.add_argument("key",    help="key")
 ~~~~
 
-## Optional flags
+### Optional arguments
 
 ~~~~
 parser.add_argument('-c', '--complib', dest='complib', help="Compression library used")
 parser.add_argument('-f', '--format',  dest='format',   help="Format pytables: table or fixed.")
 ~~~~
+
+### Mutually exclusive group of arguments
+
+Reference:
+- https://stackoverflow.com/questions/11154946/require-either-of-two-arguments-using-argparse
+
+~~~~
+group = parser.add_mutually_exclusive_group(required=True)
+group.add_argument('--foo',action=.....)
+group.add_argument('--bar',action=.....)
+~~~~
+
 
 ## Default value if not specified
 
@@ -56,8 +75,19 @@ where the options:
 - `const=1` default value if not specified.
 - `type=int` converts the argument to int.
 
-## No command-line argument is present, the value from default will be produced. (`default`)
+
+## No command-line argument is present, the value from default will be taken. (`default`)
 
 ~~~~
 parser.add_argument("-p", "--port", dest="port", default=500, type=int, help="specify port")
+~~~~
+
+
+## Passing to function
+
+- https://stackoverflow.com/questions/7336181/python-pass-arguments-to-different-methods-from-argparse
+
+~~~~
+args = parser.parse_args()
+some_other_function(**vars(args))
 ~~~~

@@ -148,6 +148,21 @@ To open a recently closed file (tab), since the file is still probably in the bu
 :tabe +Nbuf  " where N is the buffer number
 ~~~~
 
+## Line numbers
+
+
+Turn on/off:
+
+~~~~
+:set [no]nu
+~~~~
+
+Relative line numbers:
+
+~~~~
+:set [no]relativenumber
+~~~~
+
 ## Folding
 
 - `zR`: open all folds

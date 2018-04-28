@@ -24,3 +24,19 @@ later.
 [vim-multiple-cursors]: https://github.com/terryma/vim-multiple-cursors
 
 
+
+## vim-numbertoggle
+
+**Repo:**
+https://github.com/jeffkreeftmeijer/vim-numbertoggle
+
+
+**Performance issues:**
+https://github.com/jeffkreeftmeijer/vim-numbertoggle/issues/33
+
+Tricks to improve the speed:
+
+~~~~
+:set ttyfast
+:set lazyredraw
+~~~~
