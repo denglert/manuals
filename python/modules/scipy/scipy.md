@@ -1,8 +1,5 @@
 # `scipy` manuals
 
-## Interpolation
-
-~~~~
-from scipy.interpolate import interp1d
-func = interp1d(x, y)
-~~~~
+- [interpolate](./interpolate.md)
+- [optimize](./optimize.md)
+- [io](./io.md)
