@@ -5,6 +5,21 @@
 - http://www.secnetix.de/olli/Python/list_comprehensions.hawk
 
 
+Prepend an element to the list:
+
+~~~~
+list = [2,3,4]
+list.insert(0, 1)
+~~~~
+
+
+Append an element to the list:
+
+~~~~
+list = [1,2,3]
+list.append(4)
+~~~~
+
 ## List comprehensions
 
 ~~~~

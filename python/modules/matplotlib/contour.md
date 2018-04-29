@@ -15,3 +15,13 @@ f,a = plt.subplots(figsize=(8.0,8.0))
 CS = a.contour(X,Y,Z, levels=[-10.0, 0.0, 10.0])
 a.clabel(CS, inline=True)
 ~~~~
+
+
+## Contour label (`clabel`)
+
+**References:**
+- https://matplotlib.org/examples/pylab_examples/contour_label_demo.html
+
+~~~~
+plt.clabel(CS, CS.levels, inline=True, fmt=fmt, fontsize=10)
+~~~~
