@@ -94,6 +94,13 @@ Get index values:
 df.index.levels
 ~~~~
 
+## Iterating over rows
+
+~~~~
+for index, row in df.iterrows():
+    print row['c1'], row['c2']
+~~~~
+
 ### Multi-index DataFrames
 
 **References:**
