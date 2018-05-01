@@ -25,3 +25,13 @@ Get current datetime:
 ~~~~
 time_now = datetime.datetime.now()
 ~~~~
+
+
+Convert to UNIX time:
+
+~~~~
+import datetime
+import time
+dt = datetime.datetime(2010, 2, 25, 23, 23)
+time.mktime(dt.timetuple())
+~~~~
