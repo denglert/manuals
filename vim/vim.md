@@ -456,8 +456,9 @@ Differentiating:
 Tabulation and spaces:
 
 ~~~~
-:set tabstop=2
-:set noexpandtab
+:set tabstop=5
+:set shiftwidth=5
+:set expandtab
 :retab!
 ~~~~
 
