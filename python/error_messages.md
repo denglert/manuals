@@ -22,3 +22,6 @@ From user `Cilyan`:
 > ~~~~
 > color_box("blellow", color="green", height=20, width=30)
 > ~~~~
+>
+> will fail because two values are assigned to color: "blellow" as positional and "green" as
+> keyword. (`painter.draw_box` is supposed to accept the height and width arguments).
