@@ -68,7 +68,7 @@ Z = saddle(X,Y)
 Z_flat = Z.flatten()
 ~~~~
 
-**Formatting the original input so that we can pass them to `griddata`:
+**Formatting the original input so that we can pass them to `griddata`:**
 
 ~~~~
 import itertools
