@@ -184,6 +184,12 @@ cb_ax = cb.ax
 cb_ax.set_ylabel('colorbar label') 
 ~~~~
 
+**Colorbar range:**
+
+~~~~
+cb.set_clim(c_min, c_max)
+~~~~
+
 **Logarithmic colorbar:**
 
 ~~~~
