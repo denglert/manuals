@@ -11,6 +11,7 @@ Ignore all warnings:
 warnings.filterwarnings('ignore')
 ~~~~
 
+Upgrade a warning to an error:
 
 ~~~~
 warnings.simplefilter('error', UserWarning)
