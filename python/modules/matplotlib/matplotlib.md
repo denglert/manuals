@@ -58,12 +58,19 @@ Tight layout:
 f.tight_layout()
 ~~~~
 
-## Axis options
+## Axis
 
 Get the axis handle of an already existing axis:
 
 ~~~~
 a = plt.gca()
+~~~~
+
+
+Delete an existing axis:
+
+~~~~
+fig.delaxes(ax)
 ~~~~
 
 ### Axis label
