@@ -3,6 +3,26 @@
 **All references:**
 - https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.astype.html
 
+
+## Dealing with `nan` type
+
+### `DataFrame.fillna()`
+
+- https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.fillna.html
+
+Fill NA/NaN values using the specified method
+
+~~~~
+DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None, **kwargs)
+~~~~
+
+Example:
+
+Replace all `NaN` elements with 0s:
+~~~~
+df.fillna(0)
+~~~~
+
 ## Converting from `object` to a numerical type
 
 ~~~~

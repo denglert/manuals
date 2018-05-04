@@ -1,5 +1,15 @@
 # `scipy.interpolate`
 
+**All references:**
+- https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html
+- https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.interp1d.html
+- https://stackoverflow.com/questions/37872171/how-can-i-perform-two-dimensional-interpolation-using-scipy
+- Comprehensive overview of different interpolation methods: https://github.com/scipy/scipy/blob/master/scipy/interpolate/tests/test_interpnd.py
+
+Error debugging:
+- https://stackoverflow.com/questions/9656489/griddata-scipy-interpolation-not-working-giving-nan
+- https://stackoverflow.com/questions/34583784/scipy-interp2d-warning-and-large-errors-off-the-grid
+
 ## `interp1d`
 
 **References:**
@@ -10,6 +20,18 @@ from scipy.interpolate import interp1d
 func = interp1d(x, y)
 ~~~~
 
+## `interp2d`
+
+- https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.interp2d.html
+
+~~~~
+from scipy import interpolate
+x = np.arange(-5.01, 5.01, 0.25)
+y = np.arange(-5.01, 5.01, 0.25)
+xx, yy = np.meshgrid(x, y)
+z = np.sin(xx**2+yy**2)
+f = interpolate.interp2d(x, y, z, kind='cubic')
+~~~~
 
 ## `griddata`
 
@@ -31,7 +53,14 @@ where:
 	- `nearest`
 	- `linear`
 	- `cubic`
+		- 1d:
+		- 2d: [CloughTocher2DInterpolator][CloughTocher2DInterpolator] 
 
+
+**Beware:**
+
+If there is a `NaN` value in the input array somewhere then the `cubic` method gives `NaN` everywhere.
+You should replace the `NaN` values with e.g. 0s.
 
 ### Example:
 
@@ -95,3 +124,6 @@ Xi,Yi = np.meshgrid(xi,yi)
 ~~~~
 zi_cubic = scipy_griddata(points, values, xi, method='cubic')
 ~~~~
+
+
+[CloughTocher2DInterpolator]: https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.interpolate.CloughTocher2DInterpolator.html#scipy.interpolate.CloughTocher2DInterpolator
