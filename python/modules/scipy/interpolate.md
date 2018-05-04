@@ -16,18 +16,18 @@ func = interp1d(x, y)
 **References:**
 - https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html
 
-Having a `d` dimensional space.
+Having a `d` dimensional space, we can interpolate using `scipy.interpolate.griddata` by:
 
 ~~~~
 from scipy.interpolate import griddata
 zi = griddata(points, values, xi, method=method)
 ~~~~
 
-where
-- `points` is a (n, d) shaped list/array of tuples, `n` being the number of original points.
-- `values` are the corresponding data values
-- `xi` are the points at which we wish to interpolate the data
-- `method` is the interpolation method which can be the following:
+where:
+- `points`: a (n, d) shaped list/array of tuples containig the original points, `n` being the number of original points.
+- `values`: the corresponding data values
+- `xi`: the points at which we wish to interpolate the data
+- `method`: the interpolation method which can be the following:
 	- `nearest`
 	- `linear`
 	- `cubic`
