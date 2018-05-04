@@ -1,6 +1,14 @@
 # Numpy commands
 
 
+## Creating arrays
+
+### `np.full()`
+
+~~~~
+np.full((2, 2), np.inf)
+~~~~
+
 ## Reshaping/resizing arrays
 
 
@@ -26,7 +34,6 @@ grid = grid.T[::-1]
 References:
 - https://stackoverflow.com/questions/9251635/python-resize-an-existing-array-and-fill-with-zeros
 - https://stackoverflow.com/questions/33256823/numpy-resize-array-filling-with-0
-
 Note:
 - If the size of the array is larger than the original array, the elements will be repeated
 

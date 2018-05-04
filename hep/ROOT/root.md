@@ -3,7 +3,6 @@
 
 ## See contents of a .root file
 
-
 ~~~~
 root -l <filename>
 _file0.ls()
@@ -22,4 +21,3 @@ while ((key = (TKey*)next()))
     print(cl->GetName());
 }
 ~~~~
-
