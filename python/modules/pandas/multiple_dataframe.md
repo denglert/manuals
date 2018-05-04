@@ -1,10 +1,11 @@
-# Merge, join and concatenate
+# Operations on multiple dataframes
 
-## Reference
+## Merge, join and concatenate
 
+**References:**
 - https://pandas.pydata.org/pandas-docs/stable/merging.html
 
-## Concatenation
+### Concatenation
 
 ~~~~
 dfiles = glob.glob(  './data/*.dat' )
@@ -18,7 +19,7 @@ df = pd.concat(df_list)
 ~~~~
 
 
-## Merge
+### Merge
 
 Syntax:
 
@@ -39,7 +40,7 @@ pd.merge(left, right, how='inner', on=None, left_on=None, right_on=None,
 |     outer    | FULL OUTER JOIN  | Use union of keys from both frames          |
 |     inner    | INNER JOIN       | Use intersection of keys from both frames   |
 
-### How to merge a list of dataframes
+#### How to merge a list of dataframes
 
 ~~~~
 import functools
@@ -47,3 +48,15 @@ df = functools.reduce(lambda left,right: pd.merge(left,right,on=['shat', 'f', 'k
 ~~~~
 
 
+
+## Diff of dataframes
+
+**References:**
+- https://stackoverflow.com/questions/36891977/pandas-diff-of-two-dataframes
+
+Example:
+
+~~~~
+merged = df1.merge(df2, indicator=True, how='outer')
+merged[merged['_merge'] == 'right_only']
+~~~~
