@@ -25,3 +25,11 @@ a.clabel(CS, inline=True)
 ~~~~
 plt.clabel(CS, CS.levels, inline=True, fmt=fmt, fontsize=10)
 ~~~~
+
+For contours:
+
+~~~~
+from matplitlib.mlab import griddata
+import matplotlib.cm as cm
+~~~~
+
