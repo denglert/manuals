@@ -14,6 +14,17 @@ dict = {
 ~~~~
 
 
+
+## Check if dictionary is empty
+
+~~~~
+bool(dictionary)
+~~~~
+
+if empty, it evaluates to `False`, otherwise `True`
+
+## Accessing values
+
 **Retrieve value:**
 
 ~~~~

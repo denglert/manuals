@@ -1,5 +1,6 @@
 # List of useful jupyter commands
 
+
 ## Basic commands
 
 **Display available line magic commands:**

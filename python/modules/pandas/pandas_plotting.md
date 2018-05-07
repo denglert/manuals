@@ -59,3 +59,21 @@ Create scatter-like plots with:
 ~~~~
 df.plot(style='o')
 ~~~~
+
+
+## Contour plot
+
+**References:**
+- https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.pivot.html
+- https://stackoverflow.com/questions/45596959/how-can-i-do-a-contour-plot-with-date-and-time-in-the-x-y-axis
+- https://stackoverflow.com/questions/24032282/create-contour-plot-from-pandas-groupby-dataframe
+
+Using `DataFrame.pivot()`
+
+~~~~
+dfmesh = df.pivot(x_col, y_col, z_col)
+X = df.index.values
+Y = df.columns.values
+Z = df.values
+plt.contour(X,Y,Z)
+~~~~
