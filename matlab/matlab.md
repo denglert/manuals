@@ -1,6 +1,11 @@
 # `Matlab` manuals
 
 
+**All references:**
+- https://uk.mathworks.com/help/matlab/ref/for.html
+- https://uk.mathworks.com/help/matlab/matlab_prog/loop-control-statements.html
+
+
 
 ## Basic
 
@@ -32,6 +37,21 @@
 ~~~~
 
 
+### Accessing elements
+
+
+~~~~
+>>> M = [3; 2; 1]
+>>> M(2)
+ans = 2
+~~~~
+
+~~~~
+>>> M = [3 4; 1 2]
+>>> M(2,1)
+ans = 1
+~~~~
+
 ### Create matrices with fixed size
 
 
@@ -44,6 +64,49 @@
 ~~~~
 
 
+### Reshape arrays
+
+~~~~
+>>> M = [3 4; 5 6]
+>>> reshape(M, 4 1)
+ans =
+
+   3
+   5
+   4
+   6
+~~~~
+
+
+### Loops
+
+- https://uk.mathworks.com/help/matlab/matlab_prog/loop-control-statements.html
+
+#### for loop
+
+- https://uk.mathworks.com/help/matlab/ref/for.html
+
+~~~~
+s = 10;
+H = zeros(s);
+
+for c = 1:s
+    for r = 1:s
+        H(r,c) = 1/(r+c-1);
+    end
+end
+~~~~
+
+#### while loop
+
+~~~~
+n = 1;
+nFactorial = 1;
+while nFactorial < 1e100
+    n = n + 1;
+    nFactorial = nFactorial * n;
+end
+~~~~
 
 ## Linear algebra
 
