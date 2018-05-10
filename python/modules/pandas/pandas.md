@@ -19,19 +19,6 @@ Write to a whitspace seperated datafile
 pd.read_csv( 'file.dat', sep=' ', index=False, float_format='%.3e', index=False)
 ~~~~
 
-## Manipulating data
-
-**Rename columns:**
-
-~~~~
-df.rename(columns={'k_huu':'k_hdd', 'k_hdd':'k_huu'}, inplace=True)
-~~~~
-
-### Sort
-
-~~~~
-df_sorted = df.sort_values(by=['mHc'], ascending=[False])
-~~~~
 
 ## Read in chunks
 
@@ -46,12 +33,6 @@ for i, df_chunk in enumerate(reader):
 hdf_out.close()
 ~~~~
 
-
-## Drop all duplicates
-
-~~~~
-df = df.drop_duplicates(subset=['mh2', 'sina'], keep=False)
-~~~~
 
 ## `.loc`
 

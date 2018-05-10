@@ -60,3 +60,9 @@ Example:
 merged = df1.merge(df2, indicator=True, how='outer')
 merged[merged['_merge'] == 'right_only']
 ~~~~
+
+
+## Functions to check out
+
+- `combine_first()`: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.combine_first.html
+- `update()`: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.update.html
