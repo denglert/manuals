@@ -52,6 +52,23 @@ ans = 2
 ans = 1
 ~~~~
 
+
+### Slicing
+
+~~~~
+>>> M = [3 2; 1 4]
+M =
+
+   3   2
+   1   4
+
+>>> M(:,2)
+ans =
+
+   2
+   4
+~~~~
+
 ### Create matrices with fixed size
 
 
