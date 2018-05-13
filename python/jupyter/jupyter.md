@@ -61,6 +61,14 @@ jupyter nbconvert --to=html <notebook.ipynb>
 ~~~~
 
 
+## Pure python file (`.py`) -> jupyter notebook (`.ipynb`)
+
+With the help of [py2nb package](https://github.com/sklam/py2nb):
+
+~~~~
+python -m py2nb <python.py> <notebok.ipynb>
+~~~~
+
 ## ipywidgets
 
 Create a float slider:
