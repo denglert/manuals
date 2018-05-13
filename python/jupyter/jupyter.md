@@ -46,6 +46,21 @@ import plot_utils.plot_utils as plu
 code typed.
 
 
+## Conversion
+
+## Jupyter notebook (`.ipynb`) -> pure python (`.py`):
+
+~~~~
+jupyter nbconvert --to=python <notebook.ipynb>
+~~~~
+
+## Jupyter notebook (`.ipynb`) -> `html.`:
+
+~~~~
+jupyter nbconvert --to=html <notebook.ipynb>
+~~~~
+
+
 ## ipywidgets
 
 Create a float slider:
