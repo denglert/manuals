@@ -8,7 +8,7 @@ Main topics
   
 Other:
 
-- [python one liners](./one_liners.md)
-- [pip](./pip.md)
-- [virtualenv](./virtualenv.md)
-- [Error messages](./error_messages.md)
+- [python one liners](./tricks/one_liners.md)
+- [pip](./environment_mgrs/pip.md)
+- [virtualenv](./environment_mgrs/virtualenv.md)
+- [Error messages](./environment_mgrs/error_messages.md)
