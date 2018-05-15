@@ -8,8 +8,11 @@ Python strings cannot be changed, they are immutable.
 
 ## Join
 
+- https://docs.python.org/3.6/library/stdtypes.html#str.join
+
 The method `join()` returns a string in which the string elements of sequence have been joined by
 str separator.
+
 
 ~~~~
 >>> s = "-"
@@ -19,6 +22,27 @@ str separator.
 a-b-c
 ~~~~
 
+
+----
+
+
+Return a string which is the concatenation of the strings in iterable. A `TypeError` will be raised
+if there are any non-string values in iterable, including bytes objects. The separator between
+elements is the string providing this method.
+
+~~~~
+str.join(iterable)
+~~~~
+
+### Join all elements of the sequence
+
+## Get all the unique characters in a string (=remove duplicates)
+
+~~~~
+>>> str = 'monty pythons flying circus'
+>>> set(str)
+{'c', 'm', 'y', 's', 'i', 'l', 't', 'f', 'p', 'h', 'g', ' ', 'n', 'r', 'u', 'o'}
+~~~~
 
 
 ## Sorting
