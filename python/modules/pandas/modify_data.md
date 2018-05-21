@@ -3,10 +3,29 @@
 
 ## Rename columns
 
+### Custom
+
 ~~~~
 df.rename(columns={'k_huu':'k_hdd', 'k_hdd':'k_huu'}, inplace=True)
 ~~~~
 
+### Rename columns while iterating over them
+
+
+~~~~
+for col_name in df.columns.values:
+    df.rename(columns={col_name: new_col_name}, inplace=True)
+~~~~
+
+
+Example:
+
+Prepend the column names with a prefix:
+
+~~~~
+for col_name in df.columns.values:
+    df.rename(columns={col_name: prefix+col_name}, inplace=True)
+~~~~
 
 ## Replace data
 
@@ -31,6 +50,20 @@ df['tanb'].replace(1, 1.01, inplace=True)
 
 ~~~~
 df.drop(columns=['col1'], inplace=True)
+~~~~
+
+
+### Drop rows
+
+
+#### Drop row while iterating
+
+- https://stackoverflow.com/questions/28876243/how-to-delete-the-current-row-in-pandas-dataframe-during-df-iterrows
+
+~~~~
+for index, row in df.iterrows():
+    if row['a'] > 0:
+        df.drop(index, inplace=True)
 ~~~~
 
 ### Drop all duplicates
