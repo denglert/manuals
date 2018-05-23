@@ -1,7 +1,33 @@
 # Biblatex manuals
 
-Package:
+CTAN package page: 
 - https://ctan.org/pkg/biblatex
+
+Nutshell intro:
+- https://tex.stackexchange.com/questions/13509/biblatex-in-a-nutshell-for-beginners
+
+
+## Minimal setup
+
+~~~~
+\documentclass{article}
+
+\usepackage[style=numeric-comp]{biblatex}
+
+\bibliography{<database>} % or
+% \addbibresource{<database>.<extension>}
+
+\begin{document}
+\cite{<some-ref>}
+\printbibliography
+\end{document}
+~~~~
+
+Then run:
+
+1. LaTex
+2. Biber
+3. LaTex
 
 ## Custom citation styles
 
