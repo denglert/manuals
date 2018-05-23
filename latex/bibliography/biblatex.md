@@ -6,6 +6,9 @@ CTAN package page:
 Nutshell intro:
 - https://tex.stackexchange.com/questions/13509/biblatex-in-a-nutshell-for-beginners
 
+ShareLaTeX getting started manual:
+https://www.sharelatex.com/blog/2013/07/31/getting-started-with-biblatex.html
+
 
 ## Minimal setup
 
@@ -29,10 +32,33 @@ Then run:
 2. Biber
 3. LaTex
 
-## Custom citation styles
 
 
-### Show arXiv number
+
+## Citation styles
+
+ShareLatex reference:
+- https://www.sharelatex.com/learn/Biblatex_citation_styles
+
+~~~~
+\usepackage[
+citestyle=authoryear
+]{biblatex}
+~~~~
+
+**citestyle**:
+- `numeric`
+- `numeric-comp`
+- `numeric-verb`
+- `alphabetic`
+- `alphabetic-verb`
+- `authoryear`
+- `authoryear-comp`
+- ...
+
+### Custom citation style
+
+#### Show arXiv number
 
 **Reference:**
 - https://tex.stackexchange.com/questions/299757/arxiv-citation-function
