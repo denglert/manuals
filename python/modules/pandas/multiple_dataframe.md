@@ -1,4 +1,7 @@
-# Operations on multiple dataframes
+# Working with multiple dataframes
+
+Here we show some useful operations and functions when working with multiple `DataFrame`s.
+
 
 ## Merge, join and concatenate
 
@@ -17,7 +20,6 @@ for f in dfiles:
 
 df = pd.concat(df_list)
 ~~~~
-
 
 ### Merge
 
@@ -48,6 +50,7 @@ df = functools.reduce(lambda left,right: pd.merge(left,right,on=['shat', 'f', 'k
 ~~~~
 
 
+--------------------------------------------------------------------------------------------
 
 ## Diff of dataframes
 
@@ -61,6 +64,8 @@ merged = df1.merge(df2, indicator=True, how='outer')
 merged[merged['_merge'] == 'right_only']
 ~~~~
 
+
+--------------------------------------------------------------------------------------------
 
 ## Functions to check out
 
