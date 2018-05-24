@@ -1,6 +1,31 @@
 # beamer manuals
 
 
+## Revealing only parts of the slide, the `\pause` command
+
+- https://www.sharelatex.com/blog/2013/08/20/beamer-series-pt4.html
+
+~~~~
+\begin{itemize}
+	\pause
+	\item Point A
+	\pause
+	\item Point B
+	\begin{itemize}
+		\pause
+		\item part 1
+		\pause
+		\item part 2
+	\end{itemize}
+	\pause
+	\item Point C
+	\pause
+	\item Point D
+\end{itemize}
+~~~~
+
+
+
 ## Links
 
 ### `href`
