@@ -367,6 +367,12 @@ E.g.:
 :s/green/bright &/g   // Replace each "green" with "bright green" everywhere.
 ~~~~
 
+Replace a character by a newline:
+
+~~~~
+:s/,/\r/g
+~~~~
+
 Substitute every instance of the last searched pattern (could be highlighted string with `*`) to
 'new string':
 
