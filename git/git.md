@@ -462,6 +462,19 @@ git add <submodule>
 git commit -m "Updated <submodule>."
 ~~~~
 
+
+### Remove a submodule
+
+**References:**
+- https://git-scm.com/docs/gitsubmodules
+- https://stackoverflow.com/questions/29850029/what-is-the-current-way-to-remove-a-git-submodule
+- https://gist.github.com/myusuf3/7f645819ded92bda6677
+
+~~~~
+git deinit <submodule-path>
+git rm <submodule-path> && git commit
+~~~~
+
 # Troubleshooting
 
 ## `git: Not currently on any branch` problem
