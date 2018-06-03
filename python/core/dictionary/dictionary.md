@@ -14,6 +14,13 @@ dict = {
 ~~~~
 
 
+## Adding two dictionaries together
+
+- https://stackoverflow.com/questions/6005066/adding-dictionaries-together-python
+
+~~~~
+newdict = dict(dict1, **dict2)
+~~~~
 
 ## Check if dictionary is empty
 
