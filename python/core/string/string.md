@@ -45,6 +45,14 @@ str.join(iterable)
 ~~~~
 
 
+## Replace substring with another substring
+
+- https://www.pythoncentral.io/pythons-string-replace-method-replacing-python-strings/
+
+~~~~
+str.replace(old_substr, new_substr)
+~~~~
+
 ## Sorting
 
 ### Alphabetically
