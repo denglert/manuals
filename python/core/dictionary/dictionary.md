@@ -61,10 +61,9 @@ if empty, it evaluates to `False`, otherwise `True`
 
 
 
-
 ## Accessing values
 
-**Retrieve value:**
+### `dict[key]`
 
 ~~~~
 val = dict[key]
@@ -72,12 +71,20 @@ val = dict[key]
 
 Throws keyerror if key is not in the dict.
 
+### `dict.get(key)`
+
+- docs.python.org/3/library/stdtypes.html#dict.get
+- https://softwareengineering.stackexchange.com/questions/225238/python-if-foo-in-dict-vs-try-dictfoo
+
+
 ~~~~
 val = dict.get(key)
 ~~~~
 
+Return the value for key if key is in the dictionary, else default. If default is not given, it
+defaults to None, so that this method never raises a `KeyError`.
 
-Returns `None` if key is not in the dict.
+Default value can be set with `setdefault()`
 
 
 ## Dictionary functions
