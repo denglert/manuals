@@ -22,7 +22,7 @@ dict = {
 
 
 
-### Has key
+### Query a key
 
 Query if the dictionary has a key
 (returns `True` if it does)
@@ -43,6 +43,7 @@ Query if the dictionary hasn't got a key
 if key not in dict:
     print("Key is not in dict")
 ~~~~
+
 
 ## Accessing values
 
@@ -69,6 +70,12 @@ defaults to None, so that this method never raises a `KeyError`.
 
 Default value can be set with `setdefault()`
 
+
+## Deleting an element of the dictionary
+
+~~~~
+del dict[key]
+~~~~
 
 
 ## `dictionary` methods
