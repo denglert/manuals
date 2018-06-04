@@ -92,6 +92,10 @@ group.add_argument('--bar', action='store_true')
 ## Various
 
 
+### Required option argument (paradox)
+
+- https://stackoverflow.com/questions/26226816/argparse-making-required-flags
+
 ### Default value if not specified
 
 Example: [default_if_not_specified.py](examples/default_if_not_specified.py)
