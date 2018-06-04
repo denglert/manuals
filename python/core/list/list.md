@@ -5,19 +5,34 @@
 - http://www.secnetix.de/olli/Python/list_comprehensions.hawk
 
 
-Prepend an element to the list:
+## List functions
+
+## `insert()`
+
+Prepend an element to the list
 
 ~~~~
 list = [2,3,4]
 list.insert(0, 1)
 ~~~~
 
+## `append()`
 
 Append an element to the list:
 
 ~~~~
 list = [1,2,3]
 list.append(4)
+~~~~
+
+## Concatenating lists
+
+~~~~
+>>> list_one = [1,2,3]
+>>> list_two = [4,5,6]
+>>> list_merged = list_one_list_two
+>>> list_merged
+[1,2,3,4,5,6]
 ~~~~
 
 ## List comprehensions
