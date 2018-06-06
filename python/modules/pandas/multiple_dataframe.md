@@ -67,6 +67,16 @@ merged[merged['_merge'] == 'right_only']
 
 --------------------------------------------------------------------------------------------
 
+## Copy a dataframe
+
+- https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.copy.html
+
+~~~~
+dfcopy = df.copy()
+~~~~
+
+--------------------------------------------------------------------------------------------
+
 ## Functions to check out
 
 - `combine_first()`: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.combine_first.html

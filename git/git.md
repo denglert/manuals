@@ -1,5 +1,17 @@
 # Collection of git commands
 
+**Specific subtopics:**
+- [config](./config.md)
+- [git damage control](./damage_control.md)
+- [submodule](./submodule.md)
+- [log](./log.md)
+- [repositories](./repositories.md)
+- [troubleshooting](./troubleshooting.md)
+- [vim](./vim.md)
+- [ssh](./ssh.md)
+- [stash](./stash.md)
+
+
 ## Basic 
 
 **Initializing a directory:**
@@ -14,45 +26,6 @@ git init
 git status
 ~~~~
 
-**Checking log:**
-
-~~~~
-git log
-~~~~
-
-## Log
-
-More detailed docs:
-http://schacon.github.io/git/git-log.html
-
-Check the log history of the repo:
-
-~~~~
-git log
-~~~~
-
-### Get the info about the latest commit in a specific format
-
-#### Commit checksum
-
-~~~~
-git log -1 --format=%H
-~~~~
-
-#### Commit checksum and time stamp
-
-~~~~
-git log -1 --format=%H\ -\ %cd
-~~~~
-
-
-## Configuration
-
-**Make git colourful:**
-
-~~~~
-git config --global color.ui auto
-~~~~
 
 ## Stage
 
@@ -75,6 +48,7 @@ git rm <file>
 git reset octodog.txt
 ~~~~
 
+
 ## Commit
 
 **Commit (storing the staged changes):**
@@ -87,17 +61,6 @@ git commit -m "Add cute octocat story"
 git commit --amend
 ~~~~
 
-## Repositiories
-
-**Add remote repository named 'origin':**
-
-~~~~
-git remote add origin https://github.com/try-git/try_git.git
-~~~~
-
-**Add upstream remote:**
-
-git remote add upstream  <THEIR_REMOTE_URL> 
 
 ## Push/pull
 
@@ -110,8 +73,9 @@ git push <remote name> <branch name>
 **Pull new changes:**
 
 ~~~~
-git pull <remotea name> <branch name>
+git pull <remote-name> <branch name>
 ~~~~
+
 
 ## Fetch
 
@@ -120,6 +84,7 @@ git pull <remotea name> <branch name>
 ~~~~
 git fetch upstream
 ~~~~
+
 
 ## diff
 
@@ -162,6 +127,7 @@ git diff --staged
 ~~~~
 git difftool <commit1> <commit2>
 ~~~~
+
 
 ## Checkout
 
@@ -208,6 +174,7 @@ Going back to `master` branch:
 git checkout master
 ~~~~
 
+
 ## Branches
 
 **List all branches (including remote ones):**
@@ -249,6 +216,7 @@ git checkout -b <branch-name>
 git branch -d <branch-to-be-deleted>
 ~~~~
 
+
 ## Merging
 
 **Merge a branch:**
@@ -280,6 +248,7 @@ git checkout --theirs /path/to/file
 ~~~~
 git checkout --ours /path/to/file
 ~~~~
+
 
 ## Tags
 
@@ -384,6 +353,7 @@ To push all tags to the remote repository:
 git push origin --tags
 ~~~~
 
+
 ## Syncing a fork
 
 **Fetch the branches and their respective commits from the upstream repository.**
@@ -405,82 +375,4 @@ local changes.
 
 ~~~~
 git merge upstream/master
-~~~~
-
-## Submodules
-
-
-### Downloading a repository including its submodules
-
-~~~~
-git clone --recursive <url>
-~~~~
-
-If you already cloned the repo but forgot `--recursive`, you can still fetch the submodules after
-the fact with:
-
-~~~~
-git submodule update --init
-~~~~
-
-### Add a specific version of a package to your repo
-
-1. Add the submodule to your repo:
-
-~~~~
-git submodule add <url>
-~~~~
-
-2. Check out the tag/commit that you want to work on
-
-~~~~
-cd <pkg>
-git checkout <tag>/<commit>
-~~~~
-
-3. Add to the staging area and then commit the changes
-
-~~~~
-cd ..
-git add <pkg> .gitmodules
-git commit -m "Added `<pkg>` with tag/commit."
-~~~~
-
-
-
-
-### Update a submodule to the version of the latest commit
-
-Source:
-https://stackoverflow.com/questions/5828324/update-git-submodule-to-latest-commit-on-origin
-
-~~~~
-cd <submodule>
-git pull origin master
-cd ..
-git add <submodule>
-git commit -m "Updated <submodule>."
-~~~~
-
-# Troubleshooting
-
-## `git: Not currently on any branch` problem
-
-https://stackoverflow.com/questions/4735556/git-not-currently-on-any-branch-is-there-an-easy-way-to-get-back-on-a-branch
-
-If no commit was made (untested):
-
-~~~~
-git stash
-git checkout some-branch
-git stash pop
-~~~~
-
-If you've already made a commit on a HEADLESS state, you should check the hash of the commit,
-checkout the branch where you'd want to merge that commit to and then proceed with the merge:
-
-~~~~
-git log --oneline -n1
-git checkout <branch-name>
-git merge <commit hash>
 ~~~~

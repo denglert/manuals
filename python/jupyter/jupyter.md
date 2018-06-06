@@ -1,7 +1,7 @@
 # List of useful jupyter commands
 
 
-## Basic commands
+## Magic commands
 
 **Display available line magic commands:**
 
@@ -48,20 +48,20 @@ code typed.
 
 ## Conversion
 
-## Jupyter notebook (`.ipynb`) -> pure python (`.py`):
+### Jupyter notebook (`.ipynb`) -> pure python (`.py`):
 
 ~~~~
 jupyter nbconvert --to=python <notebook.ipynb>
 ~~~~
 
-## Jupyter notebook (`.ipynb`) -> `html.`:
+### Jupyter notebook (`.ipynb`) -> `html.`:
 
 ~~~~
 jupyter nbconvert --to=html <notebook.ipynb>
 ~~~~
 
 
-## Pure python file (`.py`) -> jupyter notebook (`.ipynb`)
+### Pure python file (`.py`) -> jupyter notebook (`.ipynb`)
 
 With the help of [py2nb package](https://github.com/sklam/py2nb):
 
@@ -69,10 +69,18 @@ With the help of [py2nb package](https://github.com/sklam/py2nb):
 python -m py2nb <python.py> <notebok.ipynb>
 ~~~~
 
-## ipywidgets
 
-Create a float slider:
+## Markdown
+
+### Insert an image
+
 
 ~~~~
-ipywidgets.interact( plot, S=ipywidgets.FloatSlider(min=-0.1,max=0.05,step=0.05,value=-0.1) )
+![alt text](imagename.png "Title")
+~~~~
+
+or .html
+
+~~~~
+<img src="figures/image.png">
 ~~~~
