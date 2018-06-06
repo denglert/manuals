@@ -13,6 +13,15 @@ csv.reader(csvfile, dialect='excel', **fmtparams)¶
 
 ### `DictReader`
 
+
+Read a single row:
+
+~~~~
+with open(out_path, "r") as out_f:
+    reader = csv.DictReader(out_f, delimiter=' ')
+    row = next(reader)
+~~~~
+
 --------------------------------------------------------------
 
 ## Writer
