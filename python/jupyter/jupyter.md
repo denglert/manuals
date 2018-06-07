@@ -61,6 +61,20 @@ jupyter nbconvert --to=html <notebook.ipynb>
 ~~~~
 
 
+From the notebook itselall_limitsf:
+
+~~~~
+%%bash -s "$output_dir"
+jupyter nbconvert --to html notebook.ipynb
+mv -f notebook.html $1/
+~~~~
+
+To get the notebook name, see github issue:
+- https://github.com/jupyter/notebook/issues/1000
+
+Implemented in toolbox:
+https://github.com/denglert/toolbox/commit/2558b1624d75cc63e93607e8bc98fd866ef711dc#diff-6dd63496152b41d4913b524995cba093
+
 ### Pure python file (`.py`) -> jupyter notebook (`.ipynb`)
 
 With the help of [py2nb package](https://github.com/sklam/py2nb):
