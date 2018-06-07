@@ -46,3 +46,26 @@ shutils.copy(src, dst)
 ### `copy2(src, dst, *, follow_symlinks=True`
 
 - https://docs.python.org/3.6/library/shutil.html#shutil.copy2
+
+
+## Move file
+
+- https://docs.python.org/3/library/os.path.html#module-os.path
+
+### `shutil.move(src, dst, copy_function=copy2)`
+
+Recursively move a file or directory (`src`) to another location (`dst`) and return the destination.
+
+If the destination is an existing directory, then `src` is moved inside that directory. If the
+destination already exists but is not a directory, it may be overwritten depending on `os.rename()`
+semantics.
+
+If the destination is on the current filesystem, then `os.rename()` is used. Otherwise, `src` is
+copied to `dst` using `copy_function` and then removed. In case of symlinks, a new symlink pointing
+to the target of `src` will be created in or as `dst` and `src` will be removed.
+
+If `copy_function` is given, it must be a callable that takes two arguments `src` and `dst`, and
+will be used to copy `src` to `dst` if `os.rename()` cannot be used. If the source is a directory,
+`copytree()` is called, passing it the `copy_function()`. The default `copy_function` is `copy2()`.
+Using `copy()` as the `copy_function` allows the move to succeed when it is not possible to also
+copy the metadata, at the expense of not copying any of the metadata.
