@@ -6,6 +6,26 @@
 - https://bic-berkeley.github.io/psych-214-fall-2016/dot_outer.html
 
 
+## Product types
+
+### `*` (element-wise)
+
+
+- https://stackoverflow.com/questions/18293746/what-is-the-multiplication-operator-actually-doing-with-numpy-arrays
+
+
+Element-wise product:
+
+~~~~
+>>> a = np.array([[1,2]])
+>>> b = np.array([-1, 2])
+>>> a*b
+array([[-1,  4]])
+~~~~
+
+### `.dot()` (matrix multiplication)
+
+
 ## Element-wise operations
 
 - `np.multiply()`
@@ -70,3 +90,4 @@ Insert a vector of `1`s  in front of a matrix:
 ~~~~
 M_new = np.insert(M, 0, 1, axis=1)
 ~~~~
+
