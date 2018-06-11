@@ -6,7 +6,8 @@
 Python strings cannot be changed, they are immutable.
 
 
-## Join
+
+## `join()`
 
 - https://docs.python.org/3.6/library/stdtypes.html#str.join
 
@@ -34,20 +35,14 @@ elements is the string providing this method.
 str.join(iterable)
 ~~~~
 
-### Join all elements of the sequence
 
-## Get all the unique characters in a string (=remove duplicates)
+## `replace(old, new[, count])`
 
-~~~~
->>> str = 'monty pythons flying circus'
->>> set(str)
-{'c', 'm', 'y', 's', 'i', 'l', 't', 'f', 'p', 'h', 'g', ' ', 'n', 'r', 'u', 'o'}
-~~~~
-
-
-## Replace substring with another substring
 
 - https://www.pythoncentral.io/pythons-string-replace-method-replacing-python-strings/
+
+Return a copy of the string with all occurrences of substring `old` replaced by `new`. If the
+optional argument `count` is given, only the first count occurrences are replaced.
 
 ~~~~
 str.replace(old_substr, new_substr)
@@ -77,6 +72,7 @@ str.replace(old_substr, new_substr)
 ['h', 'g', 'g', 'f', 'e', 'd', 'c', 'b', 'a']
 ~~~~
 
+
 ### Other
 
 #### Reverse the original order
@@ -100,7 +96,22 @@ str.replace(old_substr, new_substr)
 
 
 
+## `find(sub[, start[, end])`
+
+Return the lowest index in the string where substring `sub` is found within the slice
+`s[start:end]`.  Optional arguments start and end are interpreted as in `slice` notation. Return
+`-1` if `sub` is not found.
+
+## Example(s)
+
+~~~~
+filename = "workspace_mX_400.root"
+mX_index = filename.find('mX')
+~~~~
+
 ## String contents
+
+
 
 **Check if a string contains a substring:**
 
@@ -108,3 +119,17 @@ str.replace(old_substr, new_substr)
 if "blah" is in stringvar:
     print("blah is in {}".format(stirngvar))
 ~~~~
+
+
+
+## Tricks
+
+## Get all the unique characters in a string (=remove duplicates)
+
+~~~~
+>>> str = 'monty pythons flying circus'
+>>> set(str)
+{'c', 'm', 'y', 's', 'i', 'l', 't', 'f', 'p', 'h', 'g', ' ', 'n', 'r', 'u', 'o'}
+~~~~
+
+
