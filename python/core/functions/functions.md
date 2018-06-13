@@ -1,6 +1,9 @@
 # Functions in python
 
 
+**References:**
+- https://docs.python.org/3.6/library/functions.html
+
 ## List of built-in functions in python
 
 - `abs()`
@@ -73,7 +76,13 @@
 - `__import__()`
 
 
-## `filter(function, iterable)`
+### `abs(x)`
+
+Return the absolute value of a number. The argument may be an integer or a floating point number. If
+the argument is a complex number, its magnitude is returned.
+
+
+### `filter(function, iterable)`
 
 - https://docs.python.org/3/library/functions.html#filter
 
@@ -90,7 +99,7 @@ See `itertools.filterfalse()` for the complementary function that returns elemen
 which function returns `false`.
 
 
-## `map(function, iterable, ...)`
+### `map(function, iterable, ...)`
 
 - https://docs.python.org/3/library/functions.html#map
 
@@ -100,6 +109,31 @@ the items from all iterables in parallel. With multiple iterables, the iterator 
 shortest iterable is exhausted. For cases where the function inputs are already arranged into
 argument tuples, see `itertools.starmap()`.
 
+
+### `range(start, stop[, step])`
+
+- https://docs.python.org/3.6/library/stdtypes.html#range
+
+Rather than being a function, `range` is actually an immutable sequence type.
+
+### `max(iterable, *[, key, default])`/`max(arg1, arg2, *args[, key])`
+
+- https://docs.python.org/3.6/library/functions.html#max
+
+Return the largest item in an iterable or the largest of two or more arguments.
+
+If one positional argument is provided, it should be an iterable. The largest item in the iterable
+is returned. If two or more positional arguments are provided, the largest of the positional
+arguments is returned.
+
+There are two optional keyword-only arguments. The key argument specifies a one-argument ordering
+function like that used for list.sort(). The default argument specifies an object to return if the
+provided iterable is empty. If the iterable is empty and default is not provided, a ValueError is
+raised.
+
+If multiple items are maximal, the function returns the first one encountered. This is consistent
+with other sort-stability preserving tools such as sorted(iterable, key=keyfunc, reverse=True)[0]
+and heapq.nlargest(1, iterable, key=keyfunc). 
 
 ## Current local symbol table `locals()`
 
