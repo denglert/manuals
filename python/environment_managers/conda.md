@@ -12,6 +12,8 @@ conda list
 
 ## Package management
 
+### List
+
 **List all packages installed into environment 'myenv':
 
 ~~~~
@@ -24,11 +26,35 @@ conda list -n myenv
 conda list --export > requirements.txt
 ~~~~
 
-**Reinstall packages from an export file:**
+### Install
+
+
+**Install a package:**
+
+~~~~
+conda install <pkg-name>
+~~~~
+
+
+**Install a package from a specific channel:**
+
+~~~~
+conda install -c <channel-name> <pkg-name>
+~~~~
+
+Example:
+
+~~~~
+conda install -c conda-forge pygobject
+~~~~
+
+
+**Install packages from an export file:**
        
 ~~~~
 conda create -n myenv --file package-list.txt
 ~~~~
+
 
 ## Environment management
 
