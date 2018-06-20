@@ -9,12 +9,12 @@
 
 ## Subtracting the mean from columns or rows
 
-~~~~
+~~~
 >>> X = np.array([stats.norm.rvs(loc=5.0, scale=2.0, size=10) for i in range(100)])
 >>> X_means = X.mean(axis=1)
 ~~~
 
-~~~
+~~~~
 >>> X.shape
 (100, 10)
 >>> _X_means.shape
