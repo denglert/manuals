@@ -217,3 +217,33 @@
 - `entropy(pk[, qk, base])`: Calculate the entropy of a distribution for given probability values.
 - `wasserstein_distance(u_values, v_values[, …])`: Compute the first Wasserstein distance between two 1D distributions.
 - `energy_distance(u_values, v_values[, …])`: Compute the energy distance between two 1D distributions.
+
+## Circular statistical functions
+
+- `circmean(samples[, high, low, axis])`: Compute the circular mean for samples in a range.
+- `circvar(samples[, high, low, axis])`: Compute the circular variance for samples assumed to be in a range
+- `circstd(samples[, high, low, axis])`: Compute the circular standard deviation for samples assumed to be in the range [low to high].
+
+## Contingency table functions
+
+- `chi2_contingency(observed[, correction, lambda_])`: Chi-square test of independence of variables in a contingency table.
+- `contingency.expected_freq(observed)`: Compute the expected frequencies from a contingency table.
+- `contingency.margins(a)`: Return a list of the marginal sums of the array a.
+- `fisher_exact(table[, alternative])`: Performs a Fisher exact test on a 2x2 contingency table.
+
+## Plot-tests
+
+
+- `ppcc_max(x[, brack, dist])` Calculate the shape parameter that maximizes the PPCC
+- `ppcc_plot(x, a, b[, dist, plot, N])` Calculate and optionally plot probability plot correlation coefficient.
+- `probplot(x[, sparams, dist, fit, plot, rvalue])` Calculate quantiles for a probability plot, and optionally show the plot.
+- `boxcox_normplot(x, la, lb[, plot, N])` Compute parameters for a Box-Cox normality plot, optionally show it.
+
+## Masked statistics functions
+
+- Statistical functions for masked arrays (`scipy.stats.mstats`)
+
+## Univariate and multivariate kernel density estimation
+
+- `gaussian_kde(dataset[, bw_method])`: Representation of a kernel-density estimate using Gaussian
+  kernels.
