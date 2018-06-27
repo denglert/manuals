@@ -1,4 +1,0 @@
-# `matplotlib` plot recipes
-
-
-

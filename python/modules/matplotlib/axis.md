@@ -69,3 +69,21 @@ ax2.plot(t, s2, 'r.')
 a.spines['left'].set_color('C0')
 ~~~~
 
+
+
+## Axis relative coordinates
+
+~~~~
+transform = ax.transAxes
+~~~~
+
+Example:
+
+- Place text in the middle of the plot:
+
+    ~~~~
+    ax.text(0.5, 0.5, 'matplotlib',
+         horizontalalignment='center',
+         verticalalignment='center',
+         transform = ax.transAxes)
+    ~~~~
