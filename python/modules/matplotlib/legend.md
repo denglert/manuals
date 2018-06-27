@@ -129,7 +129,9 @@ transform=a.transAxes)
 a.add_artist(caption_box)
 ~~~~
 
-## Bug: sometimes the legend doesn't appear within the `jupyter` environment.
+## Troubleshooting
+
+### The legend doesn't appear within the `jupyter` environment.
 
 Try the following so that it is displayed:
 
@@ -140,3 +142,23 @@ handles, labels = a.get_legend_handles_labels()
 a.legend(handles, labels)
 ~~~~
 
+
+
+### The legend shows the `pd.DataFrame` column variable name not the label
+
+This happens when you don't specify the column which you'd like to plot.
+In this case pandas/matplotlib assumes that you want to plot all of the columns vs. the index:
+
+~~~~
+f,a = plt.subplots()
+df.plot(ax=a, label='my custom label')
+~~~~
+
+**Solution:**
+
+You need to explicitly specify which column you would like to plot, and also specify the label:
+
+~~~~
+f,a = plt.subplots()
+df.plot(y="columnvarname", ax=a, label='my custom label')
+~~~~
