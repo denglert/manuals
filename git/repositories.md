@@ -1,13 +1,22 @@
 # `git` repositiories
 
-**Add remote repository named 'origin':**
+**Add remote repository:**
 
 ~~~~
-git remote add origin https://github.com/try-git/try_git.git
+git remote add <remote-name> <remote-url>
 ~~~~
 
-**Add upstream remote:**
+Example:
+
+- Add upstream remote:
+
+    ~~~~
+    git remote add upstream <REMOTE-URL> 
+    ~~~~
+
+
+Show all remotes and their urls:
 
 ~~~~
-git remote add upstream  <THEIR_REMOTE_URL> 
+git remote -v
 ~~~~
