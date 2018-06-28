@@ -1,6 +1,11 @@
 # `vim` tips and tricks
 
 
+**Subtopics:**
+- [Windows](./windows.md)
+
+
+
 ## Basic
 
 ### Getting help
