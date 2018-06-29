@@ -37,7 +37,14 @@ Host hostalias
 
 
 ## Regenerating passphrase
+
+~~~~
 ssh-keygen -p
+~~~~
+
+~~~~
+ssh-keygen -R <host>
+~~~~
 
 ## Various flags
 
