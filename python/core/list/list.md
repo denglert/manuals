@@ -7,7 +7,7 @@
 
 ## List functions
 
-## `insert()`
+### `insert()`
 
 Prepend an element to the list
 
@@ -16,13 +16,21 @@ list = [2,3,4]
 list.insert(0, 1)
 ~~~~
 
-## `append()`
+### `append()`
 
 Append an element to the list:
 
 ~~~~
 list = [1,2,3]
 list.append(4)
+~~~~
+
+### `count()`
+
+~~~~
+>>> alist =  [123, 'xyz', 'zara', 'abc', 123]
+>>> alist.count(123)
+2
 ~~~~
 
 ## Concatenating lists
