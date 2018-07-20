@@ -22,9 +22,25 @@ Allowed inputs are:
 .loc will raise a KeyError when the items are not found.
 
 
+## Selection based on a condition requiring that an element is within a set containing multiple values
+
+**Reference:**
+- https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.isin.html
+- https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.Series.isin.html
+
+Using `df[col].isin(values)` which returns a boolean `Series` showing whether each element in the
+`Series` is contained in values.
+
+### Example(s)
+
+~~~~
+mA_grid = [100.0, 150.0, 200.0]
+df_downsampled = df[df['mA'].isin(mA_grid)]
+~~~~
+
 ## argmax/min - `idmax()`/`idmin()`
 
-Find a row where the value of a column is maximual/minimal:o
+Find a row where the value of a column is maximual/minimal:
 
 ~~~~
 df['A'].idxmax()
