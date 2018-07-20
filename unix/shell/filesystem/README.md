@@ -1,13 +1,6 @@
 # Unix filesystem commands
 
 
-## Permissions
-
-**set properties of the file:**
-~~~~
-chmod u+x filename
-~~~~
-
 ## Links
 
 **To create a symbolic link:**
