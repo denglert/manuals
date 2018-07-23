@@ -1,5 +1,10 @@
 # Annotate in matplotlib
 
+
+**References**:
+- https://matplotlib.org/api/_as_gen/matplotlib.pyplot.annotate.html
+- https://matplotlib.org/examples/pylab_examples/annotation_demo.html
+
 ~~~~
 matplotlib.pyplot.annotate(*args, **kwargs)
 ~~~~
