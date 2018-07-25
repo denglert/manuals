@@ -31,7 +31,18 @@ with open(input_path, 'r') as f_in:
 
 ### Read in a list of tuples
 
+Assuming that row elements are delimited by a whitespace:
 
 ~~~~
+contents = []
 
+with open(input_path, 'r') as f_in:
+
+    for line in f_in:
+        line_stripped = line.rstrip('\n')
+        line_stripped_and_splitted = line_stripped.split()
+        row_tuples = [float(number_str) for number_str in line_stripped_and_splitted]
+        contents.append(row_tuples)
+
+print(contents)
 ~~~~
