@@ -6,6 +6,7 @@
 - https://bic-berkeley.github.io/psych-214-fall-2016/dot_outer.html
 - https://docs.scipy.org/doc/numpy/reference/routines.linalg.html
 
+---------------------------------------------------------------------------
 
 - [List of available functions](./functions.md)
 
