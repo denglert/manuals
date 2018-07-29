@@ -79,6 +79,11 @@ Notes:
 
 ## `float`
 
+**References:**
+- https://docs.python.org/3/tutorial/floatingpoint.html
+- https://docs.python.org/3.7/library/stdtypes.html#additional-methods-on-float
+- https://docs.python.org/3.7/library/functions.html#float
+
 Floating point numbers are usually implemented using `double` in `C`; information about the
 precision and internal representation of floating point numbers for the machine on which your
 program is running is available in `sys.float_info`.
