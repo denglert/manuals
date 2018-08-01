@@ -1,5 +1,6 @@
 # `numpy` operations
 
+**References:**
 - https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.rot90.html
 - http://www.scipy-lectures.org/intro/numpy/operations.html
 - https://bic-berkeley.github.io/psych-214-fall-2016/dot_outer.html
@@ -22,9 +23,9 @@ The boolean map can be converted to integers:
 y = boolean_map.astype(int)
 ~~~~
 
+----------------------------------------------------------------------------------------------
 
-
-## Insert
+## `np.insert()`
 
 **Example:**
 
@@ -34,6 +35,7 @@ Insert a vector of `1`s  in front of a matrix:
 M_new = np.insert(M, 0, 1, axis=1)
 ~~~~
 
+----------------------------------------------------------------------------------------------
 
 ## `rot90()`
 
@@ -41,6 +43,7 @@ M_new = np.insert(M, 0, 1, axis=1)
 img_rot = np.rot90(img)
 ~~~~
 
+----------------------------------------------------------------------------------------------
 
 ## `where()`
 
@@ -50,8 +53,11 @@ img_rot = np.rot90(img)
 itemindex = numpy.where(array==item)
 ~~~~
 
+----------------------------------------------------------------------------------------------
+
 ## `unique()`
 
+**References:**
 - https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.unique.html
 
 ~~~~
