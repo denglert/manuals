@@ -8,6 +8,11 @@ Covered functions:
 	- `typeof()`
 	- `class()`
 	- `str()`
+	- `library()`
+	- `require()`
+	- `install.packages()`
+
+	- `invisible()`
 
 Operations:
 	- `mean()`
@@ -19,6 +24,30 @@ Operations:
 	- `ls()`
 	- `factor()`
 
+
+Vectorization:
+	- `lapply`
+	- `sapply`
+
+Conversion:
+	- `unlist()`
+
+Strings:
+	- `nchar()`
+	- `paste()`
+	- `print()`
+	- `strsplit()`
+	- `tolower()`
+	- `sub()`
+	- `substr()`
+	- `as.character()`
+	- `is.character()`
+	- `sprintf()`
+
+
+
+
+- `nchar()`
 
 ## Help
 
@@ -73,11 +102,22 @@ Associated functions:
 - `rownames()`
 - `colnames()`
 - `rowSums()`
+- `ncol()`
+- `nrow()`
 
 Create a matrix with elements from 1 to 9 with 3 rows:
 
 ~~~~
 matrix(1:9, byrow = TRUE, nrow = 3)
+~~~~
+
+
+### Accessing elements
+
+i-th row j-th column:
+
+~~~~
+m[i,j]
 ~~~~
 
 ### Naming rows and columns
