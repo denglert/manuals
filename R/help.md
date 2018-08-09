@@ -96,6 +96,27 @@ List of 1
 ~~~~
 
 
+
+### `is.*()`
+
+Checking to see of object is of certain type
+
+- `is.list()`
+
+
+**Example(s):**
+
+~~~~
+>>> l <- list(1,2,3)
+>>> v <- c(1,2,3)
+>>> is.list(l)
+TRUE
+>>> is.list(c)
+FALSE
+~~~~
+
+---------------------------------------------------------------------------------------------
+
 ## Environment inspection
 
 ### Loaded packages

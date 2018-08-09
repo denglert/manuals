@@ -14,15 +14,31 @@ Covered functions:
 
 	- `invisible()`
 
+    - `identical()`
+
 Operations:
-	- `mean()`
-	- `var()`
+	- `unique()`
 	- `summary()`
 	- `names()`
 	- `cbind()`
 	- `rbind()`
 	- `ls()`
 	- `factor()`
+    - `sort(x, decreasing=FALSE)`
+    - `append()`
+    - `rev()`
+
+
+Sequence:
+    - `rep()`
+    - `seq()`
+
+Math:
+	- `var()`
+	- `mean()`
+    - `sum()`
+    - `round()`
+    - `abs()`
 
 
 Vectorization:
@@ -35,6 +51,7 @@ Conversion:
 Strings:
 	- `nchar()`
 	- `paste()`
+    - `cat()`
 	- `print()`
 	- `strsplit()`
 	- `tolower()`
@@ -43,51 +60,30 @@ Strings:
 	- `as.character()`
 	- `is.character()`
 	- `sprintf()`
+    - `gsub()`
+
+
+inspection
+
+Distributions:
+    - `runif()`
+
+
+
+## Types
+
+- numeric
+- character
+- logical
 
 
 
 
-- `nchar()`
+
 
 ## Help
 
 ?command
-
-## Vector
-
-
-Create a vector:
-
-~~~~
-a <- c(1, 2, 3)
-~~~~
-
-
-Give a name to each element:
-
-~~~~
-names(a) = c('a', 'b', 'c')
-~~~~
-
-### Accessing elements of the vector
-
-i-th element:
-
-~~~~
-a[i]
-~~~~
-
-Element by name:
-
-~~~~
-a['a']
-~~~~
-
-Slice of the vector from `i` to `j`:
-
-~~~~
-a[i:j]
-~~~~
 
 
 --------------------------------------------------------------------------------------
