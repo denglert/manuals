@@ -7,3 +7,12 @@
 ~~~~
 install.packages('readr', repos='http://cran.us.r-project.org')
 ~~~~
+
+
+
+When using anaconda need to specify the appropriate library.
+Example:
+
+~~~~
+install.packages("png", "/home/user/anaconda3/lib/R/library")
+~~~~
