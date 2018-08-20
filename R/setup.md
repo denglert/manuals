@@ -5,5 +5,5 @@
 - https://anaconda.org/chdoig/jupyter-and-conda-for-r/notebook
 
 ~~~~
-conda install -r r-essentials
+conda install -c r r-essentials
 ~~~~
