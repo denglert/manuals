@@ -45,6 +45,20 @@ if key not in dict:
 ~~~~
 
 
+### Dictionary comprehension
+
+- https://www.python.org/dev/peps/pep-0274/
+
+
+**Example(s):**
+
+~~~~
+>>> d = {n: n**2 for n in range(5)}
+>>> d
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16} 
+~~~~
+
+
 ## Accessing values
 
 ### `dict[key]`
