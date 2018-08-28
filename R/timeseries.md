@@ -12,9 +12,65 @@ ts(data = NA, start = 1, end = numeric(), frequency = 1,
 ~~~~
 
 
+------------------------------------------------------------------------------------------------
+
+## Conversion
+
+### `time-series` to `vector`
+
+- https://stackoverflow.com/questions/2576876/converting-a-ts-time-series-object-to-a-vector-in-r
+
+~~~~
+array = unclass(time_series)
+~~~~
+
+or
+
+~~~~
+array = as.numeric(time_series)
+~~~~
+
+------------------------------------------------------------------------------------------------
+
+## Inspection
+
+
+- `head()`
+- `tail()`
+- `length()`
+
+### Time
+
+- `start()`
+- `end()`
+- `time`
+- `deltat()`
+- `frequency()`
+- `cycle()`
+
+
+
+------------------------------------------------------------------------------------------------
+
+
+## Modifying data
+
+Remove row `n`: 
+
+~~~~
+time_series[-n,]
+~~~~
+
+Remove column `n`: 
+
+~~~~
+time_series[,-n]
+~~~~
+
+------------------------------------------------------------------------------------------------
+
 
 ## Plotting
-
 
 
 ### `ts.plot()`
