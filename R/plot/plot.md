@@ -1,6 +1,7 @@
 # Plotting in `R`
 
 
+## `plot` - scatterplot
 
 ~~~~
 plot(x, y, ...)
@@ -350,6 +351,4 @@ to 0.2 for compatibility with R < 2.14.0 on x11 and windows() devices.
 
 
 
-## Legend
-
-
+## `legend()`- Legend
