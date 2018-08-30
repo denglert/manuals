@@ -1,11 +1,12 @@
 # `acf()` - Autocorrelation
 
 
-
 Auto- and Cross- Covariance and -Correlation Function Estimation
 
 **Description**
-The function acf computes (and by default plots) estimates of the autocovariance or autocorrelation function. Function pacf is the function used for the partial autocorrelations. Function ccf computes the cross-correlation or cross-covariance of two univariate series.
+The function acf computes (and by default plots) estimates of the autocovariance or autocorrelation
+function. Function pacf is the function used for the partial autocorrelations. Function ccf computes
+the cross-correlation or cross-covariance of two univariate series.
 
 **Usage:**
 
@@ -90,7 +91,6 @@ The lag `k` value returned by `ccf(x, y)` estimates the correlation between `x[t
 
 The result is returned invisibly if `plot` is `TRUE`.
 
-
 ---------------------------
 
 Getting autocorrelation through `cor()`:
@@ -99,3 +99,8 @@ Getting autocorrelation through `cor()`:
 cor(array[], array[-1])
 ~~~~
 
+`acf()` and `cor()` depend by a normalization factor:
+
+~~~~
+acf(x) = cor(x[-1], x[-n]) * (n-1)/n
+~~~~

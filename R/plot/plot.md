@@ -33,6 +33,7 @@ Many methods will accept the following arguments:
 
 ## `par`
 
+
 Set or Query Graphical Parameters
 
 **Graphical Parameters**
