@@ -47,3 +47,11 @@ df['A'].idxmax()
 ~~~~
 
 
+
+## Selecting by substring within a column
+
+- https://stackoverflow.com/questions/11350770/pandas-dataframe-select-by-partial-string
+
+~~~~
+df[df['A'].str.contains("hello")]
+~~~~
