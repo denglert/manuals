@@ -4,6 +4,11 @@
 - https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average
 - https://www.rdocumentation.org/packages/forecast/versions/8.4/topics/Arima
 
+
+
+
+
+
 ~~~~
 arima(x, order = c(0L, 0L, 0L),
       seasonal = list(order = c(0L, 0L, 0L), period = NA),

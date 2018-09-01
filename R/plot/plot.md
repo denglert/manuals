@@ -1,5 +1,8 @@
 # Plotting in `R`
 
+**References:**
+- https://www.datacamp.com/community/tutorials/15-questions-about-r-plots
+- https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/timeseries.html
 
 ## `plot` - scatterplot
 
@@ -350,6 +353,3 @@ to 0.2 for compatibility with R < 2.14.0 on x11 and windows() devices.
 
 - `ylog`: A logical value; see xlog above.
 
-
-
-## `legend()`- Legend
