@@ -23,6 +23,12 @@ Replace all `NaN` elements with 0s:
 df.fillna(0)
 ~~~~
 
+### Check if any value is `nan` in a `pd.DataFrame`
+
+~~~~
+df.isnull().values.any()
+~~~~
+
 ## Converting from `object` to a numerical type
 
 ~~~~
