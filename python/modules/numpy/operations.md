@@ -55,6 +55,33 @@ itemindex = numpy.where(array==item)
 
 ----------------------------------------------------------------------------------------------
 
+## `numpy.delete(arr, obj, axis=None)`
+
+- https://docs.scipy.org/doc/numpy/reference/generated/numpy.delete.html
+
+Return a new array with sub-arrays along an axis deleted. For a one dimensional
+array, this returns those entries not returned by `arr[obj]`.
+
+**Parameters:**
+
+- `arr`: `array_like`
+    Input array.
+
+- `obj : slice, int or array of ints
+    Indicate which sub-arrays to remove.
+
+- `axis`: `int`, optional
+    The axis along which to delete the subarray defined by obj. If axis is None, obj is applied to the flattened array.
+
+**Returns:**
+
+- `out`: `ndarray` A copy of `arr` with the elements specified by obj removed.
+Note that delete does not occur in-place. If axis is None, out is a flattened
+array.
+
+
+----------------------------------------------------------------------------------------------
+
 ## `unique()`
 
 **References:**
