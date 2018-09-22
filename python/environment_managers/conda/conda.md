@@ -98,3 +98,21 @@ conda remove --name <env-name> --all
 ~~~~
 anacondalib/envs/
 ~~~~
+
+
+## Remove unused packages and caches
+
+- https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments
+
+Clean up conda environment:
+
+~~~~
+conda clean -a -y
+~~~~
+
+
+Dry run:
+
+~~~~
+conda clean -a --dry-run
+~~~~
