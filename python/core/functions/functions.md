@@ -2,7 +2,7 @@
 
 
 **References:**
-- https://docs.python.org/3.6/library/functions.html
+- https://docs.python.org/3/library/functions.html
 
 ## List of built-in functions in python
 
@@ -98,6 +98,7 @@ function is `None`.
 See `itertools.filterfalse()` for the complementary function that returns elements of iterable for
 which function returns `false`.
 
+### `locals`
 
 ### `map(function, iterable, ...)`
 
@@ -155,10 +156,13 @@ If multiple items are maximal, the function returns the first one encountered. T
 with other sort-stability preserving tools such as sorted(iterable, key=keyfunc, reverse=True)[0]
 and heapq.nlargest(1, iterable, key=keyfunc). 
 
-## Current local symbol table `locals()`
 
-Display the local variables seen from the locale of a function:
+## `locals()`
 
-~~~~
-print(locals())
-~~~~
+Update and return a dictionary representing the current local symbol table.
+Free variables are returned by `locals()` when it is called in function blocks,
+but not in class blocks.
+
+
+The contents of this dictionary should not be modified; changes may not affect
+the values of local and free variables used by the interpreter.
