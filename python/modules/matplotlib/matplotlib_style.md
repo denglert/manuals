@@ -1,5 +1,9 @@
 ## Global style configuration
 
+**References:**
+- https://matplotlib.org/users/customizing.html
+- https://github.com/matplotlib/matplotlib/blob/master/matplotlibrc.template
+
 Template available at:
 https://github.com/matplotlib/matplotlib/blob/master/matplotlibrc.template
 
