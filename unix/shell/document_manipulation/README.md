@@ -31,6 +31,20 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dNOPAUSE -d
 convert input -compress Zip output.pdf # lossy
 ~~~~
 
+
+
+### Rescale pdf
+
+~~~~
+pdfjam --a4paper --scale factor -- input.pdf
+~~~~
+
+Example:
+
+~~~~
+pdfjam --a4paper --scale 0.95 -- poster.pdf
+~~~~
+
 ## Postscript
 
 **Convert all *.eps files in all subfolders into .pdf:**
