@@ -12,11 +12,19 @@ a = plt.gca()
 
 ## Axis on/off
 
-Don't display the axis:
+Don't display any axis:
 
 ~~~~
 plt.axis('off')
 ~~~~
+
+
+Don't display a specific axis:
+
+~~~~
+ax.axis('off')
+~~~~
+
 
 Delete an existing axis:
 
