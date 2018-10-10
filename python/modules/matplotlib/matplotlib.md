@@ -27,6 +27,7 @@ plt.savefig( 'fig.pdf' )
 - [axis](./axis.md)
 - [legend](./legend.md)
 - [contour](contour.md)
+- [patches](patches.md)
 
 
 ## Recipes

@@ -7,10 +7,28 @@ a = plt.gca()
 ~~~~
 
 
+
+
+
+## Axis on/off
+
+Don't display the axis:
+
+~~~~
+plt.axis('off')
+~~~~
+
 Delete an existing axis:
 
 ~~~~
 fig.delaxes(ax)
+~~~~
+
+
+## Grid
+
+~~~~
+a.grid('off')
 ~~~~
 
 ## Axis label
