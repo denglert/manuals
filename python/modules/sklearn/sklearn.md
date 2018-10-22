@@ -9,3 +9,5 @@
 ## Subtopics
 - [Linear models](./linear_model.md)
 - [Model selection](./model_selection.md)
+- [Dealing with weighted samples](./weighted_samples.md)
+- [Ensemble methods](./ensemble.md)
