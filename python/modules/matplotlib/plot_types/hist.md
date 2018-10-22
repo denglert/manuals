@@ -66,8 +66,17 @@ value will be used. If neither are set, then the args will be treated as `False`
 ## Example(s):
 
 
-Normalized histogram of y points, with horizontal orientation:
+### Normalized histogram of y points, with horizontal orientation
 
 ~~~~
 a.hist(y, bins=50, density=True, orientation="horizontal")
+~~~~
+
+
+### Create histogram out of weighted samples
+
+- https://stackoverflow.com/questions/41252078/weighted-bins-in-a-distribution-hist-plot
+
+~~~~
+a.hist(x,y, weight=weights)
 ~~~~
