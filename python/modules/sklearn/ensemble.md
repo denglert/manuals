@@ -2,6 +2,7 @@
 
 **References:**
 - http://scikit-learn.org/stable/modules/ensemble.html 
+- https://github.com/scikit-learn/scikit-learn/tree/master/sklearn/ensemble
 
 
 ## `AdaBoost`
@@ -9,6 +10,8 @@
 
 **References:**
 - [AdaBoost paper][adaboost]
+- https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/ensemble/weight_boosting.py
+- https://github.com/scikit-learn/scikit-learn/blob/bac89c2/sklearn/ensemble/weight_boosting.py#L295
 
 
 

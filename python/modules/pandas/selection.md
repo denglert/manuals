@@ -22,6 +22,16 @@ Allowed inputs are:
 .loc will raise a KeyError when the items are not found.
 
 
+### Example(s)
+
+
+Accessing first appearing value in column:
+
+~~~~
+df.loc[df.index[0], colname]
+~~~~
+
+
 ## Selection based on a condition requiring that an element is within a set containing multiple values
 
 **Reference:**
