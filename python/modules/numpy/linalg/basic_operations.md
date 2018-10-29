@@ -20,6 +20,7 @@ dotproduct = np.dot(a,b)
 
 ### Element-wise product
 
+- https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.dot.html
 - https://stackoverflow.com/questions/18293746/what-is-the-multiplication-operator-actually-doing-with-numpy-arrays
 
 
@@ -39,6 +40,23 @@ Other element-wise operations:
 - `np.multiply()`
 - `np.divide()`
 
+
+
+### Matrix product
+
+- https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.matmul.html
+
+
+Matrix product of two arrays.
+
+
+~~~~
+>>> a = [[1, 0], [0, 1]]
+>>> b = [[4, 1], [2, 2]]
+>>> np.matmul(a, b)
+array([[4, 1],
+       [2, 2]])
+~~~~
 
 ### Transpose
 
