@@ -7,6 +7,7 @@ This is repository is a collection of:
 - various tips and tricks
 - possible pitfalls, and
 - references
+- demonstration notebooks
 
 for different tools and packages.
 

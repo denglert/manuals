@@ -1,6 +1,23 @@
 # Working with multiple arrays in numpy
 
 
+Index:
+
+- `np.concatenate()`
+- `np.vstack()`
+- `np.hstack()`
+- `np.r_[]`
+- `np.column_stack()`
+- `np.c_[]`
+
+
+Splitting arrays:
+
+- `np.hsplit()`
+- `np.vsplit()`
+
+
+
 ## `np.hstack(tup)`
 
 - https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.hstack.html
