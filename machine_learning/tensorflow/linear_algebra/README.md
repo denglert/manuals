@@ -11,7 +11,7 @@
 - https://www.tensorflow.org/api_docs/python/tf/matmul
 
 
-Multiplies matrix a by matrix b, producing a*b.
+Multiplies matrix a by matrix b, producing a * b.
 
 ~~~~
 tf.matmul(
