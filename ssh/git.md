@@ -44,7 +44,7 @@
     ssh-add <path_to_ssh_id>
     ~~~~
 
-	Example:
+	**Example:**
 
     ~~~~
     eval $(ssh-agent -s)
