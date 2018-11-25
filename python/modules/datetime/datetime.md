@@ -23,24 +23,29 @@ time_now = datetime.datetime.now()
 
 
 
+----------------------------------------------------------
+----------------------------------------------------------
+
+
 ## Conversion
 
 
-### To `datetime.datetime`
+### From `datetime.datetime`
 
-#### String to `datetime.datetime`
 
-String to datetime:
+#### `datetime.datetime` to `np.datetime64`
+
 
 ~~~~
-datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+date = datetime.datetime.now()  
+np.datetime64(date)
 ~~~~
 
 
 
-### From `datetime.datetime`/`datetime.timedelta`
 
-#### Convert `datetime` to UNIX time:
+### `datetime.datetime` to UNIX time
+
 
 ~~~~
 import datetime
@@ -49,8 +54,34 @@ dt = datetime.datetime(2010, 2, 25, 23, 23)
 time.mktime(dt.timetuple())
 ~~~~
 
-#### Convert `timedelta` to human readable string
+### `timedelta` to human readable string
 
 hours, remainder = divmod(s, 3600)
 minutes, seconds = divmod(remainder, 60)
 print('%sh %sm %ss').format(hours, minutes, seconds)
+
+
+#### `datetime.datetime` to `pd.datetime`
+
+~~~~
+date = datetime.datetime.now()  
+pd.to_datetime(date)
+~~~~
+
+
+----
+
+### To `datetime.datetime`
+
+
+#### `string` to `datetime.datetime`
+
+
+~~~~
+str = 'Jun 1 2005  1:33PM'
+format = '%b %d %Y %I:%M%p'
+date = datetime.strptime(str, format)
+~~~~
+
+
+

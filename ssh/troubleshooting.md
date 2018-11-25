@@ -4,6 +4,8 @@
 
 **References:**
 - https://stuff-things.net/2016/07/06/ssh-too-many-authentication-failures/
+- https://serverfault.com/questions/139870/stop-ssh-client-from-offering-all-the-public-keys-it-can-find
+- https://serverfault.com/questions/36291/how-to-recover-from-too-many-authentication-failures-for-user-root
 
 
 ### Symptom
