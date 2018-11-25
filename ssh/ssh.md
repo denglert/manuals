@@ -5,51 +5,23 @@ References:
 - https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys
 - http://unix.stackexchange.com/questions/36540/why-am-i-still-getting-a-password-prompt-with-ssh-with-public-key-authentication
 
-## Generating a new SSH key
 
-~~~~
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-~~~~
+## Options
 
-## Passwordless login with SSH key pairs
+- `-i <identity_file>`
+        Selects a file from which the identity (private key) for public key authentication is read.
 
-Steps:
+- `-X`: Enables X11 forwarding.
+- `-L`: Specifies that connections to the given TCP port or Unix socket on the local (client) host
+        are to be forwarded to the given host and port, or Unix socket, on the remote side.
 
-1. Generate public- and private-key pairs 
-2. Place the public key (.pub) in the `authorized_keys`
-3. Set up correct permissions for the files (rwx------ / 700)
-	`chmod 700 ~/.ssh/authorized_keys`
-4. Add the ssh private key to the `ssh-agent`:
-	`ssh-add ~/.ssh/id_rsa_custom`
- 
+    Syntax:
+    -L [bind_address:]port:host:hostport
+    -L [bind_address:]port:remote_socket
+    -L local_socket:host:hostport
+    -L local_socket:remote_socket
 
-## .ssh/config
-
-Config for tunneling
-
-~~~~
-Host hostalias
-    Hostname hostname
-    ProxyCommand ssh user@gateway_host -W %h:%p
-    User username
-    IdentityFile ~/.ssh/id_rsa_custom
-~~~~
-
-
-## Regenerating passphrase
-
-~~~~
-ssh-keygen -p
-~~~~
-
-~~~~
-ssh-keygen -R <host>
-~~~~
-
-## Various flags
-
-# Graphics
-ssh -X
-
-# Create socket
-ssh -L 
+- `-o option`: Can be used to give options in the format used in the configuration file.  This is
+               useful for specifying options for which there is no separate command-line flag.
+    Example:
+    `-o 'PubkeyAuthentication no'`
