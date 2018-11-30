@@ -1,7 +1,7 @@
 # manuals
 
 
-This is repository is a collection of:
+This repository is a collection of:
 - software manuals
 - template code
 - various tips and tricks
@@ -20,5 +20,5 @@ for different tools and packages.
 
 
 **Note:**
-- If the function has a comprehensive official documentation I might just copy and paste it the
-  relevant section, supplementing it with my own boilerplate code & tips.
+- If the function has a comprehensive official documentation you might just find the copy-pasted
+  version of the relevant section, supplementing it with my own boilerplate code & tips.
