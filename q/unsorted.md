@@ -38,3 +38,25 @@ Generate random integers:
 ~~~~
 10?5
 ~~~~
+
+## `get`
+
+~~~~
+get `:/data/t
+~~~~
+
+## `set`
+
+## `value`
+
+~~~~
+value `:/data/t
+~~~~
+
+## `read0`
+
+## `hcount`
+
+## `hdel`
+
+## `hsym`
