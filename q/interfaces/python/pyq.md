@@ -2,6 +2,7 @@
 
 **References:**
 - [pyq kx][pyq-kx]
+- [pyq user guide][pyq-user-guide]
 - [pyq github][pyq-github]
 
 > `PyQ` brings the `Python` programming language to the `kdb+` database. It allows developers to integrate
@@ -13,5 +14,43 @@
 
 `pyq` is primarily focused on accessing `kdb+` data from `python`
 
+
+## Install
+
+### pip
+
+~~~~
+pip install pyq
+~~~~
+
+### anaconda
+
+~~~~
+conda install -c enlnt pyq
+~~~~
+
+---------------------------------------------------------------------------------------------------
+
+## Interactive python
+
+Switch to `q` prompt:
+
+~~~~
+q()
+~~~~
+
+Switch back to `python` prompt:
+
+~~~~
+\
+~~~~
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+
 [pyq-github]: https://github.com/KxSystems/pyq
 [pyq-kx]: https://code.kx.com/q/interfaces/pyq/
+[pyq-user-guide]: https://code.kx.com/q/interfaces/pyq/user-guide/
