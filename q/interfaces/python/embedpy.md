@@ -1,15 +1,4 @@
-# Python interface
-
-**References:**
-
-- `pyq`
-    - [pyq github][pyq-github]
-- `embedPy`
-    - [embedPy github][embedPy-github]
-    - [embedPy kx][embedPy-kx]
-- [fusion][fusion]
-
-## `embedPy`
+# `embedPy`
 
 **References:**
 - [embedPy github][embedPy-github]
@@ -19,6 +8,8 @@ Calling python from `q`.
 Allows the kdb+ interpreter to manipulate Python objects and call Python functions.
 
 
+`embedPy` has more features for `q` programers to call `python` functions.
+
 ~~~~
 \l p.q
 ~~~~
@@ -27,7 +18,5 @@ Allows the kdb+ interpreter to manipulate Python objects and call Python functio
 .p
 ~~~~
 
-[pyq-github]: https://github.com/KxSystems/pyq
 [embedPy-github]: https://github.com/KxSystems/embedPy
 [embedPy-kx]: https://code.kx.com/q/ml/embedpy/
-[fusion]: https://code.kx.com/q/interfaces/fusion/
