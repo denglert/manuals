@@ -11,7 +11,6 @@ software, commercialized by Kx Systems.
 - [Configuration][configuration]
 - [Unsorted material][unsorted]
 
-
 [references]: ./references.md
 [io]: ./io.md
 [configuration]: ./configuration.md
