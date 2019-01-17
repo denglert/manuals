@@ -1,9 +1,9 @@
 # References
 
-
 ## Main
 
 - https://code.kx.com/q/
+- https://code.kx.com/q/ref/card/
 
 ## Tutorials
 
