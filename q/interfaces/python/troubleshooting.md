@@ -21,7 +21,7 @@ or with `pyq` installed
   [4]  /Users/user/lib/build/anaconda/envs/q/q/jupyterq_pyzmq.q:2: pypop:.p.eval["list.pop"][;0]
 ~~~~
 
-### Solution
+### Cause
 
 **Reference:**
 - https://github.com/KxSystems/pyq/issues/97
@@ -33,4 +33,10 @@ conda uninstall pyq embedpy jupyterq kdb
 conda install -c kx -c enlnt pyq
 conda install -c kx jupyterq
 jupyter notebook
+~~~~
+
+Contents of the `p.k` file after installing `jupyterq`:
+
+~~~~
+\l p.q
 ~~~~

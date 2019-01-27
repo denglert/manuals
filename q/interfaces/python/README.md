@@ -15,6 +15,7 @@
     - [jupyterq kx][jupyterq-kx]
     - [jupyterq github][jupyterq-github]
 - [fusion][fusion]
+- [Troubleshooting][troubleshooting]
 
 
 
@@ -31,3 +32,5 @@
 [jupyterq-github]: https://github.com/kxsystems/jupyterq
 
 [fusion]: https://code.kx.com/q/interfaces/fusion/
+
+[troubleshooting]: ./troubleshooting.md
