@@ -1,6 +1,7 @@
 # Resolving merge conflicts
 
 **References:**
+- https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts
 - http://genomewiki.ucsc.edu/index.php/Resolving_merge_conflicts_in_Git
 
 
