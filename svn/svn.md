@@ -8,7 +8,7 @@
 
 ## Basic
 
-### Update working copy
+### `update` - update working copy
 
 `svn` update brings changes from the repository into your working copy. If no revision is given, it
 brings your working copy up to date with the HEAD revision. Otherwise, it synchronizes the working
@@ -21,7 +21,7 @@ svn update [PATH...]
 ~~~~
 
 
-### Commit changes
+### `commit` - Commit changes
 
 Send changes from your working copy to the repository.
 
@@ -34,13 +34,13 @@ svn commit -m "commit message"
 ~~~~
 
 
-### log
+### `log`
 
 ~~~~
 svn log
 ~~~~
 
-### Status
+### `status`
 
 ~~~~
 svn status
