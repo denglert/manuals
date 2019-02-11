@@ -147,3 +147,29 @@ git config merge.tool vimdiff
 **References:**
 - https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 
+
+--------------------------------------------------------------------------------------
+
+## Syncing a fork
+
+**Fetch the branches and their respective commits from the upstream repository.**
+Commits to master will be stored in a local branch, upstream/master
+
+~~~~
+git fetch upstream
+~~~~
+
+**Check out the fork's local master branch.**
+
+~~~~
+git fetch upstream
+~~~~
+
+**Merge the changes from upstream/master into your local master branch.**
+This brings your fork's master branch into sync with the upstream repository, without losing your
+local changes.
+
+~~~~
+git merge upstream/master
+~~~~
+
