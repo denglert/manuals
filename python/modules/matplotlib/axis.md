@@ -65,9 +65,9 @@ ax.xaxis.label.set_color('red')
 ~~~~
 fix, ax = plt.subplots(nrows=1, ncols=1, sharex=True )
 ax.set_xticks(      np.linspace(0, 1, 5) )
-ax.set_xticklabels( np.linspace(0, 1, 5) )
+ax.set_xticklabels( np.linspace(0, 1, 5), rotate='vertical')
 ax.set_yticks(      np.linspace(0, 1, 5) )
-ax.set_yticklabels( np.linspace(0, 1, 5) )
+ax.set_yticklabels( np.linspace(0, 1, 5))
 ~~~~
 
 ## Axis ranges

@@ -98,6 +98,8 @@ df.set_values(index, col, value)
 
 ## Drop data
 
+
+
 ### Drop columns
 
 **References:**
@@ -105,6 +107,12 @@ df.set_values(index, col, value)
 
 ~~~~
 df.drop(columns=['col1'], inplace=True)
+~~~~
+
+or
+
+~~~~
+df.drop(col_to_be_dropped, axis=1)
 ~~~~
 
 
@@ -120,6 +128,13 @@ for index, row in df.iterrows():
     if row['a'] > 0:
         df.drop(index, inplace=True)
 ~~~~
+
+or 
+
+~~~~
+df.drop(row_to_be_dropped, axis=0)
+~~~~
+
 
 ### Drop all duplicates
 
