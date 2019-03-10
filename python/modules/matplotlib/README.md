@@ -5,7 +5,7 @@
 
 - [Basics](./basics.md)
 - [Figure](./figure.md)
-- [Axis](./axis.md)
+- [Axis](./axis/axis.md)
 - [Legend](./legend.md)
 - [Contour](./contour.md)
 - [Patches](./patches.md)
