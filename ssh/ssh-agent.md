@@ -2,6 +2,7 @@
 
 **References:**
 - https://www.ssh.com/ssh/agent
+- https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
 
 The `ssh-agent` is a helper program that keeps track of user's identity keys

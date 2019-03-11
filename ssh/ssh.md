@@ -1,10 +1,4 @@
-# ssh tips
-
-References:
-- https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-- https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys
-- http://unix.stackexchange.com/questions/36540/why-am-i-still-getting-a-password-prompt-with-ssh-with-public-key-authentication
-
+# `ssh` command
 
 ## Options
 
