@@ -18,3 +18,11 @@ ax.set_xlabel( r'$\cos(\beta - \alpha)$', horizontalalignment='right', x=1.0)
 ~~~~
 ax.xaxis.label.set_color('red')
 ~~~~
+
+
+## Get axis labels
+
+~~~~
+xlabel = ax.xaxis.get_label().get_text()
+ylabel = ax.yaxis.get_label().get_text()
+~~~~
