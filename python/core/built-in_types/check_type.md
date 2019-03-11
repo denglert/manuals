@@ -3,15 +3,24 @@
 
 ## `type()`
 
+- https://docs.python.org/3/library/functions.html#type
 
+With one argument, return the type of an object.
 
-Example:
+**Example(s):**
 
 ~~~~
 >>> a = 1
 >>> type(a)
 <class 'int'>
+~~~~
 
+
+~~~~
+if type(x) is list:
+    print("x is a list.")
+elif type(x) is tuple:
+    print("x is a tuple.")
 ~~~~
 
 
