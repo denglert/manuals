@@ -1,64 +1,31 @@
 # Customizing holoviews plots
 
-## Reference
+**References:**
 
 - http://holoviews.org/getting_started/Customization.html
 - http://holoviews.org/user_guide/Customizing_Plots.html
+- http://holoviews.org/user_guide/Styling_Plots.html
 
-## Global
 
 
-Output size: 
+## Axis
 
-~~~~
-%output size=150
-~~~~
+## Axis labels
 
-Renderer:
-
-~~~~
-hv.Store.renderers['bokeh'].webgl = True
-~~~~
-
-## Magic options
-
-Set options globally:
+> hv.Dataset accepts kdims and vdims. By default it automatically makes all dimensions into
+kdims, if you supply either kdims or vdims it will infer the other, or you can specify both. If you
+want to provide labels just for specific dimensions you can also use the redim method, e.g.:
 
 ~~~~
-%opts Points [tools=['lasso_select', 'box_select']] (size=5 color='navy' nonselection_color='gray' alpha=0.2)
+renamed = all_ds.redim(mH=('mH', r'$m_{H}$ [GeV]'), mHc=('mHc', r'$m_{H^\pm}$ [GeV]'))
 ~~~~
 
-Magic commands for the cell only:
+### Axis ranges 
 
-~~~~
-%%opts Points [color_index=3 scaling_factor=10]
-~~~~
-
-## Customization settings examples
-
-### hv.Points`
-
-~~~~
-p1(style={'Points': dict(color='orange')}).relabel(label='95% CL upper limit from comb.')
-~~~~
+> You can set a range on the Dimension. You can either declare a dimension directly, e.g.
+`hv.Curve(range(10), vdims=[hv.Dimension('y', range=(0, 10))])` or you can use the redim method to
+`hv.Curve(range(10)).redim(y=dict(range=(0,10)))` which will let you do the same thing on an existing
+element.
 
 
-## Renaming labels
-
-**Dataset:**
-
-~~~~
-ds = ds.redim(mH=('mH', 'mH [GeV]'))
-~~~~
-
-**Curve, points:**
-
-~~~~
-curve  = curve.redim.label(Hertz='Frequency (Hz)')
-~~~~
-
-(Sometimes) you can specify the labels with key-value pairs, e.g.:
-
-~~~~
-p2 = p1.map(lambda x: x.clone(kdims=[('mA', 'mA [GeV]'), ('xs_ggFH_br_H_hh', 'σ(pp->H->hh) [pb]')], vdims=[]), [hv.Points])
-~~~~
+--------------------------------------

@@ -1,17 +1,3 @@
-# HoloViews tricks and tips
-
-Links:
-- http://holoviews.org/
-- http://dev.holoviews.org/
-- https://github.com/ioam/holoviews
-- https://gitter.im/ioam/holoviews
-
-**Install dev branch with conda**
-
-~~~~
-conda install -c ioam/label/dev holoviews
-~~~~
-
 **Overlay + groupby example:**
 
 ~~~~
@@ -77,9 +63,3 @@ al = hv.util.Aliases(name1='Long label', name2='Long label 2')
 al.name1
 ~~~~
 
-**Save output**
-
-~~~~
-renderer = hv.renderer('bokeh')
-renderer.save(layout, 'layout.html')
-~~~~
