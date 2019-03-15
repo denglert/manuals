@@ -5,11 +5,12 @@
 
 - [Basics](./basics.md)
 - [Figure](./figure.md)
-- [Axis](./axis/axis.md)
+- [Axis](./axis/)
 - [Legend](./legend.md)
 - [Contour](./contour.md)
 - [Patches](./patches.md)
-- [Genearl](./general.md)
+- [General](./general.md)
+- [Colormap](./colormap/)
 
 
 ## Recipes
