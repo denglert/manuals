@@ -7,35 +7,12 @@
     - https://youtu.be/-ARI4Cz-awo
     - https://youtu.be/jxmzY9soFXg
 
-
-## Basic example
-
-~~~~
-import logging
-logger = logging.getLogger(__name__)
-
-file_handler = logging.FileHandler(path_to_file)
-file_handler.setLevel(logging.WARNING)
-
-logger.add(file_handler)
-~~~~
-
-## Handlers
+**Subtopics:**
+- [config](./config/)
+- [handlers](./handlers/)
+- [recipes](./recipes/)
 
 
-`StreamHandler`:
-
-~~~~
-stdout_handler = logging.StreamHandler(sys.stdout)
-stdout_handler.setLevel(logging.INFO)
-~~~~
-
-`FileHandler`:
-
-~~~~
-file_handler = logging.FileHandler(path_to_file)
-file_handler.setLevel(logging.WARNING)
-~~~~
 
 ## Logging levels
 
@@ -47,21 +24,6 @@ file_handler.setLevel(logging.WARNING)
   - `CRITICAL`: A serious error, indicating that the program itself may be unable to continue running.
 
 Default `logging` level: WARNING
-
-
-## Format of the log messages (`LogRecord`)
-
-You change the format of the log message via the `format` option:
-
-~~~
-logging.basicConfig(filename='test.log',
-                    level=logging.DEBUG,
-                    format='%(asctime)s:%(levelname)s:  %(message)s'
-                   )
-~~~
-
-where the format placeholders in the constructor can be found here `LogRecord attributes`:
-https://docs.python.org/3/library/logging.html#logrecord-attributes
 
 
 ## Tips
