@@ -71,8 +71,3 @@ git config --global merge.tool vimdiff
 ~~~~
 git difftool <commit1> <commit2>
 ~~~~
-
-
-
-
-

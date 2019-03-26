@@ -9,6 +9,7 @@
 - [Git damage control](./tutorials/damage_control.md)
 - [Submodules](./tutorials/submodule.md)
 - [Repositories](./tutorials/repositories.md)
+- [Diff files](./tutorials/diff.md)
 
 -----------------------------------------------------------
 
