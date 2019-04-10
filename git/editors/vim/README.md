@@ -2,4 +2,4 @@
 
 ## Plugins
 
-[vim-fugitive](./vim-fugitive.md)
+[vim-fugitive](./vim-fugitive/)
