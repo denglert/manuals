@@ -3,16 +3,11 @@
 
 ## Domain specific documentation:
 
-- [Basics](./basics.md)
-- [Figure](./figure.md)
+- [Basics](./basic/)
+- [Figure](./figure/)
 - [Axis](./axis/)
-- [Legend](./legend.md)
-- [Contour](./contour.md)
-- [Patches](./patches.md)
-- [General](./general.md)
+- [Legend](./legend/)
+- [Contour](./contour/)
+- [Patches](./patches/)
+- [General](./general/)
 - [Colormap](./colormap/)
-
-
-## Recipes
-
-You can find pre-defined recipes in the [recipes folder](./recipes/)

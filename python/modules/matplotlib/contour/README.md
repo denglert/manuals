@@ -33,8 +33,6 @@ For the majority of things, the function signatures and return values are the sa
 - https://matplotlib.org/examples/pylab_examples/contour_label_demo.html
 - https://matplotlib.org/gallery/images_contours_and_fields/contour_demo.html#sphx-glr-gallery-images-contours-and-fields-contour-demo-py
 
-
-
 ### Example(s)
 
 #### `contour` plot template
