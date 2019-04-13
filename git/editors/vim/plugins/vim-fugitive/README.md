@@ -5,6 +5,6 @@
 
 
 **Subtopics:**
-- [basic](basic.md)
+- [Basic](basic.md)
 - [Workflow](workflow.md)
 
