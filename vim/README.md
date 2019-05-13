@@ -2,14 +2,19 @@
 
 
 **Subtopics:**
-- [Basic](./basics.md)
-- [Search](./search.md)
-- [Substitution](./substitution.md)
-- [Windows](./windows.md)
-- [Registers](./registers.md)
-- [Spell check](./spellcheck.md)
-- [Macros](./macros.md)
-- [Folds](./fold.md)
+- [Basic](./basics/)
+- [Encryption](./encryption/)
+- [Folds](./fold/)
+- [Installation](./install/)
+- [Macros](./macros/)
+- [Plugins](./plugins/)
+- [Registers](./registers/)
+- [Search](./search/)
+- [Spellcheck](./spellcheck/)
+- [Substitution](./substitution/)
+- [Spell check](./spellcheck/)
+- [Tabs](./tabs/)
+- [Windows](./windows/)
 
 
 **External guides/tips:**

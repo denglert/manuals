@@ -1,3 +1,3 @@
 # Installing `vim`
 
-[See vim/install.md](../vim/install.md)
+[See vim/install.md](../vim/install/)
