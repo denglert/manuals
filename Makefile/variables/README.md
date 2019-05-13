@@ -1,13 +1,4 @@
-# `Makefile` manuals
-
-## References
-
-- http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/
-- https://www.gnu.org/software/make/manual/make.html
-- http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/
-
-
-## Variables
+# `Makefile` variables
 
 ~~~~
 variable1 = value1
@@ -21,7 +12,7 @@ ${PIDconfigfile##*/}
 ~~~~
 
 
-### Special variables
+## Special variables
 
 - `.VARIABLES`
 
@@ -36,8 +27,9 @@ ${PIDconfigfile##*/}
 VPATH = src:rambo:DHELAS:alpha_QCD:CTEQ5
 
 
+------------------------------------------------------------------
 
-### Automatic variables
+## Automatic variables
 
 [From the official manual][autovar1]:
 
@@ -102,9 +94,14 @@ VPATH = src:rambo:DHELAS:alpha_QCD:CTEQ5
 - `$^`: Name of all the dependencies with space as the delimiter
 
 
-### Variable manipulation
 
-#### Substitution refrences
+
+
+-------------------------------------------------------------------------------
+
+## Variable manipulation
+
+### Substitution refrences
 
 For each word in 'name' replace 'string1' with 'string2'.
 
@@ -118,70 +115,6 @@ Replace the suffix `.c` of all words in the macro `SRCS` with the `.o` suffix.
 
 ~~~~
 OBJS = $(SRCS:.c=.o)
-~~~~
-
-## Rule syntax
-
-~~~
-targets : prerequisites
-        recipe
-        ...
-~~~
-
-## Functions
-
-### Custom functions
-
-~~~~
-define generate_file
-    sed 's/{NAME}/$(1)/' greetings.tmpl >$(2).txt
-endef
-
-all:
-    $(call generate_file,John Doe,101)
-    $(call generate_file,Peter Pan,102)
-~~~~
-
-### Functions for String Substitution and Analysis
-
-#### `$(patsubst pattern,replacement,text)`
-
-
-## Tricks
-
-
-### Automatic dependency generation
-
-See:
-- http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/
-
-[Example makefile](./examples/auto_dependency_gen.make)
-
-
-### Extract list of variables with starting with a specific string
-
-**Example:**
-
-~~~~
-form_dat_job_tag = Hybrid_mH_eq_mHc_500_mA_150-400_8bins_pert_8pi
-form_dat_out_tag = output_form_dat_mA_$(form_dat_mA)
-
-VAR_FORM_DAT    := $(shell echo '$(.VARIABLES)' |  awk -v RS=' ' '/form_dat/')
-EXPORT_FORM_DAT := $(foreach v,$(VAR_FORM_DAT),$(v)='$($(v))')
-
-format_data : 
-	@cd output/$(form_dat_job_tag); $(EXPORT_FORM_DAT) ../../awk/format_data.sh; echo $(EXPORT_FORM_DAT) | tr " " "\n" | awk 'NF > 0' | sort > $(form_dat_out_tag).config
-~~~~
-
-
-### Using wildcards
-
-~~~~
-srcs := $(wildcard src/*.tex)
-
-%.pdf : %.tex $(srcs)
-	pdflatex $(INTER) $<
-	bibtex note
 ~~~~
 
 
