@@ -11,6 +11,6 @@
 
 **References:**
 
+- [GNU make official documentation](https://www.gnu.org/software/make/manual/make.html)
 - http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/
-- https://www.gnu.org/software/make/manual/make.html
 - http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/
