@@ -12,4 +12,7 @@
 - [Folds](./fold.md)
 
 
+**External guides/tips:**
+- https://castel.dev/post/lecture-notes-1
+
 ---------------------------------------------------------------

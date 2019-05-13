@@ -6,6 +6,16 @@
 ldconfig -p | grep <libname>
 ~~~~
 
+
+## Add a library permnantly
+
+https://serverfault.com/questions/201709/how-to-set-ld-library-path-in-ubuntu
+
+1. Create `/etc/ld.so.conf.d/<library>.conf`
+2. Add `<path-to-library>` in the created file
+3. Run `sudo ldconfig`
+
+
 ## Examining libraries
 
 
