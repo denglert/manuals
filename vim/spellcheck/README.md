@@ -36,3 +36,22 @@ or
 ~~~~
 z=
 ~~~~
+
+-----------------------------------------------------------------------------
+
+## LateX documents
+
+**Reference(s):**
+- https://stackoverflow.com/questions/23353009/vim-spellcheck-not-always-working-in-tex-file-check-region-in-vim
+
+Sometimes the spell check feature does not work properly in for latex documents.
+
+To enable it try issuing:
+
+~~~~
+setlocal spell spelllang=en_us
+syntax sync fromstart
+syntax spell toplevel
+~~~~
+
+
