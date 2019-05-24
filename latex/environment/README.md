@@ -1,11 +1,4 @@
-# `latex` manuals
-
-**All references:**
-- https://www.sharelatex.com
-- https://www.sharelatex.com/learn/Environments
-
-
-## Environments
+# Environments in `LaTeX`
 
 - https://www.sharelatex.com/learn/Environments
 
@@ -17,7 +10,7 @@
     { todo after}
 ~~~~
 
-### Example(s)
+## Example(s)
 
 Create a new figure environment with a predefined positioning:
 
