@@ -1,5 +1,4 @@
-# Setup `cplex`
-
+# Setup `docplex`
 
 ## With `anaconda`
 
@@ -8,6 +7,5 @@
 - http://ibmdecisionoptimization.github.io/docplex-doc/getting_started_python.html
 
 ~~~~
-conda install -c ibmdecisionoptimization cplex 
 conda install -c ibmdecisionoptimization docplex 
 ~~~~
