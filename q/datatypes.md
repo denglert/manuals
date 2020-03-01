@@ -7,10 +7,26 @@
 Data types in `q` are indicated by short int number.
 
 
+**Example:**
+
+~~~~
+q) type 12.0
+-9h
+~~~~
+
+where `-9h` is a short integer, indicated by `h`.
+
+
+The short integer indicator of the data type of short integer integers is itself `-5h`:
+
+~~~~
+q) type 1h
+-5h
+~~~~
+
 
 ## List of datatypes
 
-Primitive datatypes are in the range `±1h` to `19h`:
 
 
 | Range of short int type indicator | Short name   | Data type category |
@@ -19,6 +35,8 @@ Primitive datatypes are in the range `±1h` to `19h`:
 |          `0h`                     |  zero-h      | general list       |
 |          `>0h`                    |  positive-h  | vector             |
 
+
+Full list of datatypes:
 
 
 |   n    |  c  |                 name                  |  sz  |       literal       | null | inf  |    SQL    |  Java     |     .Net      |
@@ -64,19 +82,12 @@ Primitive datatypes are in the range `±1h` to `19h`:
 | 111    |     | f\:                                   |
 | 112    |     |  dynamic load                         |
 
+where:
 - `n`: short int returned by type and used for casting, e.g. `9h$3`
 - `c`: character used lower-case for casting and upper-case for Tok and Load CSV
 - `sz:` size in bytes
 - `inf`: infinity (no math on temporal types); `0Wh` is `32767h`
 - `RO`: read only; `RW`: read-write
-
-
-## Query the type of a `q` object
-
-~~~~
-type <object>
-~~~~
-
 
 
 [kx_datatypes]: https://code.kx.com/q/basics/datatypes/
