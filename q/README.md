@@ -1,6 +1,6 @@
 # `q` manuals
 
-`Q` is a programming language for array processing, developed by Arthur Whitney. It is proprietary
+`q` is a programming language for array processing, developed by Arthur Whitney. It is proprietary
 software, commercialized by Kx Systems.
 
 **Subtopics:**
@@ -10,6 +10,7 @@ software, commercialized by Kx Systems.
 - [Interfaces to other programming languages][interface]
 - [Configuration][configuration]
 - [Unsorted material][unsorted]
+
 
 [references]: ./references.md
 [io]: ./io.md
