@@ -24,3 +24,13 @@ Function taking the square of a number:
 ~~~~
 sqr:{[a] a*a}
 ~~~~
+
+
+
+## List of `q` functions
+
+
+- `type`
+- `enlist`
+- `til`
+- `exit 0`

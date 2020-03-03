@@ -15,7 +15,7 @@ software, commercialized by Kx Systems.
 [references]: ./references.md
 [io]: ./io.md
 [configuration]: ./configuration.md
-[datatypes]: ./datatypes.md
+[datatypes]: ./datatypes/README.md
 [interface]: ./interfaces/README.md
 [unsorted]: ./unsorted.md
 [q_wiki]: https://en.wikipedia.org/wiki/Q_(programming_language_from_Kx_Systems
