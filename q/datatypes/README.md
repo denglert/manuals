@@ -8,6 +8,7 @@
 - [Boolean data type](boolean.md)
 - [Strings](string.md)
 - [Symbol](symbol.md)
+- [Casting](casting.md)
 
 
 Data types in `q` are indicated by short int number.
