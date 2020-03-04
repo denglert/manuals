@@ -3,18 +3,29 @@
 Int to float:
 
 ~~~~
-`float$1
+q) `float$1
+1.0
 ~~~~
 
 Float to long int:
 
 ~~~~
-`long$1.0
+q) `long$1.0
+1
 ~~~~
 
 
 Int to boolean:
 
 ~~~~
-`booleans$1
+q) `booleans$1
+1b
+~~~~
+
+
+Int to date:
+
+~~~~
+q) `date$31
+2000.02.01
 ~~~~

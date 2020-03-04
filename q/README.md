@@ -6,6 +6,9 @@ software, commercialized by Kx Systems.
 **Subtopics:**
 - [References][references]
 - [Data types][datatypes]
+- [Keywords][keywords]
+- [Iterators][iterators]
+- [Opeators][operators]
 - [I/O][io]
 - [Interfaces to other programming languages][interface]
 - [Configuration][configuration]
@@ -17,5 +20,8 @@ software, commercialized by Kx Systems.
 [configuration]: ./configuration.md
 [datatypes]: ./datatypes/README.md
 [interface]: ./interfaces/README.md
+[iterators]: ./iterators/README.md
+[keywords]: ./keywords/README.md
+[operators]: ./opreators/README.md
 [unsorted]: ./unsorted.md
 [q_wiki]: https://en.wikipedia.org/wiki/Q_(programming_language_from_Kx_Systems
