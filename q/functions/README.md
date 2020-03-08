@@ -65,5 +65,13 @@ q) fiter\[1.0]
 #### Fibonacci
 
 ~~~~
+q)sum_last_two_elements:{x,sum -2#x}
+~~~~
+
+~~~~
+q)sum_last_two_elements 1 1
+1 1 2
+q)sum_last_two_elements/[10; 1 1]
+1 1 2 3 5 8 13 21 34 55 89 144
 ~~~~
 
