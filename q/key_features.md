@@ -4,12 +4,11 @@
 **References:**
 - [Introduction to kdb+ and q #1: Introduction][intro_to_kdb_vid]
 
+The below items are taken from the iten and might actually not be accurate...
 
 
 **Features that are NOT available in `q`:**
-- no control flow
-    - no loops
-    - no if then else blocks
+- very basic control flow
 - no objects
 - no inheritance
 - no threads

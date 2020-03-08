@@ -4,9 +4,21 @@
 - https://code.kx.com/q/ref/greater/
 
 
+**General remarks:**
+
+- All operators have the same precendence.
+- Everything is executed from right to left.
 
 
-## Greater, or (`|`)
+**List of operators:**
+- [Greater, or (`|`)](#greater)
+- [Lesser, and (`&`)](#lesser)
+
+
+-----------------------------------------------
+
+
+## Greater, or (`|`)<a name="greater"></a>
 
 
 **Examples:**
@@ -24,7 +36,7 @@ q) 10 | 2
 
 ------------------------------------------------
 
-## Lesser, and (`&`)
+## Lesser, and (`&`)<a name="lesser"></a>
 
 **Examples:**
 

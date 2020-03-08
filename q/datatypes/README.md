@@ -3,12 +3,17 @@
 **References:**
 - [code.kx Datatypes - basics][kx_datatypes]
 
-**Data type:**
+**Data types:**
 - [Temporal data types](temporal_data.md)
 - [Boolean data type](boolean.md)
 - [Strings](string.md)
 - [Symbol](symbol.md)
+
+**Relevant to datatypes:**
 - [Casting](casting.md)
+
+
+------------------------------------------------------------
 
 
 Data types in `q` are indicated by short int number.
