@@ -15,6 +15,7 @@ software, commercialized by Kx Systems.
 - [I/O][io]
 - [Interfaces to other programming languages][interface]
 - [Configuration][configuration]
+- [System commands][system_commands]
 - [Unsorted material][unsorted]
 
 
@@ -28,6 +29,7 @@ software, commercialized by Kx Systems.
 [iterators]: ./iterators/README.md
 [keywords]: ./keywords/README.md
 [operators]: ./operators/README.md
+[system_commands]: ./system_commands/README.md
 [unsorted]: ./unsorted.md
 
 [q_wiki]: https://en.wikipedia.org/wiki/Q_(programming_language_from_Kx_Systems

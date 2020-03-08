@@ -10,7 +10,7 @@
 - [Symbol](symbol.md)
 
 **Relevant to datatypes:**
-- [Casting](casting.md)
+- [Casting one datatype to another](casting.md)
 
 
 ------------------------------------------------------------
