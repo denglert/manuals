@@ -1,10 +1,15 @@
 # References
 
-## Main
+
+
+## Main references
 
 - https://code.kx.com/q/
 - https://code.kx.com/q/ref/card/
 - https://github.com/denglert/q-sandbox
+
+
+-----------------------------------------------------------
 
 ## Tutorials
 
@@ -17,10 +22,16 @@
     - http://www.thalesians.com/finance/index.php/Knowledge_Base/Databases/Kdb
     - http://www.thalesians.com/finance/images/Lecture05.pdf
 
+
+-----------------------------------------------------------
+
 ## Specific topics
 
 - http://www.timestored.com/kdb-guides/memory-management
 - Map-reduce https://code.kx.com/wiki/JB:KdbplusForMortals/partitioned_tables#1.3.4.1_Map-Reduce
+
+
+-----------------------------------------------------------
 
 ## Blog posts
 

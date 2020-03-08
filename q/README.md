@@ -5,6 +5,7 @@ software, commercialized by Kx Systems.
 
 **Subtopics:**
 - [References][references]
+- [Key features][key_features]
 - [Data types][datatypes]
 - [Keywords][keywords]
 - [Iterators][iterators]
@@ -16,6 +17,7 @@ software, commercialized by Kx Systems.
 
 
 [references]: ./references.md
+[key_features]: ./key_features.md
 [io]: ./io.md
 [configuration]: ./configuration.md
 [datatypes]: ./datatypes/README.md
