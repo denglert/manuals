@@ -1,16 +1,16 @@
 # Time series data
 
 **References:**
-- https://pandas.pydata.org/pandas-docs/stable/timeseries.html
+- https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html
 
-## Slicing data range
 
-~~~~
-df['2015-01-01':'2017-12-31']
-~~~~
+**Subtopics:**
+- [Selection][selection]
+- [`pd.tseries.offsets`][offsets]
 
-or
 
-~~~~
-df.loc['2015-01-01':'2017-12-31']
-~~~~
+[offsets]: ./offsets.md
+
+
+
+
