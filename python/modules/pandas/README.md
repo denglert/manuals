@@ -13,7 +13,7 @@
 
 **Subtopics:**
 - [Aggregation][agg]
-- [Datatypes][dataypes]
+- [Datatypes][datatypes]
 - [Cheatsheets][cheatsheet]
 - [Constructors][constructors]
 - [Index][index]
