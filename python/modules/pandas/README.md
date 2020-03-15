@@ -8,7 +8,6 @@
     - [pandas latest documentation][pd_doc_latest]
 - Online references
     - [pandas tricks][pd_tricks]
-    -
 
 
 **Subtopics:**

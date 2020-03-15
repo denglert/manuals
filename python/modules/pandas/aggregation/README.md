@@ -1,37 +1,15 @@
-# Manipulating data in `pandas`
+# Aggregation in python
+
+**References:**
+- 
 
 
-## `pivot()`
+**Aggregator function:**
+- [Pivot tables]
+    - `pd.pivot_table()`
+    - `pd.DataFrame.pivot()`
+- [`pd.DatFrame.groupby()`]
 
+[pivot_table]: ./pivot_table.md
+[groupby]: ./groupby.md
 
-~~~~
-DataFrame.pivot(index=None, columns=None, values=None)[source]
-~~~~
-
-Reshape data (produce a ''pivot'' table) based on column values. Uses unique values from index / columns to form axes of the resulting DataFrame.
-
-**Parameters:	**
-
-- `index` : string or object, optional
-
-    Column name to use to make new frame’s index. If None, uses existing index.
-
-- `columns` : string or object
-
-    Column name to use to make new frame’s columns
-
-- `values` : string or object, optional
-
-    Column name to use for populating new frame’s values. If not specified, all remaining columns will be used and the result will have hierarchically indexed columns
-
-**Returns:**
-
-- `pivoted` : DataFrame
-
-
-## Iterating over rows
-
-~~~~
-for index, row in df.iterrows():
-    print row['c1'], row['c2']
-~~~~
