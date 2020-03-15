@@ -52,7 +52,7 @@ q)count (4;5;6;7)
 - https://code.kx.com/q/ref/deltas/
 
 
-Differences between list items
+Differences between list items.
 
 **Syntax:**
 
