@@ -3,9 +3,9 @@
 
 **References:**
 - Documentation
-    - [pandas 0.17.1 documentation][pd_doc_0.17.1]
-    - [pandas 0.19.2 documentation][pd_doc_0.19.2]
     - [pandas latest documentation][pd_doc_latest]
+    - [pandas 0.19.2 documentation][pd_doc_0.19.2]
+    - [pandas 0.17.1 documentation][pd_doc_0.17.1]
 - Online references
     - [pandas tricks][pd_tricks]
 
