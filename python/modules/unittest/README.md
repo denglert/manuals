@@ -7,19 +7,38 @@
 - https://www.youtube.com/watch?v=6tNS--WetLI
 
 
-## Example(s)
+**Subtopic:**
+- [Assert methods][assert]
+- [Examples][examples]
+- [Mock][mock]
+
+
+## Template
+
 
 ~~~~
 import unittest
 
-def fun(x):
-    return x + 1
+from unittest.mock import patch, Mock
+# or
+from mock import patch, Mock
 
-class MyTest(unittest.TestCase):
-    def test(self):
-        self.assertEqual(fun(3), 4)
+from your_module_to_be_tested.submodule import function_to_test
 
-if __name__ == '__main__':
-    unittest.main()
+
+class Test(unittest.TestCase)
+
+    @patch('your_module_to_be_tested.submodule.process', Mock())
+    def test_some_function(self):
+        
+        args = ...
+        kwargs = ...
+        function_return = function_to_test(args, kwargs)
+        self.assert(functionReturn)
 ~~~~
 
+
+
+[assert]: ./asserts/
+[examples]: ./examples/
+[mock]: ./mock/
