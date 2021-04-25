@@ -7,7 +7,7 @@
 
 Short int data type indicator of dictionaries: `99h`
 
-
+------------------------------------------------------------------------------
 
 ## Creating a dictionary
 
