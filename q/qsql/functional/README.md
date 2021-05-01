@@ -2,6 +2,7 @@
 
 **References:**
 - https://code.kx.com/q/basics/funsql/
+- https://code.kx.com/q/wp/parse-trees/
 
 The functional forms of `delete`, `exec`, `select` and `update` are particularly useful for
 programmatically-generated queries, such as when column names are dynamically produced. 
