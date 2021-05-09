@@ -7,7 +7,7 @@
 **General:**
 - `addmonths`
 - `bt`       backtrace
-- `dd`       join symbols
+- [`dd`][dd] join symbols
 - `def`      parse options
 - `f`        format
 - `fc`       parallel on cut
@@ -66,7 +66,7 @@
 - `dpft` dpfts  save table
 - `dpt`  dpts   save table unsorted
 - `dsftg`       load process save
-- `en`          enumerate varchar cols
+- [`en`][en]          enumerate varchar cols
 - `ens`         enumerate against domain
 - `fk`          foreign key
 - `hdpf`        save tables
@@ -104,15 +104,6 @@
 ------------------------------------------------------------------------------------------------------
 
 
-## `.Q.ind[table; indices]`
-
-
-~~~~
-.Q.ind[table; indices]
-~~~~
-
-where
-- `table` is a partitioned table
-- `indices`  is a long int vector of row indexes into `table`
-
-returns rows indices from `table`.
+[dd]: ./dd.md
+[en]: ./en.md
+[ind]: ./ind.md

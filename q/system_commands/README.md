@@ -41,48 +41,8 @@
 
 -----------------------------------------------------------------------------------
 
-## `\l` (load file or directory) <a name="backslashl"></a>
-
-
-~~~~
-\l name
-\l .
-~~~~
-
-Where `name` is the name of a
-- q script, executes the script
-- serialized object, deserializes it into memory as variable `name`
-- directory of a splayed table, maps the table to variable `name`,
-	without loading any columns into memory
-- directory and the value of one of the permitted partition types,
-	the most recent partition directory is inspected for splayed directories and each such directory mapped into memory with the name of the splayed directory
-- directory containing a kdb+ database,
-	recursively loads whatever it finds there: serialized objects, scripts, splayed tables, etc.
 
 
 -----------------------------------------------------------------------------------
 
-## `\P` (precision)<a name="backslashP"></a>
 
-
-
-**Syntax:**
-~~~~
-\P [n]
-~~~~
-
-
-
-Show or set display precision for floating-point numbers, i.e. the number of digits shown.
-
-The default value is 7 and possible values are in the range [0,17]. A value of 0 means use maximum
-precision. This is used when exporting to CSV files.
-
-
-**Example(s):**
-
-~~~~
-q)\P 3
-q)1%3
-0.333
-~~~~
