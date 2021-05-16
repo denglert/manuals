@@ -1,7 +1,6 @@
-# Configuration for `q`
+# Environment variables
 
-## Environment variables
-
+**References:**
 - https://code.kx.com/q4m3/14_Introduction_to_Kdb+/#1481-the-environment-variables
 
 - `QHOME`: 

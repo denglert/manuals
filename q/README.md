@@ -19,6 +19,17 @@ software, commercialized by Kx Systems.
 - [Unsorted material][unsorted]
 
 
+
+## License, credits
+
+**Important remark:**
+Many of the material here is simply taken from the code.kx.com website whose material is licensed
+under [Creative Commons Attribution 4.0 International License][cca4].
+
+
+[q_wiki]: https://en.wikipedia.org/wiki/Q_(programming_language_from_Kx_Systems
+[cca4]: https://creativecommons.org/licenses/by/4.0/
+
 [references]: ./references.md
 [key_features]: ./key_features.md
 [arithmetics]: ./arithmetics/README.md
@@ -31,14 +42,3 @@ software, commercialized by Kx Systems.
 [operators]: ./operators/README.md
 [system_commands]: ./system_commands/README.md
 [unsorted]: ./unsorted.md
-
-
-## License, credits
-
-**Important remark:**
-Many of the material here is simply taken from the code.kx.com website whose material is licensed
-under [Creative Commons Attribution 4.0 International License][cca4].
-
-
-[q_wiki]: https://en.wikipedia.org/wiki/Q_(programming_language_from_Kx_Systems
-[cca4]: https://creativecommons.org/licenses/by/4.0/

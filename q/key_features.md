@@ -1,6 +1,5 @@
 # Key features of `q`
 
-
 **References:**
 - [Introduction to kdb+ and q #1: Introduction][intro_to_kdb_vid]
 
