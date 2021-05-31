@@ -4,10 +4,13 @@
 - [code.kx Datatypes - basics][kx_datatypes]
 
 **Data types:**
-- [Temporal data types](temporal_data.md)
-- [Boolean data type](boolean.md)
-- [Strings](string.md)
-- [Symbol](symbol.md)
+- [Temporal data types](./temporal_data)
+- [Boolean data type](./boolean)
+- [Strings](./string)
+- [Symbol](./symbol)
+- [Dictionary](./dictionary)
+- [List](./list)
+- [Table](./table)
 
 **Relevant to datatypes:**
 - [Casting one datatype to another](casting.md)

@@ -1,5 +1,18 @@
 # Basic usage in `q`
 
+
+
+## Assignment
+
+**References:**
+- https://code.kx.com/q/ref/assign/
+
+~~~~
+var: value
+~~~~
+
+--------------------------------------------------------------
+
 ## Exit q commands prompt
 
 Type 

@@ -3,9 +3,13 @@
 **References:**
 - https://code.kx.com/q/ref/fby/
 - https://kdbfaq.com/how-does-fby-work/
+- https://stackoverflow.com/questions/66131575/kdb-q-compute-the-percentage-by-group
 
 Apply an aggregate to groups.
 
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 
 ## Syntax
 
@@ -15,22 +19,39 @@ Apply an aggregate to groups.
 
 where:
 - `aggr` is an aggregate function
-- `date`, `group` conforming vectors
+- `data`, `group` conforming vectors
 
 collects the items of data into sublists according to the corresponding items of `group`, applies `aggr`
 to each sublist, and returns the results as a vector with the same count as data.
 
+
+### `fby` in tables 
+
+Grouping on multiple columns:
+
+~~~~
+fby ([]colname1; colname2; ...)
+~~~~
+
+Example:
+
+~~~~
+fby ([]date; uid)
+~~~~
+
+----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 
 ## Where `fby` is practical
 
-fby is designed to collapse cascaded `select … from select … by … from t` expressions into a single
+`fby` is designed to collapse cascaded `select … from select … by … from t` expressions into a single
 `select … by … from … where … fby …`.
 Think of `fby` when you find yourself trying to apply a filter to the aggregated column of a table
 produced by `select … by …`.
 
 
+----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 
@@ -77,7 +98,37 @@ corresponding sublist.
 ~~~~
 
 ----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+
+### Example: Vectors
+
+~~~~
+dat: 2 5 4 1 7
+grp: "abbac" 
+~~~~
+
+Apply `sum` to the groups
+
+~~~~
+(sum; dat) fby grp
+~~~~
+
+Apply `first` to the groups
+
+~~~~
+(first;dat) fby grp
+~~~~
+
+
+
+----------------------------------------------------------------------------------------------------------
 
 ### Example 2: `select`
 
 ~~~~
+~~~~
+
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
