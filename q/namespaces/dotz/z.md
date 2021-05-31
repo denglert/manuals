@@ -3,7 +3,7 @@
 **References:**
 - https://code.kx.com/q/ref/dotz/#zz-utc-datetime
 
-UTC time as a datetime atom.
+UTC time as a datetime (`-15h`) atom.
 
 ## Syntax
 
@@ -25,7 +25,7 @@ UTC time as a datetime atom.
 **References:**
 - https://code.kx.com/q/ref/dotz/#zz-local-datetime
 
-Local time as a datetime atom.
+Local time as a datetime (`-15h`) atom.
 
 ## Syntax
 

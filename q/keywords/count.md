@@ -1,24 +1,22 @@
-# List datatype in `q`
+# `count`
 
 **References:**
-- https://code.kx.com/q4m3/3_Lists/
-- https://thinqkdb.wordpress.com/lists-in-q/
+- https://code.kx.com/q/ref/count/
 
+## Syntax
 
-**Subtopics:**
-- [Indexing lists](./indexing.md)
-- [Operations on lists](./operations.md)
-
+~~~~
+count x
+~~~~
 
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 
-## Basics
+## Examples
 
-### Constructing a list
 
 ~~~~
-list1:(2;3)
 ~~~~
 
+----------------------------------------------------------------------------------------------------------
 
