@@ -1,13 +1,11 @@
 # References
 
 
-
 ## Main references
 
 - https://code.kx.com/q/
 - https://code.kx.com/q/ref/card/
 - https://github.com/denglert/q-sandbox
-
 
 -----------------------------------------------------------
 
@@ -18,9 +16,30 @@
     - [Q for Mortals v3](https://code.kx.com/q/q4m3/)
     - [Introduction to kdb+ and q (video series)](https://www.youtube.com/playlist?list=PLypX5sYuDqvrwBD2EMWadIMiTqJZmVsqm)
 
-- Thalesians
-    - http://www.thalesians.com/finance/index.php/Knowledge_Base/Databases/Kdb
-    - http://www.thalesians.com/finance/images/Lecture05.pdf
+
+
+-----------------------------------------------------------
+
+## Books
+
+- N. Psaris: Q Tips: Fast, Scalable and Maintainable Kdb+
+- N. Psaris: Fun Q: A Functional Introduction to Machine Learning in Q 
+- J. Novotny, P. Bilokon, A. Galiotos, F. Deleze: Machine Learning and Big Data with kdb+/q
+
+-----------------------------------------------------------
+
+## Community
+
+- https://www.aquaq.co.uk/
+- http://www.timestored.com/
+- http://www.enlistq.com/
+- https://code.kx.com/home/
+
+-----------------------------------------------------------
+
+## Blog posts
+
+- http://quantmind.com/blog/2009/10/a-first-look-at-kdb
 
 
 -----------------------------------------------------------
@@ -31,8 +50,3 @@
 - Map-reduce https://code.kx.com/wiki/JB:KdbplusForMortals/partitioned_tables#1.3.4.1_Map-Reduce
 
 
------------------------------------------------------------
-
-## Blog posts
-
-- http://quantmind.com/blog/2009/10/a-first-look-at-kdb
