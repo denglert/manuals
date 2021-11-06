@@ -39,7 +39,19 @@ Below is some examples of functions defined in the `q.k` file.
 ~~~~
 parse:{$["\\"=*x;(system;1_x);-5!x]}
 
-sums:+\;prds:*\;mins:&\;maxs:|\;fills:^\;deltas:-':;ratios:%':;avgs:{(+\x)%+\~^x};differ:"b"$~~':;prev::':;next:{$[0h>@x;'`rank;1_x,,x 0N]};
+sums:+\;
+prds:*\;
+mins:&\;
+maxs:|\;
+fills:^\;
+deltas:-':;
+ratios:%':;
+avgs:{(+\x)%+\~^x};
+differ:"b"$~~':;
+prev::':;
+next:{$[0h>@x;'`rank;1_x,,x 0N]};
 
 asc:{$[99h=@x;(!x)[i]!`s#r i:<r:. x;`s=-2!x;x;0h>@x;'`rank;`s#x@<x]}
+
+...
 ~~~~

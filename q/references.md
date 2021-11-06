@@ -34,6 +34,7 @@
 - http://www.timestored.com/
 - http://www.enlistq.com/
 - https://code.kx.com/home/
+- [Nick Psaris](https://nick.psaris.com/)
 
 -----------------------------------------------------------
 

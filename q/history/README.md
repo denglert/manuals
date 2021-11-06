@@ -1,5 +1,9 @@
 # History of `kdb+`/`q`
 
+**References:**
+- https://code.kx.com/q/learn/archive/
+
+
 | **Programming language** | First release |
 | -----------------------  | ------------- |
 | `APL`                    | 1966          |
@@ -86,6 +90,7 @@ Arthur Whitney (Morgan Stanley)
 
 **References:**
 - https://en.wikipedia.org/wiki/K_(programming_language)
+- http://www.math.bas.bg/bantchev/place/k.html
 
 
 **First release:**
@@ -166,7 +171,8 @@ Arthur Whitney (Morgan Stanley)
 
 **Paradigms:**
 - Array
-- Functional
+- Functional (not pure functional, it might have side effects)
+- Dynamic
 - Structured
 - Modular
 - Interpreted
