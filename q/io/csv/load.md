@@ -36,7 +36,7 @@ or
 ~~~~
 
 where:
-- `types` is a string of column type codes in upper case, see [Column type codes](#column_type_codes)
+- `types` is a string of column type codes in upper case, see [Column type codes](#column_type_codes).
 - `delimiter` is a char atom or 1-item list
     - If `delimiter` is enlisted, the first row of the content of `y` is read as column names and the
     result is a table;
@@ -57,7 +57,7 @@ t : ("DTSFF"; enlist ",") 0: `/path/to/file/data.csv
 where
 - `t`: is the table variable to be defined
 - `DTSFF` is the column type codes of the csv file corresponding to: `date`, `time`, `symbol`, `float`,
-    `float`
+    `float`, see [Column type codes](#column_type_codes)
 - `enlist ","` is the delimiter specification
 - `0:` is the file text operator
 - `/path/to/file/data.csv` is the path to the csv file
@@ -70,7 +70,7 @@ t : ("DTSFF"; ",") 0: `/path/to/file/data.csv
 ~~~~
 
 where
-- `t`: is the table variable to be defined
+- `t`: is the table variable to be defined, see [Column type codes](#column_type_codes)
 - `DTSFF` is the column type codes of the csv file corresponding to: `date`, `time`, `symbol`, `float`,
     `float`
 - `","` is the delimiter specification
