@@ -5,12 +5,4 @@
 - https://code.kx.com/q/wp/parse-trees/
 
 
-## Conversion between plain q-sql and functional form
-
-"Plain q-sql" ---> "functional form":
-
-~~~~
-parse "plain q-sql query"
-~~~~
-
 
