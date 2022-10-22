@@ -45,7 +45,7 @@ where
 
 ### Enumerating symbol columns
 
-If a table contains columns of type `symbo`l with repeated items (i.e. the table is not fully
+If a table contains columns of type `symbol` with repeated items (i.e. the table is not fully
 enumerated), trying to save it splayed will result in a type error.
 
 **Solution:** enumerate symbol columns before saving the table splayed.
